@@ -1,0 +1,15 @@
+$colors: (
+  primary: (
+    400: hsl(220deg 45% 53%),
+    600: hsl(220deg 45% 43%),
+  ),
+  secondary: (
+    400: hsla(0deg 0% 100% / 50%),
+    600: hsla(0deg 0% 100% / 100%),
+  ),
+);
+$colors-buttons: (
+  close: red,
+  zoom: orange,
+  minimize: green,
+);

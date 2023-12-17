@@ -1,0 +1,25 @@
+@use "../abstracts/colors" as *;
+
+:root {
+  @each $color, $shades in $colors {
+    @each $prop, $value in $shades {
+      --#{$color}-#{$prop}: #{$value};
+    }
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  font-family: Poppins-Regular, sans-serif;
+  background: url("/Background.jpg") no-repeat center;
+  background-size: cover;
+}

@@ -1,0 +1,49 @@
+@mixin display-flex($content: center, $items: center, $direction: row) {
+  display: flex;
+  justify-content: #{$content};
+  align-items: #{$items};
+  flex-direction: #{$direction};
+}
+
+@mixin element-invisible($enforce: true) {
+  $important: if($enforce, "!important", null);
+
+  max-height: 0 #{$important};
+  opacity: 0 #{$important};
+  visibility: hidden #{$important};
+  transition: $default-transition;
+}
+
+@mixin element-invisible-off($value-visibility: 100px, $enforce: true) {
+  $important: if($enforce, "!important", null);
+
+  max-height: #{$value-visibility} #{$important};
+  opacity: 1 #{$important};
+  visibility: visible #{$important};
+}
+
+@mixin css-triangle($triangle-size, $triangle-color, $triangle-direction) {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: $triangle-size;
+
+  @if $triangle-direction == down {
+    border-bottom-width: 0;
+    border-color: $triangle-color transparent transparent;
+  }
+  @if $triangle-direction == up {
+    border-top-width: 0;
+    border-color: transparent transparent $triangle-color;
+  }
+  @if $triangle-direction == right {
+    border-right-width: 0;
+    border-color: transparent transparent transparent $triangle-color;
+  }
+  @if $triangle-direction == left {
+    border-left-width: 0;
+    border-color: transparent $triangle-color transparent transparent;
+  }
+}

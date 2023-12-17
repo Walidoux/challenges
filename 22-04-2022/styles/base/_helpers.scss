@@ -1,0 +1,14 @@
+@import "variables";
+
+%content {
+  position: absolute;
+  content: "";
+}
+
+%button {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: $default-transition;
+}
