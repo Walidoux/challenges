@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #1e272e;
+  font-family: "Inter", sans-serif;
+}
+
+body .timer {
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+body .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 50px;
+}
+
+body .container button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 15px 40px;
+  margin: 0 15px;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  color: white;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+body .container button.start {
+  background: -webkit-gradient(linear, right top, left top, from(#0b755a), to(#1dd3a2));
+  background: linear-gradient(to left, #0b755a, #1dd3a2);
+  -webkit-box-shadow: 0 5px 20px rgba(29, 211, 162, 0.3);
+          box-shadow: 0 5px 20px rgba(29, 211, 162, 0.3);
+  background-size: 200%;
+}
+
+body .container button.pause {
+  background: -webkit-gradient(linear, right top, left top, from(#f28926), to(#fec958));
+  background: linear-gradient(to left, #f28926, #fec958);
+  -webkit-box-shadow: 0 5px 20px rgba(254, 201, 88, 0.3);
+          box-shadow: 0 5px 20px rgba(254, 201, 88, 0.3);
+  background-size: 200%;
+}
+
+body .container button.pause.hidden {
+  display: none;
+}
+
+body .container button.reset {
+  background: -webkit-gradient(linear, right top, left top, from(#e63737), to(#ff6b6b));
+  background: linear-gradient(to left, #e63737, #ff6b6b);
+  -webkit-box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
+          box-shadow: 0 5px 20px rgba(255, 107, 107, 0.3);
+  background-size: 200%;
+}
+
+body .container button[disabled] {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+body .container button:not([disabled]):hover {
+  background-position: right;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+/*# sourceMappingURL=main.css.map */

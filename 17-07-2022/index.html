@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="js/main.js"></script>
+</head>
+
+<body>
+    <form method="post" class="form_container" id="formContainer">
+        <div class="logo">
+            <img src="assets/img/logo.png" alt=" lsroleplay logo">
+            <span class="textinfo">we can do it</span>
+        </div>
+        <div class="input_container">
+            <input type="text" id="emailInput" required>
+            <label for="input_text" class="label_container">
+                <img src="assets/icons/usericon.svg" class="icon" draggable="false">
+                <span class="value">Pseudo/adresse email</span>
+            </label>
+        </div>
+        <p class="error_message" id="errorEmail">Pseudo/adresse mail incorrect</p>
+        <div class="input_container">
+            <input type="password" id="passwordInput" required>
+            <label for="input_password" class="label_container">
+                <img src="assets/icons/passwordIcon.svg" class="icon" draggable="false">
+                <span class="value">Mot de passe</span>
+            </label>
+        </div>
+        <p class="error_message" id="errorPassword">Mot de passe incorrect</p>
+        <div class="input_container checkbox">
+            <input type="checkbox" id="input_checkbox">
+            <label for="input_checkbox" class="label_checkbox">Se souvenir de moi</label>
+        </div>
+        <p class="output_popup" id="outputPopup">Connexion réussie..</p>
+        <input type="submit" value="Se connecter" id="Connecting">
+        <div class="links_container">
+            <a href="#" class="link">Mot de passe oublié ?</a>
+            <a href="#" class="link">Je souhaite m'inscrire</a>
+        </div>
+    </form>
+
+    <form method="post" class="form_userContainer" id="formUserContainer">
+        <div class="title_container">
+            <p>Sélectionnez votre personnage</p>
+        </div>
+        <div class="form_body">
+            <div class="userinfo_container selected" id="userInfo">
+                <p class="container_header">
+                    <span class="username">
+                        <svg class="usericon" width="18" height="18" viewBox="0 0 18 22" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 11C11.8406 11 14.1429 8.53789 14.1429 5.5C14.1429 2.46211 11.8406 0 9 0C6.15938 0 3.85714 2.46211 3.85714 5.5C3.85714 8.53789 6.15938 11 9 11ZM12.6 12.375H11.929C11.0371 12.8133 10.0446 13.0625 9 13.0625C7.95536 13.0625 6.96696 12.8133 6.07098 12.375H5.4C2.41875 12.375 0 14.9617 0 18.15V19.9375C0 21.0762 0.863839 22 1.92857 22H16.0714C17.1362 22 18 21.0762 18 19.9375V18.15C18 14.9617 15.5812 12.375 12.6 12.375Z"
+                                fill="#EBEBEB" />
+                        </svg> Daniel Christensen</span>
+                </p>
+                <div class="container_body">
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="id">Id:</span>
+                        <p class="user_dataValue">289</p>
+                    </div>
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="faction">Faction:</span>
+                        <p class="user_dataValue">LOS SANTOS POLICE DEPARTMENT</p>
+                    </div>
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="job">Job:</span>
+                        <p class="user_dataValue">Mécanicien</p>
+                    </div>
+                    <div class="user_data highlighted">
+                        <span class="user_dataKey" data-key="banque">Banque:</span>
+                        <p class="user_dataValue">29 039 $</p>
+                    </div>
+                    <div class="user_data highlighted">
+                        <span class="user_dataKey" data-key="liquide">Liquide:</span>
+                        <p class="user_dataValue">31 $</p>
+                    </div>
+                </div>
+            </div>
+            <div class="userinfo_container" id="userInfo">
+                <p class="container_header">
+                    <span class="username">
+                        <svg class="usericon" width="18" height="18" viewBox="0 0 18 22" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 11C11.8406 11 14.1429 8.53789 14.1429 5.5C14.1429 2.46211 11.8406 0 9 0C6.15938 0 3.85714 2.46211 3.85714 5.5C3.85714 8.53789 6.15938 11 9 11ZM12.6 12.375H11.929C11.0371 12.8133 10.0446 13.0625 9 13.0625C7.95536 13.0625 6.96696 12.8133 6.07098 12.375H5.4C2.41875 12.375 0 14.9617 0 18.15V19.9375C0 21.0762 0.863839 22 1.92857 22H16.0714C17.1362 22 18 21.0762 18 19.9375V18.15C18 14.9617 15.5812 12.375 12.6 12.375Z"
+                                fill="#EBEBEB" />
+                        </svg>
+                        </svg> Daniel Christensen</span>
+                </p>
+                <div class="container_body">
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="id">Id:</span>
+                        <p class="user_dataValue">289</p>
+                    </div>
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="faction">Faction:</span>
+                        <p class="user_dataValue">LOS SANTOS POLICE DEPARTMENT</p>
+                    </div>
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="job">Job:</span>
+                        <p class="user_dataValue">Mécanicien</p>
+                    </div>
+                    <div class="user_data highlighted">
+                        <span class="user_dataKey" data-key="banque">Banque:</span>
+                        <p class="user_dataValue">29 039 $</p>
+                    </div>
+                    <div class="user_data highlighted">
+                        <span class="user_dataKey" data-key="liquide">Liquide:</span>
+                        <p class="user_dataValue">31 $</p>
+                    </div>
+                </div>
+            </div>
+            <div class="userinfo_container blocked" id="userInfo">
+                <p class="container_header">
+                    <span class="username">
+                        <img src="assets/icons/UserLock.svg" class="usericon" draggable="false">
+                        </svg> Daniel Christensen</span>
+                </p>
+                <div class="container_body">
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="id">Id:</span>
+                        <p class="user_dataValue">289</p>
+                    </div>
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="faction">Faction:</span>
+                        <p class="user_dataValue">LOS SANTOS POLICE DEPARTMENT</p>
+                    </div>
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="job">Job:</span>
+                        <p class="user_dataValue">Mécanicien</p>
+                    </div>
+                    <div class="user_data highlighted">
+                        <span class="user_dataKey" data-key="banque">Banque:</span>
+                        <p class="user_dataValue">29 039 $</p>
+                    </div>
+                    <div class="user_data highlighted">
+                        <span class="user_dataKey" data-key="liquide">Liquide:</span>
+                        <p class="user_dataValue">31 $</p>
+                    </div>
+                </div>
+            </div>
+            <div class="userinfo_container premium" id="userInfo">
+                <p class="container_header">
+                    <span class="username">
+                        <svg class="usericon" width="18" height="18" viewBox="0 0 18 22" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 11C11.8406 11 14.1429 8.53789 14.1429 5.5C14.1429 2.46211 11.8406 0 9 0C6.15938 0 3.85714 2.46211 3.85714 5.5C3.85714 8.53789 6.15938 11 9 11ZM12.6 12.375H11.929C11.0371 12.8133 10.0446 13.0625 9 13.0625C7.95536 13.0625 6.96696 12.8133 6.07098 12.375H5.4C2.41875 12.375 0 14.9617 0 18.15V19.9375C0 21.0762 0.863839 22 1.92857 22H16.0714C17.1362 22 18 21.0762 18 19.9375V18.15C18 14.9617 15.5812 12.375 12.6 12.375Z"
+                                fill="#EBEBEB" />
+                        </svg>
+                        </svg> Daniel Christensen</span>
+                </p>
+                <div class="container_body">
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="id">Id:</span>
+                        <p class="user_dataValue">289</p>
+                    </div>
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="faction">Faction:</span>
+                        <p class="user_dataValue">LOS SANTOS POLICE DEPARTMENT</p>
+                    </div>
+                    <div class="user_data">
+                        <span class="user_dataKey" data-key="job">Job:</span>
+                        <p class="user_dataValue">Mécanicien</p>
+                    </div>
+                    <div class="user_data highlighted">
+                        <span class="user_dataKey" data-key="banque">Banque:</span>
+                        <p class="user_dataValue">29 039 $</p>
+                    </div>
+                    <div class="user_data highlighted">
+                        <span class="user_dataKey" data-key="liquide">Liquide:</span>
+                        <p class="user_dataValue">31 $</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="confirmselection_button" value="Choisir ce personnage" id="confirmSelectButton" />
+    </form>
+
+    <form method="post" class="form_spawnContainer" id="formSpawnContainer">
+        <div class="title_container">
+            <p>Sélectionnez votre spawn</p>
+        </div>
+        <div class="form_body">
+            <div class="userinfo_container" id="userInfo">
+                <div class="userinfo_container">
+                    <div class="container_header">Dernière position</div>
+                </div>
+                <div class="userinfo_container">
+                    <div class="container_header">142 Imagination Court</div>
+                </div>
+                <div class="userinfo_container">
+                    <div class="container_header">31 Av. Vinewood Gate</div>
+                </div>
+            </div>
+        </div>
+        <input type="submit" class="confirmselection_button" value="Jouer" id="confirmSelectButton" />
+    </form>
+</body>
+
+</html>

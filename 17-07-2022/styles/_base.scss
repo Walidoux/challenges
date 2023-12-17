@@ -1,0 +1,20 @@
+@import "mixins";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include displayFlex(center, center, column);
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+}
+
+$primary_color: #286ee7;
+$secondary_color: #1353c0;

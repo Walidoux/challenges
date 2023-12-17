@@ -1,0 +1,45 @@
+@mixin displayFlex($content: center, $items: center, $direction: column) {
+  display: flex;
+  justify-content: #{$content};
+  align-items: #{$items};
+  flex-direction: #{$direction};
+}
+
+@mixin pseudoElement(
+  $element,
+  $el-height,
+  $el-width,
+  $isCentered: false,
+  $el-color: black,
+  $el-rotation: 0deg,
+  $el-transition: none,
+  $isVisible: true
+) {
+  @if $element == "before" or $element == "after" {
+    position: relative;
+
+    &:#{$element} {
+      @extend %pseudos;
+      height: #{$el-height};
+      width: #{$el-width};
+      background: #{$el-color};
+      transition: #{$el-transition};
+      @content;
+      @if $isVisible {
+        @extend %visibilityShown;
+      } @else {
+        @extend %visibilityHidden;
+      }
+      @if $isCentered {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(#{$el-rotation});
+      } @else {
+        transform: rotate(#{$el-rotation});
+        @content;
+      }
+    }
+  } @else {
+    @warn "`#{$el}` is not a valid pseudo-element...";
+  }
+}

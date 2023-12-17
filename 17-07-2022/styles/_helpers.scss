@@ -1,0 +1,117 @@
+@import "base";
+
+%pseudos {
+  content: "";
+  position: absolute;
+}
+
+%visibilityHidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+%visibilityShown {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s ease;
+}
+
+%titleStyles {
+  width: 100%;
+  text-align: center;
+  padding: 25px 15px;
+  text-transform: uppercase;
+  color: #a7a7a7;
+  font-weight: bold;
+}
+
+%formStyles {
+  box-shadow: 0 20px 50px rgba($color: #000000, $alpha: 0.75);
+  border-radius: 16px;
+  background: #1c2028;
+  transition: 0.3s ease;
+  min-width: 400px;
+}
+
+%formSelectionStyles {
+  @include displayFlex(flex-start, center, column);
+  @extend %formStyles;
+  position: absolute;
+  overflow: hidden;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #2c313f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #394055;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4b5570;
+  }
+
+  .title_container {
+    @extend %titleStyles;
+  }
+
+  .form_body {
+    width: 100%;
+    overflow-y: auto;
+    max-height: 575px;
+  }
+
+  .confirmselection_button {
+    @extend %defaultSubmitButtonStyles;
+    border-radius: 0 !important;
+    position: sticky;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+  }
+
+  &.visible {
+    left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+%inputStyles {
+  position: relative;
+  outline: none;
+  border: none;
+  background: none;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+%defaultSubmitButtonStyles {
+  @extend %inputStyles;
+  height: 55px;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(-200deg, $primary_color, $secondary_color);
+
+  &:hover {
+    box-shadow: 0 0 30px rgba($color: $secondary_color, $alpha: 0.5);
+  }
+
+  &:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+
+    &:hover {
+      box-shadow: unset;
+    }
+  }
+}

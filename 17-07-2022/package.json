@@ -1,0 +1,20 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server",
+    "start": "node server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.27.0",
+    "fastify-cli": "^2.15.0",
+    "fastify-cors": "^6.0.2",
+    "form-data": "^4.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
