@@ -1,0 +1,11 @@
+@media screen and (max-width:900px) {
+    .bg {
+        display: none;
+    }
+    .content .left {
+        display: none;
+    }
+    .content .right {
+        width: 100%;
+    }
+}

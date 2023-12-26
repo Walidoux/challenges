@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Spotify Card Statut Discord</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts/fonts.css">
+</head>
+
+<body>
+    <div class="card">
+        <div class="top_card">
+            <img src="images/avatar.png" class="user_avatar" draggable="false" alt="Avatar utilisateur">
+            <ul class="list_badges">
+                <li class="badge"><img src="images/badge.svg" draggable="false" alt="Badge Discord"></li>
+            </ul>
+            <h1 class="username">Walidoux<span class="usertag">#3152</span></h1>
+        </div>
+        <div class="body_card">
+            <h3 class="title">À propos de moi</h3>
+            <p class="description">An ambitious guy with good <br />
+                suave mannerisms trying to use his hidden potential.</p>
+            <h3 class="title withIcon">Écoute Spotify <img src="images/icons/spotify.svg" draggable="false"
+                    alt="Spotify Icon"></h3>
+            <div class="music_field">
+                <div class="music_container">
+                    <img src="images/music.jpg" class="music_image" draggable="false" alt="Image de la musique">
+                    <div class="music_informations">
+                        <h3 class="music_title">Crystal Clouds</h3>
+                        <p class="author">de Phantom Sage <br /> sur l'album NCS: The Best of 2016</p>
+                    </div>
+                </div>
+                <div class="music_progression">
+                    <div class="music_progression-container">
+                        <p id="start">2:52</p>
+                        <p id="start">4:24</p>
+                    </div>
+                </div>
+                <button class="music_button play" disabled><img src="images/icons/spotify.svg" class="icon"
+                        draggable="false" alt="Spotify Icon">Écouter sur Spotify</button>
+                <button class="music_button listenAlong" disabled><img src="images/icons/listenAlong.svg"
+                        draggable="false" alt="Listen Along Icon"></button>
+            </div>
+            <h3 class="title">Note</h3>
+            <textarea name="note" id="note" class="textarea_note" placeholder="Clique pour ajouter une note"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>

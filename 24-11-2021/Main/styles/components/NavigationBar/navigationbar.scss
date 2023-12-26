@@ -1,0 +1,135 @@
+@import "./../../abstracts/mixins";
+@import "./../../base/supports";
+
+@mixin NavBarLinkState($state: false) {
+  position: relative;
+  background-color: if($state, hsla(0, 100%, 61%, 0.1), transparent);
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: if($state, 5px, 0);
+    background-color: var(--clr-primary-600);
+    transition: 0.3s ease;
+  }
+
+  &:hover::before {
+    height: 5px;
+  }
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  max-width: 1200px;
+  padding: 0 50px;
+  transition: 0.3s ease;
+  margin: 50px auto 0 auto;
+  z-index: 1000;
+
+  .nav_container {
+    @include flexDisplay("center", "center", "row");
+    @include Blur_Firefox_Support();
+    position: relative;
+    height: 70px;
+    list-style: none;
+    padding: 0 40px;
+    overflow: hidden;
+    border-radius: 50px;
+    background-color: hsl(210, 7%, 11%);
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.4);
+    transition: 0.3s ease;
+
+    .logo {
+      height: 35px;
+      margin: 0 40px;
+      filter: drop-shadow(0 4px 10px rgba(236, 53, 53, 0.4));
+    }
+
+    .item {
+      @include flexDisplay("center", "center", "row");
+      height: 100%;
+
+      .link:not(.social_media) {
+        @include flexDisplay("center", "center", "row");
+        @include NavBarLinkState(false);
+        height: 100%;
+        text-decoration: none;
+        padding: 0 30px;
+
+        .text {
+          color: white;
+          text-decoration: none;
+          margin-left: 15px;
+        }
+
+        &.active {
+          @include NavBarLinkState(true);
+        }
+      }
+
+      &.discord_styles {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3));
+        transform: translateY(-50%);
+        transition: 0.5s ease;
+
+        & .link {
+          @include flexDisplay("center", "center", "row");
+          height: 100%;
+          padding: 0 20px;
+        }
+
+        &:hover {
+          transform: translateY(-50%) rotate(360deg) scale(1.3);
+        }
+      }
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &.hidden {
+    @include Blur_Firefox_Support();
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+    top: unset;
+    bottom: 0;
+
+    .nav_container {
+      border-radius: 0;
+      box-shadow: 0px -5px 30px rgba(0, 0, 0, 0.4);
+
+      .item.discord_styles {
+        display: none;
+      }
+
+      .icon {
+        margin-right: 0;
+      }
+
+      .text {
+        display: none;
+      }
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+}

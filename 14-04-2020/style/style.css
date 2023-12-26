@@ -1,0 +1,31 @@
+
+@keyframes focus-effect{0%{transform:translateZ(0);box-shadow:0 0 0 0 transparent}100%{transform:translateZ(50px);box-shadow:0 0 20px 0 rgba(0,0,0,.35)}}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, rgb(64, 67, 71), rgb(24, 36, 51));
+    height: 100vh;
+}
+
+span#green {
+    color: rgb(34, 248, 6);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+span#red {
+    color: rgb(240, 55, 23);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+span#blue {
+    color: rgb(86, 86, 255);
+    text-transform: uppercase
+}

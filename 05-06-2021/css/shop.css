@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+    /* Important Colors */
+    --primary-color: #6382EC;
+
+    /* Default Colors */
+    --body-background-color: #1e2022;
+    --header-background: linear-gradient(145deg, rgba(66, 94, 192, 0.9) 0%, rgba(20, 44, 122, 0.9) 100%);
+    --titles-text-color: white;
+    --descriptions-text-color: white;
+    --header-svg_icon: rgba(255, 255, 255, 0.3);
+    --cards-background: linear-gradient(-225deg, #414449, #2c2d31);
+    --cards-recommended-background-color: rgb(255, 240, 32);
+    --cards-recommended-star_icon-color: white;
+    --cards-pricing-titles: white;
+    --cards-default-pricing-card-color: #535353;
+    --cards-free-pricing-card-color: var(--primary-color);
+    --cards-notfree-pricing-card-color: rgb(223, 211, 53);
+    --cards-titles-color: white;
+    --cards-titles-background: rgba(0, 0, 0, 0.4);
+    --cards-prices-text-color: white;
+    --cards-mini-titles: rgb(231, 231, 231);
+    --cards-mini-titles_content: rgb(177, 177, 177);
+    --cards-mini-titles_content__removed: rgb(126, 126, 126);
+    --cards-valid_icons-color: #44ac37;
+    --cards-notvalid_icons-color: rgb(189, 71, 67);
+    --cards-buttons-text-color: white;
+
+    /* Shadows */
+    --titles-text-shadow: 0 3px 15px rgba(255, 255, 255, 0.3);
+    --cards-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    --cards-recommended-text-shadow: 0 2px 30px rgba(0, 0, 0, 0.5);
+    --cards-default-pricing-card-shadow: 0 5px 20px #535353;
+    --cards-free-pricing-card-shadow: 0 5px 20px #6383ec7e;
+    --cards-notfree-pricing-card-shadow: 0 5px 20px rgb(223, 211, 53);
+    --cards-prices-text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+/* Default Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--body-background-color);
+}
+
+/* Background decorations (Ellipses) */
+.ellipses {
+    position: fixed;
+    z-index: -1;
+}
+
+.ellipses.first {
+    right: -400px;
+    top: -400px;
+}
+
+.ellipses.second {
+    top: 300px;
+    left: -600px;
+}
+
+/* Mini Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: url(../images/Background.svg) no-repeat;
+    background-size: cover;
+    min-height: 50vh;
+    margin-top: 10px;
+}
+
+.header_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+/* Particles-JS Background Animation */
+#particles-js {
+    position: absolute;
+    height: 50vh;
+    min-width: 100%;
+    /* Smoothy Header Background (No Variables Needed) */
+    box-shadow: inset 0 10px 15px -10px rgba(0, 0, 0, 1),
+                inset 0 -10px 8px -10px rgba(0, 0, 0, 1);
+    background: var(--header-background);
+    z-index: 0;
+    overflow: hidden;
+}
+
+#header-svg_icon {
+    position: absolute;
+    bottom: 70px;
+    right: 15%;
+    transform: scale(10) rotate(10deg);
+    color: var(--header-svg_icon);
+}
+
+/* Quick Position Fix Header */
+@media screen and (max-width: 900px) {
+    header {
+        margin-top: 30px;
+    }
+}
+
+.titles,
+.descriptions {
+    padding: 0 35px 15px 35px;
+}
+
+.titles {
+    max-width: 750px;
+    color: var(--titles-text-color);
+    text-shadow: var(--titles-text-shadow);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.4rem;
+    margin: 0;
+}
+
+.descriptions {
+    max-width: 825px;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    color: var(--descriptions-text-color);
+    padding-bottom: 0;
+}
+
+.princing-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 35px;
+}
+
+.card {
+    position: relative;
+    min-height: 500px;
+    width: 350px;
+    margin: 30px;
+    background: var(--cards-background);
+    box-shadow: var(--cards-shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-top { position: relative; }
+
+#recommended-card {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -2px;
+    right: 30px;
+    font-size: 3rem;
+    text-shadow: var(--cards-recommended-text-shadow);
+    color: var(--cards-recommended-background-color);
+    z-index: 10;
+}
+
+#recommended-card #star_icon {
+    color: var(--cards-recommended-star_icon-color);
+    position: absolute;
+    margin-bottom: 5px;
+    font-size: initial;
+}
+
+.card-pricing_titles {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 20px;
+    color: var(--cards-pricing-titles);
+    padding: 5px 15px;
+    font-weight: bold;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.card.default .card-pricing_titles {
+    background-color: var(--cards-default-pricing-card-color);
+    box-shadow: var(--cards-default-pricing-card-shadow);
+}
+
+.card.free .card-pricing_titles {
+    background-color: var(--cards-free-pricing-card-color);
+    box-shadow: 0 5px 20px var(--cards-free-pricing-card-shadow);
+}
+
+.card.notfree .card-pricing_titles {
+    background-color: var(--cards-notfree-pricing-card-color);
+    box-shadow: 0 5px 20px var(--cards-notfree-pricing-card-shadow);
+}
+
+.card-titles {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1.1rem;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    color: var(--cards-titles-color);
+    background-color: var(--cards-titles-background);
+}
+
+.card-prices {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--cards-prices-text-color);
+    text-shadow: var(--cards-prices-text-shadow);
+}
+
+.card-prices_devise {
+    font-size: 1.5rem;
+    margin-left: 3px;
+    font-weight: normal;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 20px;
+}
+
+.card-mini_titles {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--cards-mini-titles);
+}
+
+.card-text_content {
+    font-size: 0.9rem;
+    color: var(--cards-mini-titles_content);
+}
+
+.card-caracteristics {
+    list-style: none;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.card-valid_caracteristic,
+.card-notvalid_caracteristic {
+    display: flex;
+    align-items: center;
+    margin: 3px;
+}
+
+.default-caracteristic {
+    color: var(--cards-mini-titles_content);
+}
+
+.removed-caracteristic {
+    text-decoration: line-through;
+    color: var(--cards-mini-titles_content__removed);
+}
+
+#caracteristic_icon {
+    text-align: center;
+    margin-right: 15px;
+}
+
+.fa-check.green { color: var(--cards-valid_icons-color); }
+.fa-times.red { color: var(--cards-notvalid_icons-color); }
+
+/* Quick Position Fix Icon */
+.fa-times { font-size: 18px; padding-right: 3px; }
+
+.card-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgb(75, 75, 75); /* Separation (No variables needed) */
+    padding: 15px;
+}
+
+.card-purchase_button {
+    width: 100%;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 13px 0;
+    color: var(--cards-buttons-text-color);
+    border-radius: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: .3s ease;
+}
+
+.card.default .card-purchase_button {
+    background-color: var(--cards-default-pricing-card-color);
+    border: 2px solid var(--cards-default-pricing-card-color);
+    box-shadow: 0 5px 20px var(--cards-default-pricing-card-shadow);
+}
+
+.card.free .card-purchase_button {
+    background-color: var(--cards-free-pricing-card-color);
+    border: 2px solid var(--cards-free-pricing-card-color);
+    box-shadow: var(--cards-free-pricing-card-shadow);
+}
+
+.card.notfree .card-purchase_button {
+    background-color: var(--cards-notfree-pricing-card-color);
+    border: 2px solid var(--cards-notfree-pricing-card-color);
+    box-shadow: var(--cards-notfree-pricing-card-shadow);
+}
+
+.card .card-purchase_button:hover {
+    background: transparent;
+    box-shadow: none;
+}
+
+#icon-buy_button { margin-right: 10px; }

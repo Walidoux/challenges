@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile utilisateur</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/user_profil.css">
+        
+        <script src="https://kit.fontawesome.com/a111cfd49e.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <section class="section_user">
+            <div class="section_user-top">
+                <div class="section_file-input">
+                    <img src="images/staffMembers/profil1.png" class="avatar-img" draggable="false" alt="User profil">
+                    <p class="hovered_message-profil">Changer d'avatar</p>
+                    <input type="file" name="selector_files" class="selector-input">
+                    <label for="selector_files"><i id="file_icon" class="fas fa-file-upload"></i></label>
+                </div>
+            </div>
+            <div class="section_user-body">
+                <div class="section_user-body--gap">
+                    <h2 class="section_user-body--gap_title">Changement de pseudonyme</h2>
+                    <form action="#">
+                        <div class="section_user-from--input">
+                            <input type="textfield" class="section_user-input text" required maxlength="16" placeholder="Nouveau pseudo">
+                            <input type="submit" class="section_user-input submit" value="Confirmer">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="section_user-body--gap">
+                    <h2 class="section_user-body--gap_title">Réinitialisation du mot de passe</h2>
+                    <form action="#">
+                        <div class="section_user-from--input">
+                            <i id="section_user-form_icon" class="fas fa-unlock-alt"></i>
+                            <input type="password" class="section_user-input password" required maxlength="40" placeholder="Votre ancien mot de passe">
+                        </div>
+                        <div class="section_user-from--input">
+                            <i id="section_user-form_icon" class="fas fa-unlock-alt"></i>
+                            <input type="password" class="section_user-input password" required maxlength="40" placeholder="Votre nouveau mot de passe">
+                        </div>
+                        <div class="section_user-from--input">
+                            <i id="section_user-form_icon" class="fas fa-unlock-alt"></i>
+                            <input type="password" class="section_user-input password" required maxlength="40" placeholder="Répérez votre mot de passe">
+                        </div>
+                        <input type="submit" class="section_user-input submit" value="Confirmer">
+                    </form>
+                </div>
+
+                <div class="section_user-body--gap">
+                    <h2 class="section_user-body--gap_title">Supprimer son compte</h2>
+                    <form action="#">
+                        <p class="section_user-body--gap_paragraph">
+                            <input type="checkbox" class="section_user-checkbox_input" required>
+                            <span class="section_user-body--gap_paragraph__text">En cochant cette case, je confirme vouloir
+                                supprimer mon compte ainsi que tout les services achetés sur SearchMC.</span>
+                            <div class="section_user-from--input">
+                                <input type="submit" class="section_user-input deleteButton" value="Supprimer">
+                                <i id="trash_icon" class="fas fa-trash"></i>
+                            </div>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="main_section">
+            <div class="main_section-box">
+                <i id="icon_box" class="fas fa-id-card"></i>
+                <h2 class="main_section-box_title">Abonnement</h2>
+                <ul class="main_section-box_lists">
+                    <li class="main_section-box_list"><p class="main_section-box_list--text">Type : <span class="main_section-box_list--value">Default</span></p></li>
+                    <li class="main_section-box_list"><p class="main_section-box_list--text">Compte crée le : <span class="main_section-box_list--value">17/07/2021</span></p></li>
+                    <li class="main_section-box_list"><p class="main_section-box_list--text">Temps restant : <span class="main_section-box_list--value">xxxxxx</span></p></li>
+                    <li class="main_section-box_list"><p class="main_section-box_list--text">Limite Hash Crack : <span class="main_section-box_list--value">xxxxxx</span></p></li>
+                </ul>
+            </div>
+            <div class="main_section-box">
+                <i id="icon_box" class="fas fa-cog"></i>
+                <h2 class="main_section-box_title">Changement ID Discord <i style="color: #7289DA;margin-left: 8px;" class="fab fa-discord"></i></h2>
+                <form action="#" class="main_section-box_form">
+                    <input type="text" class="main_section-box_input text" maxlength="35" placeholder="Nouveau ID Discord" required>
+                    <!-- To Do Javascript Code (Only Numbers Input) -->
+                    <input type="submit" class="main_section-box_input submit" value="Valider">
+                </form>
+            </div>
+            <div class="main_section-box">
+                <i id="icon_box" class="fas fa-cog"></i>
+                <h2 class="main_section-box_title">Changement ID Telegram <i style="color: #3999c9;margin-left: 8px;" class="fab fa-telegram"></i></h2>
+                <form action="#" class="main_section-box_form">
+                    <input type="text" class="main_section-box_input text" maxlength="35" placeholder="Nouveau ID Discord" required>
+                    <!-- To Do Javascript Code (Only Numbers Input) -->
+                    <input type="submit" class="main_section-box_input submit" value="Valider">
+                </form>
+            </div>
+            <div class="main_section-box_messages">
+                <button class="main_section-box_access__message">Demander l'accès au bot Discord <i style="color: #7289DA;margin-left: 8px;" class="fab fa-discord"></i></button>
+                <button class="main_section-box_access__message">Demander l'accès au bot Telegram <i style="color: #3999c9;margin-left: 8px;" class="fab fa-telegram"></i></button>
+            </div>
+        </section>
+
+        <div class="popup_messages active">
+            <div class="popup_content error active">
+                <i id="error_icon" class="fas fa-times"></i>
+                <p class="popup_message error">Impossible, votre Abonnement ne vous le permet pas !</p>
+                <button class="popup_message-closeButton error">Ok</button>
+            </div>
+            <div class="popup_content success">
+                <i id="success_icon" class="fas fa-check"></i>
+                <p class="popup_message success">
+                    Revenez plus tard pour avoir votre lien d'invitation ! <br>
+                    Vous pouvez envoyer la commande : <br>
+                    <span class="popup_message-important">/start aubot @xxxxx</span>
+                </p>
+                <button class="popup_message-closeButton success">Ok</button>
+            </div>
+        </div>
+
+        <script src="javascript/userProfil.js"></script>
+    </body>
+</html>

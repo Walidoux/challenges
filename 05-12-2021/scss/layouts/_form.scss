@@ -1,0 +1,75 @@
+@import "../core/core";
+@import "../helpers/input";
+
+.form_container {
+  padding: 30px;
+  border-radius: 16px;
+  background: $background-base;
+  box-shadow: 0 15px 40px hsla(0, 0%, 0%, 0.5);
+
+  .input_group {
+    @include displayFlex(center, flex-start, column);
+
+    label {
+      color: $foreground-muted;
+      margin: 0 0 10px 10px;
+      font-size: 13px;
+    }
+
+    input {
+      @extend %input;
+      padding: 15px;
+      color: $foreground-default;
+      background-color: rgb(52, 53, 56);
+
+      &::placeholder {
+        color: $foreground-dark;
+      }
+
+      &:focus {
+        background-color: rgb(60, 61, 65);
+      }
+    }
+  }
+
+  .g-recaptcha {
+    margin: 20px 0;
+  }
+
+  .core_button {
+    @extend %input;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: $foreground-default;
+    background: linear-gradient(160deg, #63ec63, #3ca53c);
+    box-shadow: 0 10px 30px #63ec6336;
+    background-size: 200%;
+
+    &:hover {
+      background-position: right;
+      box-shadow: 0 10px 30px #63ec6317;
+    }
+  }
+
+  .seperation {
+    margin: 30px 0 25px 0;
+    opacity: 0.2;
+  }
+
+  .link {
+    @include displayFlex(center, center, row);
+    text-align: center;
+    color: white;
+    transition: 0.3s ease;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+  }
+}

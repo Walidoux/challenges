@@ -1,0 +1,50 @@
+@use "../core/core" as *;
+@use "../abstracts/mixins" as *;
+
+.floating_toolbar {
+  position: absolute;
+  top: 0;
+  right: 50px;
+  background-color: $background-base;
+  box-shadow: $box-shadow-light;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  padding: 0 10px;
+  overflow: hidden;
+  z-index: 1000;
+
+  .fbtl_container {
+    @include displayFlex(center, center, row);
+
+    .tool_button {
+      transition: 0.25s;
+      opacity: 0.8;
+      min-width: fit-content;
+      max-width: 30px;
+      display: flex;
+      padding: 15px 15px;
+      justify-content: center;
+      align-items: center;
+      color: $foreground-default;
+
+      &:hover,
+      &.active {
+        opacity: 1;
+        background-color: $floatingbar-toolbar_background-hovered;
+      }
+
+      .material-icons {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .floating_toolbar {
+    width: 100%;
+    right: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

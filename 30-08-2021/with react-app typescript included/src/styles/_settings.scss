@@ -1,0 +1,21 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+// Global Variables
+$primary_color: hsl(135, 88%, 38%);
+
+$default-fontFamily: "Poppins", sans-serif;
+$default-fontSize: 100%;
+$body_background: radial-gradient(
+  100% 100% at 50% 0%,
+  #353738 0%,
+  #212223 100%
+);
+
+// Directives
+@mixin centerAll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

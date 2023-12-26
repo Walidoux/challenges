@@ -2,24 +2,126 @@
 <html lang="en">
 
 <head>
-    <title>Chronomètre</title>
+    <title>| Dupont Expertise Immobilier</title>
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="style/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
 
     <script defer src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a111cfd49e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <p class="timer" id="timer">00 : 00 : 00 : 000</p>
-    <div class="container">
-        <button class="start" id="startButton">Start</button>
-        <button class="pause hidden" id="pauseButton">Pause</button>
-        <button class="reset" id="resetButton">Reset</button>
-    </div>
+    <nav>
+        <img src="assets/logo_web.png" data-aos="fade-right" draggable="false" height="100"
+            alt="Logo Dupont Expertise Immobilier">
+        <ul class="nav_links" data-aos="fade-down">
+            <li><a class="nav_link" href="#location"><i id="nav_links-icons"
+                        class="fas fa-map-marker-alt"></i>Localisation</a></li>
+            <li><a class="nav_link" href="#statistics"><i id="nav_links-icons" class="fas fa-chart-line"></i>
+                    Statistiques</a></li>
+        </ul>
+        <button class="nav_button" data-aos="fade-left">
+            <svg width="20" height="20" class="icon" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M10.8373 5.87713L6.94688 1.38641C6.49839 0.868908 5.67614 0.871208 5.15519 1.39331L1.95591 4.59834C1.00372 5.55168 0.731169 6.96732 1.28202 8.10237C4.57286 14.916 10.068 20.4189 16.8771 23.7193C18.011 24.2701 19.4255 23.9976 20.3777 23.0442L23.6068 19.8093C24.1301 19.2861 24.1312 18.4592 23.6091 18.0107L19.1012 14.141C18.6297 13.7362 17.8971 13.7891 17.4245 14.2629L15.8559 15.8338C15.7756 15.9179 15.6699 15.9734 15.555 15.9917C15.4401 16.01 15.3224 15.9901 15.2199 15.935C12.656 14.4585 10.5291 12.3289 9.05597 9.76296C9.0008 9.66032 8.98083 9.54242 8.99911 9.42734C9.01739 9.31226 9.07292 9.20635 9.15717 9.12586L10.7212 7.56072C11.195 7.08462 11.2467 6.34863 10.8373 5.87598V5.87713Z"
+                    stroke="#E21F25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Contact
+        </button>
+    </nav>
+    <header>
+        <div class="header-left_content">
+            <h1 class="header_title">Nous faisons par exemple de l'immoblier</h1>
+            <p class="header_description"><span class="seperation"></span> Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Voluptas in voluptates tempora. Molestiae nihil consequatur iste!</p>
+            <button class="header_button">
+                <i id="button_icon" class="far fa-calendar-alt"></i>
+                Prendre rendez-vous
+            </button>
+        </div>
+        <div class="header-right_content">
+            <img src="assets/Header Image.svg" data-aos="fade-up" class="header_image" draggable="false"
+                alt="Image immobilier">
+            <img src="assets/3D_Black_Component.svg" data-aos="fade-down" class="header_blackComponent"
+                id="parallaxEffect" draggable="false" alt="Decoration">
+            <img src="assets/3D_White_Component.svg" data-aos="fade-down" class="header_whiteComponent"
+                id="parallaxEffect" draggable="false" alt="Decoration">
+        </div>
+    </header>
+
+    <section class="location_informations-section" id="location">
+        <div class="section_infos-container">
+            <div class="location_informations-box">
+                <div class="box_header">
+                    <h1 class="box_title">San Fransisco Oakland Bay</h1>
+                    <i id="box_icon" class="fas fa-arrow-right"></i>
+                </div>
+                <div class="box_body">
+                    <h2 class="box_infosTitle">Informations :</h2>
+                    <div class="box_content">
+                        <img src="assets/icons/phone.svg" class="box_icon" alt="Icône numéro de téléphone"
+                            draggable="false">
+                        <span class="value">+212 21264324</span>
+                    </div>
+                    <div class="box_content">
+                        <img src="assets/icons/map.svg" class="box_icon" alt="Icône localisation" draggable="false">
+                        <span class="value">Chinatown, Broadway St, Boulevard AT&T Park Bay Bridge</span>
+                    </div>
+                </div>
+            </div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11450.783694229438!2d2.328195826560785!3d48.85623015122572!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb975fcfa192f84d4!2sMus%C3%A9e%20du%20Louvre!5e0!3m2!1sfr!2sma!4v1628942689156!5m2!1sfr!2sma"
+                class="googlemaps-iframe" allowfullscreen="" data-aos="fade-up" loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <section class="statistics-section" id="statistics">
+        <div class="statistics_box" data-aos="fade-right">
+            <img src="assets/icons/s_home_icon.svg" class="box_image" draggable="false" alt="Maison vendus">
+            <div class="statistics_box-container">
+                <span class="box_value">324</span>
+                <span class="box_key">Maisons vendus</span>
+            </div>
+        </div>
+        <div class="statistics_box" data-aos="fade-up">
+            <img src="assets/icons/s_phone_icon.svg" class="box_image" draggable="false" alt="Appels reçus">
+            <div class="statistics_box-container">
+                <span class="box_value">932</span>
+                <span class="box_key">Appels reçus</span>
+            </div>
+        </div>
+        <div class="statistics_box" data-aos="fade-left">
+            <img src="assets/icons/s_eye_icon.svg" class="box_image" draggable="false" alt="Visiteurs par jour">
+            <div class="statistics_box-container">
+                <span class="box_value">392148</span>
+                <span class="box_key">Trafic du site par jour</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="copyright">Tous droits réservés <span class="important">&copy;</span> Dupont 2021
+        </p>
+        <a href="#location" class="contact_link">
+            <img src="assets/icons/phone.svg" draggable="false" alt="Icone contactez-nous">
+            Contactez-nous
+        </a>
+        <div class="footer_leftContent">
+            <div class="footer_socialMedias">
+                <a href="#" class="socialMedia_link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="socialMedia_link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="socialMedia_link"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

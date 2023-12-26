@@ -1,0 +1,336 @@
+
+:root {
+    --body-color: hsl(240, 78%, 98%);
+    --default-text-color: hsl(237, 63%, 64%);
+    --box-color: linear-gradient(120deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    --title-color: hsl(233, 13%, 49%);
+    --mini-title: hsl(235, 17%, 61%);
+    --prices-dark-color: hsl(231, 13%, 29%);
+    --prices-white-color: hsl(240, 78%, 98%);
+    --list-items-dark-color: hsl(235, 17%, 61%);
+    --list-items-white-color: hsl(240, 100%, 97%);
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+*  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: lighter;
+}
+
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 25px;
+    width: 100vw;
+    background-color: var(--body-color);
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+}
+
+.background.first {
+    top: 0;
+    right: 0;
+    height: 90%;
+}
+
+.background.second {
+    bottom: 0;
+    left: 0;
+    height: 50%;
+}
+
+/* Main Titles */
+
+.title {
+    color: var(--title-color);
+    z-index: 100;
+}
+
+.title.main {
+    font-size: 2.3rem;
+}
+
+.mini-title {
+    font-size: 0.9em;
+    color: var(--mini-title);
+}
+
+/* Info Mensuel / Annuel */
+
+.info-ma {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    margin-top: 35px;
+    z-index: 100;
+}
+
+.info-ma #checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 33px;
+    width: 63px;
+    outline: none;
+    -webkit-appearance: none;
+    background: linear-gradient(120deg, hsla(236, 72%, 79%, 0.61), hsla(237, 63%, 64%, 0.603));
+    box-shadow: 0px 2px 5px rgb(0,0,0,.2);
+    border-radius: 50px;
+    transition: 0.5s ease;
+}
+
+.info-ma #checkbox:hover {
+    box-shadow: 0px 2px 8px rgb(0,0,0,.4);
+}
+
+.info-ma #checkbox::before {
+    position: absolute;
+    content: '';
+    left: 7px;
+    right: 0;
+    height: 25px;
+    width: 25px;
+    z-index: 3;
+    background-color: #fff;
+    border-radius: inherit;
+    box-shadow: inset 0px 2px 5px rgb(0,0,0,.2);
+    transition: 0.2s ease;
+}
+
+.info-ma #checkbox:checked {
+    background: linear-gradient(120deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+.info-ma #checkbox:checked::before {
+    left: 90%;
+    transform: translateX(-100%);
+}
+
+.info-ma #checkbox:active::before {
+    width: 30px;
+    box-shadow: inset 0px 2px 5px rgba(116, 116, 116, 0.2),
+                0px 3px 10px rgb(0,0,0,.3);
+}
+
+/* Main Content */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    z-index: 100;
+}
+
+main .box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 330px;
+    padding: 30px 25px;
+    border-radius: 8px;
+    background: var(--box-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+}
+
+main .box:nth-child(odd) {
+    background: #fff;
+}
+
+main .box:nth-child(2) {
+    padding: 50px 25px;
+    z-index: 50;
+}
+
+main .box:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+main .box:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Main Content Boxes */
+
+main .box:nth-child(2)::after {
+    position: absolute;
+    content: 'Popular';
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background-color: #f8d135;
+    transform: translateY(-120%);
+}
+
+main .box .title {
+    margin-top: 5px;
+    font-size: 1.3rem;
+}
+
+main .box:nth-child(odd) .title {
+    color: var(--title-color);
+}
+
+main .box .prices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+main .box .prices .symbol {
+    font-size: 2rem;
+    margin-right: 5px;
+}
+
+main .box .prices .number {
+    font-size: 3.5rem;
+}
+
+main .box .title,
+main .box .prices .symbol,
+main .box .prices .number {
+    color: var(--prices-white-color);
+}
+
+main .box:nth-child(odd) .prices .number,
+main .box:nth-child(odd) .prices .symbol {
+    color: var(--prices-dark-color);
+}
+
+main .box .prices .annuel,
+main .box .prices .mensuel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+main .box .prices .annuel {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+}
+
+main .box .prices.active .annuel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+main .box .prices.active .mensuel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(40px);
+}
+
+main .box .informations {
+    margin-top: 30px;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+}
+
+main .box .informations .description {
+    padding: 15px 0;
+    font-size: 15px;
+    color: var(--list-items-white-color);
+    border-top: 1px solid hsla(236, 74%, 95%, 0.445);
+}
+
+main .box .informations li:last-child .description {
+    border-bottom: 1px solid hsla(236, 74%, 95%, 0.445);
+}
+
+main .box:nth-child(odd) .informations .description {
+    color: var(--list-items-dark-color);
+    border-top: 1px solid hsla(236, 17%, 61%, 0.445);
+}
+
+main .box:nth-child(odd) .informations li:last-child .description {
+    border-bottom: 1px solid hsla(236, 17%, 61%, 0.445);
+}
+
+main .box .link {
+    margin-top: 30px;
+    width: 100%;
+    height: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    color: var(--default-text-color);
+    box-shadow: 0 3px 6px rgba(255, 255, 255, 0.3);
+    background: #fff;
+    transition: .3s;
+}
+
+main .box:nth-child(odd) .link {
+    color: #fff;
+    background: var(--box-color);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .3);
+}
+
+main .box .link:hover {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: none;
+}
+
+main .box:nth-child(odd) .link:hover {
+    border: 1px solid var(--default-text-color);
+    color: var(--default-text-color);
+}
+
+/* Reponsiveness */
+
+@media screen and (max-width: 1050px) {
+    main {
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    main .box {
+        width: 400px;
+        margin: 20px;
+    }
+
+    main .box:first-child {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    
+    main .box:last-child {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    main .box {
+        width: 300px;
+    }
+}

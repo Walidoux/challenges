@@ -1,0 +1,10 @@
+footer {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-shadow: 0 0 10px rgba($color: white, $alpha: 0.5);
+  letter-spacing: 1px;
+  z-index: 0;
+}

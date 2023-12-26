@@ -1,0 +1,77 @@
+$background-deep: hsl(0, 0%, 12%);
+$background-base: hsl(0, 0%, 19%);
+$background-surface: hsl(0, 0%, 38%);
+
+$foreground-dark: hsl(0, 0%, 66%);
+$foreground-special: hsl(204, 16%, 65%);
+$foreground-active: hsl(149, 40%, 51%);
+$foreground-default: hsl(0, 0%, 100%);
+$foreground-muted: darken(hsl(0, 0%, 100%), 15%);
+$foreground-link: hsl(205, 70%, 51%);
+$plugin-using: hsl(235, 86%, 65%);
+$plugin-use: $foreground-active;
+$plugin-buy: hsl(219, 90%, 69%);
+
+$box-shadow: 0 10px 15px hsla(0, 0%, 0%, 0.2), 0 4px 6px hsla(0, 0%, 0%, 0.1);
+$box-shadow-light: 0 10px 20px hsla(0, 0%, 0%, 0.2),
+  0 4px 6px hsla(0, 0%, 0%, 0.1);
+
+$floatingbar-toolbar_background-hovered: hsl(0, 0%, 25%);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  position: relative;
+  background: url("../../assets/Background.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+  overflow: hidden;
+
+  #particles-js {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10000000000;
+    pointer-events: none;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1000;
+  }
+
+  @supports (backdrop-filter: blur(20px)) {
+    &::before {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+  }
+
+  @supports not (backdrop-filter: blur(12px)) {
+    &::before {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}

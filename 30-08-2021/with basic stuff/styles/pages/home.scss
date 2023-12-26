@@ -1,0 +1,65 @@
+@import "./../settings", "./../components/navbar", "./../components/footer";
+
+.main {
+  @include centerAll();
+  flex-direction: column;
+  padding-bottom: 50px;
+  margin: 0 25px;
+
+  &_title {
+    font-size: 3rem;
+    color: white;
+    padding: 30px;
+    text-shadow: 0 0 15px rgba($color: white, $alpha: 0.2);
+    letter-spacing: 1px;
+  }
+
+  .table {
+    border-collapse: collapse;
+    white-space: nowrap;
+    overflow: auto;
+    box-shadow: 0 0 15px rgba($color: #1b1c1f, $alpha: 0.7);
+    background-color: #1b1c1f;
+    overflow: hidden;
+
+    &_head {
+      background-color: $primary_color;
+
+      &-titles {
+        padding: 12px 30px;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+
+    &_body {
+      &-container {
+        background-color: #1d1f22;
+
+        &--information {
+          padding: 12px 30px;
+          text-align: center;
+          color: rgb(201, 201, 201);
+        }
+
+        &.pinned {
+          position: relative;
+
+          &::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: -2px;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            z-index: 1;
+            background: url("./../../assets/icons/pin_icon.svg") no-repeat;
+          }
+        }
+      }
+    }
+  }
+}

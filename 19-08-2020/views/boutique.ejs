@@ -1,0 +1,51 @@
+<%- include('./includes/head.ejs') %>
+<link rel="stylesheet" href="/css/pages/boutique.css" />
+</head>
+
+<body>
+    <%- include('./includes/navigation.ejs') %>
+
+    <section class="container">
+        <h1 class="title">Votre pseudo Minecraft :</h1>
+        <form action="boutique.html">
+            <input type="text" placeholder="Pseudo Minecraft" name="pseudo-mc" maxlength="16" required>
+            <button type="submit"><i class="fas fa-check"></i></button>
+        </form>
+        <p class="subtitle">Vos gemmes : 0 <img src="images/gem-icon.png"></p>
+    </section>
+
+    <section class="content">
+        <section class="left-content">
+            <ul class="tabs content-links">
+                <li class="active"><a href="#grades">Grades</a></li>
+                <li><a href="#spawners">Spawners</a></li>
+                <li><a href="#boosters">Boosters</a></li>
+                <li><a href="#cosmetiques">Cosmétiques</a></li>
+            </ul>
+        </section>
+        <section class="tabs-content right-content">
+            <article id="grades" class="tab-content active">
+                <div class="box">
+                    <img src="/images/grade1.png">
+                </div>
+                <div class="box">
+                    <img src="/images/grade2.png">
+                </div>
+                <div class="box">
+                    <img src="/images/grade3.png">
+                </div>
+            </article>
+            <article id="spawners" class="tab-content">
+                <p>non</p>
+            </article>
+            <article id="boosters" class="tab-content">
+                <p>jaaaj</p>
+            </article>
+            <article id="cosmetiques" class="tab-content">
+                <p>jooj</p>
+            </article>
+        </section>
+    </section>
+    
+<script defer src="/js/boutique.js"></script>
+<%- include('./includes/footer.ejs') %>

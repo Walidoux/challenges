@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Authenficiation</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/auth.css">
+
+        <script src="https://kit.fontawesome.com/a111cfd49e.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <section class="left-side">
+            <img src="images/Logo.svg" class="logo" draggable="false" alt="Logo de SearchMC">
+
+            <form class="signin clicked" action="#">
+                <h1>Connexion</h1>
+                <div class="form_content">
+                    <div class="input_content">
+                        <label class="label_inputs" for="signin-username">Nom d'utilisateur</label>
+                        <div class="inputs">
+                            <i id="form_icon" class="fas fa-user"></i>
+                            <input type="text" maxlength="16" name="signin-username" placeholder="Nom d'utilisateur">
+                        </div>
+                    </div>
+                    <div class="input_content">
+                        <label class="label_inputs" for="signin-password">Mot de passe</label>
+                        <div class="inputs">
+                            <i id="form_icon" class="fas fa-unlock-alt"></i>
+                            <input type="password" maxlength="40" name="signin-password" placeholder="Votre mot de passe">
+                        </div>
+                    </div>
+                    <button class="buttons signin" type="submit">Se connecter</button>
+                </div>
+            </form>
+            <form class="signup" action="#">
+                <h1>S'inscrire</h1>
+                <div class="form_content">
+                    <div class="input_content">
+                        <label class="label_inputs" for="signup-username">Nom d'utilisateur</label>
+                        <div class="inputs">
+                            <i id="form_icon" class="fas fa-user"></i>
+                            <input type="text" maxlength="16" name="signup-username" placeholder="Nom d'utilisateur">
+                        </div>
+                    </div>
+                    <div class="input_content">
+                        <label class="label_inputs" for="signup-password">Mot de passe</label>
+                        <div class="inputs">
+                            <i id="form_icon" class="fas fa-unlock-alt"></i>
+                            <input type="password" maxlength="40" name="signup-password" placeholder="Votre mot de passe">
+                        </div>
+                    </div>
+                    <div class="input_content">
+                        <label class="label_inputs" for="signup-repeat_password">Mot de passe</label>
+                        <div class="inputs">
+                            <i id="form_icon" class="fas fa-unlock-alt"></i>
+                            <input type="password" maxlength="40" name="signup-repeat_password" placeholder="Répétez votre mot de passe">
+                        </div>
+                    </div>
+                    <button class="buttons signin" type="submit">Se connecter</button>
+                </div>
+                <div class="captcha">
+                    <img src="images/captcha.png" draggable="false" alt="Image Captcha">
+                    <input type="text" maxlength="6" class="input_captcha" placeholder="123456">
+                </div>
+            </form>
+            <p class="creator">Site codé avec <span id="colored">&#10084;</span> par Walid.</p>
+        </section>
+
+        <section class="right-side">
+            <div id="particles-js"></div>
+            <div class="right-side_content signin">
+                <div class="content__header">
+                    <h2>Nouveau ici ?</h2>
+                    <p class="descriptions">Dans le cas où vous n'avez pas de compte, cliquez sur le bouton ci-dessous.</p>
+                </div>
+                <button class="buttons signup onClickButton">S'inscrire</button>
+            </div>
+            <div class="right-side_content signup clicked">
+                <div class="content__header">
+                    <h2>Déjà inscrit ?</h2>
+                    <p class="descriptions">Si vous avez déjà un compte, cliquez sur le bouton ci-dessous.</p>
+                </div>
+                <button class="buttons signup onClickButton">Se connecter</button>
+            </div>
+        </section>
+
+        <script src="javascript/particles.js"></script>
+        <script src="javascript/appParticles.js"></script>
+        <script src="javascript/appAuth.js"></script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI";
+}
+
+header {
+    min-height: 13vh;
+    background-color: #3b5998;
+}
+
+#logo {
+    position: absolute;
+    left: 3em;
+    top: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 2.8em;
+    font-weight: Bold;
+}
+
+.login {
+    display: -webkit-inline-box;
+    float: right;
+    margin: 12px 7em 12px 0;
+}
+
+.login p {
+    margin-left: 14px;
+    color: white;
+    font-size: 13px;
+}
+
+#email, #password {
+    border: 1px solid;
+    padding: 1.5px 0 1.5px 0;
+    margin-left: 14px;
+}
+
+#confirm {
+    background-color: #4267b2;
+    color: white;
+    border: 1px solid #29487d;
+    padding: 5px;
+    margin-left: 3em;
+    font-family: Arial;
+    cursor: pointer;
+}
+#confirm:hover {
+    background-color: #29487d;
+    border: 1px solid #203963;
+}
+
+.link {
+    color: #9cb4d8;
+    text-decoration: none;
+    font-family: Arial;
+}
+
+.link:hover {
+    color: #9cb4d8;
+    text-decoration: underline;
+    font-family: Arial;
+}
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BS | Ajouter un test</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/icons/favicons/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="stylesheet" href="styles/pages/doxpage.css">
+
+    <script defer src="javascript/doxpage.js"></script>
+    <script src="https://kit.fontawesome.com/a111cfd49e.js" crossorigin></script>
+</head>
+
+<body>
+    <nav class="navigationbar">
+        <div class="navigationbar_container">
+            <ul class="navigationbar_container__list">
+                <img src="assets/images/Logo.svg" class="logo" draggable="false" alt="Logo de BlockStresser">
+                <li class="navigationbar_container__list-item"><a href="index.html" class="directory"><img
+                            src="assets/icons/home_icon.svg" class="nav_icon" draggable="false" />
+                        Accueil</a></li>
+                <li class="navigationbar_container__list-item"><a href="#" class="directory active"><img
+                            src="assets/icons/plus_icon.svg" class="nav_icon" draggable="false" />Ajouter un dox</a>
+                </li>
+                <li class="navigationbar_container__list-item"><a href="#" class="directory"><img
+                            src="assets/icons/shop_icon.svg" class="nav_icon" draggable="false" />Boutique</a></li>
+                <li class="navigationbar_container__list-item"><a href="#" class="directory"><img
+                            src="assets/icons/members_icon.svg" class="nav_icon" draggable="false" />Membres</a></li>
+            </ul>
+            <div class="navigationbar_container__log notin">
+                <a href="#" class="connectButton">Se connecter</a>
+            </div>
+            <div class="navigationbar_container__log in">
+                <a href="#" class="directory"><img src="assets/images/profil.jpg" draggable="false" class="profilImage"
+                        alt="Photo de profil"></a>
+                <button class="disconnectButton"><i id="icon" class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <article class="article">
+            <aside class="article_aside__tools">
+                <button value="imageTag" id="asideTool" class="article_aside__tools-tool"><i id="aside_icon"
+                        class="fas fa-adjust"></i></button>
+                <button value="stuff" id="asideTool" class="article_aside__tools-tool"><i id="aside_icon"
+                        class="fab fa-accusoft"></i></button>
+                <button value="stuff" id="asideTool" class="article_aside__tools-tool"><i id="aside_icon"
+                        class="fab fa-bity"></i></button>
+                <button value="stuff" id="asideTool" class="article_aside__tools-tool"><i id="aside_icon"
+                        class="fab fa-bitcoin"></i></button>
+            </aside>
+            <div class="article_aside__container">
+                <textarea name="textarea_container" class="textarea_input" id="asideTextareaInput"></textarea>
+            </div>
+        </article>
+
+        <form method="GET" class="form">
+            <div class="form_field">
+                <h2 class="form_field-title">Titre du test</h2>
+                <input type="text" class="form_field-input
+                " placeholder="Test d'une personne" required />
+            </div>
+            <div class="form_field">
+                <h2 class="form_field-title">Autheur</h2>
+                <div class="form_field__selection">
+                    <input type="radio" id="name" name="author" checked />
+                    <label for="name">Pseudonyme du compte</label>
+                </div>
+                <div class="form_field__selection">
+                    <input type="radio" id="anonymous" name="author" />
+                    <label for="anonymous">Anonyme</label>
+                </div>
+            </div>
+            <div class="form_field">
+                <div class="form_field__container">
+                    <input type="checkbox" id="checkboxVisiblity" name="checkboxVisiblity"
+                        class="form_field__checkbox-forpassword" onclick="handlePasswordVisibility()" />
+                    <label class="form_field__label-forpassword" for="checkboxVisiblity">Mot de
+                        passe</label>
+                </div>
+                <input type="password" class="form_field-input" id="passwordVisiblity" title="test"
+                    placeholder="Votre mot de passe" disabled />
+            </div>
+            <div class="form_field">
+                <h2 class="form_field-title">Type d'unlock</h2>
+                <div class="form_field__selection">
+                    <input type="radio" id="nothing" name="unlocktype" checked />
+                    <label for="nothing">Aucun</label>
+                </div>
+                <div class="form_field__selection">
+                    <input type="radio" id="credit" name="unlocktype" />
+                    <label for="credit">Crédit</label>
+                </div>
+                <div class="form_field__selection">
+                    <input type="radio" id="comment" name="unlocktype" title="test" disabled />
+                    <label title="test" for="comment">Commentaire</label>
+                </div>
+            </div>
+            <div class="form_field">
+                <h2 class="form_field-title">Visibilité</h2>
+                <div class="form_field__selection">
+                    <input type="radio" id="pinned" name="visibility" checked />
+                    <label for="pinned">Épinglé</label>
+                </div>
+                <div class="form_field__selection">
+                    <input type="radio" id="normal" name="visibility" />
+                    <label for="normal">Normal</label>
+                </div>
+                <div class="form_field__selection">
+                    <input type="radio" id="hidden" name="visibility" title="test" disabled />
+                    <label title="test" for="hidden">Caché</label>
+                </div>
+            </div>
+            <div class="form_field agrements">
+                <input type="checkbox" name="agrements" id="checkbox" required />
+                <label for="checkbox">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Recusandae culpa
+                    voluptatibus illum.</label>
+            </div>
+            <div class="form_field">
+                <input type="submit" class="form_submitButton" value="Poster">
+            </div>
+        </form>
+    </main>
+
+    <footer class=" footer">
+        <img src="assets/images/Logo.svg" draggable="false" alt="Logo de BlockStresser">
+        <ul class="footer_items-list">
+            <li class="item"><a class="link" href="#">Terms of services</a></li>
+            <li class="item"><a class="link" href="#">Another link</a></li>
+        </ul>
+        <p class="footer_copyright">&copy; Copyright 2021 BlockStresser | All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+@keyframes rotatation-anim{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.content {
+    display: flex;
+    min-height: 70vh;
+    width: 100%;
+}
+
+header {
+    background: url("../images/background.jpg") no-repeat center;
+    background-size: cover;
+    width: 100%;
+}
+
+.nav-1, .nav-2, .main {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.main {
+    min-height: 40vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.nav-1 {
+    min-height: 15vh;
+    justify-content: space-around;
+}
+
+.nav-2 {
+    min-height: 7vh;
+    justify-content: center;
+    margin-right: 200px;
+}
+
+.nav-1 .logo {
+    width: 300px;
+    height: 70px;
+}
+
+.nav-1 #top, .nav-1 #bottom {
+    display: flex;
+    float: right;
+    list-style: none;
+}
+
+.nav-1 #top li:first-child {
+    margin: 7px;
+    padding-right: 10px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.nav-1 #top button, .nav-2 #bottom li button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #4AD6AE;
+    transition: 250ms ease;
+}
+
+.nav-1 #top button:hover, .nav-2 #bottom li button:hover {
+    background-color: #fff;
+    color: #4AD6AE;
+}
+
+.nav-2 #bottom {
+    display: flex;
+    list-style: none;
+}
+
+.nav-2 #bottom li {
+    margin-right: 30px;
+    line-height: 3;
+}
+
+.nav-2 #bottom li a.a1 {
+    color: #fff;
+    text-decoration: none;
+    background-color: #3B639F;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: 500ms ease;
+}
+
+.nav-2 #bottom li a.a1:hover {
+    background-color: #fff;
+    color: #3B639F;
+}
+
+.nav-2 #bottom li button {
+    padding: 10px 20px;
+}
+
+.main .img-new {
+    animation: rotatation-anim 2s ease-in-out infinite both;
+}
+
+.main h1 {
+    font-size: 50px;
+    margin-left: 15px;
+    color: #fff;
+}
+
+.main p {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.main span {
+    font-weight: bold;
+}
+
+.main button {
+    overflow: hidden;
+    border: none;
+    background: linear-gradient(to left, #3B639F, #4AD6AE, #3B639F);
+    background-size: 200%;
+    border-radius: 8px;
+    margin-top: 30px;
+    padding: 20px 0 20px;
+    transition: 0.6s;
+}
+
+.main button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 30px;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.main button:hover {
+    background-position: right;
+    transform: scale(1.2);
+}

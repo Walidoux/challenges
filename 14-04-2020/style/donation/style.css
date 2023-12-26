@@ -1,0 +1,244 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/******************************************************************/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 10vh;
+    border-bottom: 1px solid rgba(199, 199, 199, 0.3);
+    background-color: rgb(32, 44, 54);
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header .remove {
+    display: none;
+}
+
+header li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 20px;
+    font-weight: bold;
+}
+
+header li .active {
+    color: red;
+}
+
+header li a::before,
+header li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    margin: -5px 0 -5px 0;
+    left: 0;
+    background-color: red;
+    transform: scaleX(0);
+    transition: all .5s;
+}
+
+header ul li a::before {
+    top: 0;
+    transform-origin: left;
+}
+
+header ul li a::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+header li a:hover::before,
+header li a:hover::after {
+    transform: scaleX(1);
+    height: 2px;
+}
+
+header span i {
+    margin-right: 13px;
+}
+
+header span a {
+    background: linear-gradient(to left, rgb(255, 217, 0), red);
+    background-size: 200%;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 500ms ease;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header span a:hover {
+    background-position: right;
+}
+
+/********************************************************************/
+
+main {
+    background: linear-gradient(-45deg, rgb(64, 67, 71), rgb(24, 36, 51));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120vh;
+}
+
+main .box-left {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    min-height: 500px;
+    width: 400px;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3),
+                0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+main .box-left h1 {
+    text-align: center;
+    /* font-size: 2rem; */
+}
+
+main .box-left p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+main .box-left span {
+    color: rgb(100, 100, 100);
+}
+
+main .box-left a {
+    font-weight: bold;
+    color: red;
+}
+
+main .box-left #p {
+    font-weight: bold;
+    color: rgb(57, 57, 255);
+}
+
+/******************************************************************************/
+
+main .right .box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 500px;
+    width: 400px;
+    padding: 30px 0 0 100px;
+}
+
+main .right .box button {
+    width: 200px;
+    height: 50px;
+    margin-top: 40px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(to left, #3a7bd5, #00d2ff, #3a7bd5);
+    background-size: 200%;
+    transition: 500ms ease;
+}
+
+main .right .box button:hover {
+    background-position: right;
+}
+
+/************************************************************************/
+
+
+/*          Footer is in the the folder "images" (../images/footer).
+
+
+/***************************************************************/
+
+@media screen and (max-width: 850px) {
+    main {
+        flex-direction: column;
+        background: linear-gradient(-45deg, rgb(64, 67, 71), rgb(24, 36, 51));
+    }
+
+    main .box-left {
+        margin-top: 50px;
+        width: 600px;
+        min-height: 300px;
+    }
+
+    main .right .box {
+        padding: 0;
+        justify-content: center;
+        min-height: 400px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    main .box-left {
+        width: 500px;
+    }
+
+    header span {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    main .box-left {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    main .box-left {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    main .box-left {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    main .box-left {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    main .box-left {
+        width: 270px;
+    }
+}

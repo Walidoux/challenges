@@ -1,0 +1,138 @@
+/* Directives */
+
+@mixin defaultPosition-circles_x {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.board {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+
+    .cell {
+      position: relative;
+      height: $cell_size;
+      width: $cell_size;
+      cursor: pointer;
+      border: 5px solid white;
+
+      &:last-child,
+      &:nth-child(7),
+      &:nth-child(8) {
+        border-bottom: none;
+      }
+      &:first-child,
+      &:nth-child(2),
+      &:nth-child(3) {
+        border-top: none;
+      }
+
+      &:nth-child(3n + 1) {
+        border-left: none;
+      }
+      &:nth-child(3n + 3) {
+        border-right: none;
+      }
+    }
+
+    & .cell.circle,
+    & .cell.x {
+      cursor: not-allowed;
+    }
+
+    /* Circle Styling */
+    & .cell.circle::after,
+    &.circle .cell:not(.x):not(.circle):hover::after {
+      @include defaultPosition-circles_x();
+      height: 75px;
+      width: 75px;
+      filter: drop-shadow(0px 0px 8px #ffb800);
+      border-radius: 50%;
+      border: 10px solid #ffb800;
+    }
+
+    /* X Styling */
+    & .cell.x::after,
+    & .cell.x::before,
+    &.x .cell:not(.x):not(.circle):hover::after,
+    &.x .cell:not(.x):not(.circle):hover::before {
+      @include defaultPosition-circles_x();
+      height: 120px;
+      width: 15px;
+      border-radius: 30px;
+      opacity: 1;
+      background: linear-gradient(180deg, #054c9d 0%, #0071dd 100%);
+      filter: drop-shadow(0px 0px 8px #00509d);
+    }
+
+    & .cell.x::after,
+    &.x .cell:not(.x):not(.circle):hover::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    & .cell.x::before,
+    &.x .cell:not(.x):not(.circle):hover::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    /* On Hover on Both */
+    &.x .cell:not(.x):not(.circle):hover::after,
+    &.x .cell:not(.x):not(.circle):hover::before,
+    &.circle .cell:not(.x):not(.circle):hover::after {
+      opacity: 0.2;
+    }
+  }
+
+  /* Results Section */
+  .results_section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: $default_fontFamily;
+    background: rgba($color: #000000, $alpha: 0.8);
+    backdrop-filter: blur(10px);
+    transition: $default_transition;
+    opacity: 0;
+    visibility: hidden;
+
+    & .result-text_message {
+      color: white;
+      font-size: 4rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    & .restart_button {
+      margin-top: 20px;
+      width: 200px;
+      height: 50px;
+      font-size: 1.2rem;
+      outline: none;
+      border: none;
+      background: white;
+      border: 2px solid white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: $default_transition;
+
+      &:hover {
+        color: white;
+        background: transparent;
+      }
+    }
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }

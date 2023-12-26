@@ -1,0 +1,42 @@
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+main .right {
+    margin-right: 200px;
+}
+
+main p {
+    width: 600px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+main h1 {
+    font-size: 3rem;
+    color: #fff;
+    margin: 10px 0 10px 5px;
+}
+
+main .download {
+    outline: none;
+    border: none;
+    margin-top: 30px;
+    padding: 15px 40px;
+    color: white;
+    background-color: rgb(86, 86, 255);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 500ms ease;
+}
+
+main .download:hover {
+    background-color: white;
+    color: rgb(86, 86, 255);
+}

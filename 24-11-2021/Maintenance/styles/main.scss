@@ -1,0 +1,123 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+// Mixins & Functions
+@mixin flexDisplay($justify: "stretch", $direction: "row") {
+  display: flex;
+  justify-content: #{$justify};
+  align-items: center;
+  flex-direction: #{$direction};
+}
+
+// Variables
+$title-text_color: white;
+$link-text_color: #7289da;
+$link-background_color: rgb(36, 36, 41);
+
+$default-transition_effect: 0.5s ease-in-out;
+
+// Default Styles
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  font-family: "Poppins", sans-serif;
+  background: url("../assets/images/Background.jpg") no-repeat center;
+  background-size: cover;
+}
+
+nav {
+  @include flexDisplay("center", "row");
+  position: relative;
+  padding-top: 20px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    width: 120%;
+    height: 120%;
+    z-index: -1;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.05)
+    );
+    filter: blur(30px);
+  }
+}
+
+main {
+  @include flexDisplay("center", "column");
+  min-height: 70vh;
+  padding: 50px 25px;
+
+  .title {
+    color: $title-text_color;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 90px;
+  }
+
+  .link {
+    @include flexDisplay("center", "rows");
+    position: relative;
+    margin-top: 20px;
+    background-color: $link-background_color;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 6px;
+    box-shadow: 0 5px 20px rgba($color: $link-background_color, $alpha: 0.5);
+    overflow: hidden;
+    outline: none;
+    width: 250px;
+    transition: $default-transition_effect;
+
+    .text {
+      margin-left: 20px;
+      color: $link-text_color;
+      font-weight: bold;
+      transition: $default-transition_effect;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: -100px;
+      left: -60px;
+      height: 200px;
+      width: 50px;
+      background: rgba(255, 255, 255, 0.363);
+      transform: rotate(45deg);
+      transition: $default-transition_effect;
+    }
+
+    &:hover {
+      box-shadow: unset;
+    }
+
+    &:hover::before {
+      left: 375px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .title {
+    line-height: 70px !important;
+    font-size: 3rem !important;
+  }
+}

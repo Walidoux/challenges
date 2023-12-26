@@ -1,0 +1,19 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+main {
+  min-height: 100vh;
+  min-width: 100vw;
+  transition: 0.5s ease;
+  background-color: var(--clr-secondary-200);
+}

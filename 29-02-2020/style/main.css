@@ -1,0 +1,63 @@
+@keyframes box-animation{0%{transform:translateZ(0);box-shadow:0 0 0 0 transparent}100%{transform:translateZ(50px);box-shadow:0 0 20px 0 rgba(0,0,0,.35)}}
+body {
+    margin: 0;
+    padding: 0;
+    background: url('../images/bg.jpg') no-repeat center center;
+    /*background-color: rgb(73, 73, 73);*/
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 94vh;
+    text-align: center;
+    /*border: 1px solid black;*/
+}
+
+.header-box {
+    padding: 30px 120px 40px 120px;
+    animation: box-animation .4s cubic-bezier(.25,.46,.45,.94) both;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.11);
+}
+
+h3 {
+    margin: 10px 0 30px 0;
+    font-family: sans-serif;
+    color: rgb(95, 95, 204);
+}
+
+.username, .password {
+    padding: 10px 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.username {
+    
+}
+.password {
+    margin-bottom: 2em;
+}
+
+.confirm {
+    text-decoration: none;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: rgb(95, 95, 204);
+    padding: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.confirm:hover {
+    background-color: rgb(72, 72, 141);
+    transition: all .5s ease 0s;
+    box-shadow: 3px 3px rgb(98, 98, 146);
+}
+
+footer p {
+    margin-top: 0;
+    color: white;
+}

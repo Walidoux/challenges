@@ -1,0 +1,216 @@
+:root {
+    --primary-color: #6382EC;
+
+    --default-links-color: rgb(204, 204, 204);
+    --hover-links-color: white;
+
+    --default-disconnect_button-text-color: #e66d64;
+    --default-button-background-color: white;
+    --hover-button-text-color: white;
+    --hover-disconnect_button-background-color: #e66d64;
+}
+
+body.active {
+    overflow: hidden;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 100px;
+}
+
+.nav-links_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-links {
+    position: relative;
+    margin: 10px;
+    padding: 10px 10px;
+    text-decoration: none;
+    color: var(--default-links-color);
+    transition: .5s ease;
+}
+
+.nav-links.active {
+    color: var(--hover-links-color);
+}
+
+.nav-links.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    box-shadow: 0 3px 12px var(--primary-color);
+    border-radius: 8px;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.nav-links:hover {
+    color: var(--hover-links-color);
+}
+
+.nav-links:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-disconnect_button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    min-width: 200px;
+    margin-left: 50px;
+    background-color: var(--default-button-background-color);
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    border: none;
+    color: var(--default-disconnect_button-text-color);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    transition: .3s ease;
+}
+
+.nav-disconnect_button::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: -35px;
+    width: 1px;
+    height: 100%;
+    background-color: rgb(87, 87, 87);
+}
+
+.nav-disconnect_button:hover {
+    box-shadow: none;
+    color: var(--hover-button-text-color);
+    background-color: var(--hover-disconnect_button-background-color);
+}
+
+.nav-disconnect_button:hover svg path {
+    fill: var(--hover-button-text-color);
+    transform: rotate(360deg);
+}
+
+/* Burger Animation */
+.menu {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+    padding: 0;
+}
+
+.line {
+    fill: none;
+    stroke: white;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+                stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+    stroke-width: 6;
+}
+
+.line3 {
+    stroke-dasharray: 60 207;
+    stroke-width: 6;
+}
+
+.opened .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+.opened .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+    stroke-width: 6;
+}
+
+.opened .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+    stroke-width: 6;
+}
+
+/* Responsive Part */
+@media screen and (max-width: 1040px) {
+    nav {
+        justify-content: space-between;
+        padding: 30px 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    nav {
+        padding: 30px 60px 0 30px;
+    }
+
+    .nav-logo {
+        margin-left: 20px;
+    }
+    
+    .nav-links_list {
+        position: fixed;
+        opacity: 0;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.849);
+        z-index: 10000000;
+        transition: .3s ease;
+    }
+
+    .nav-links_list.opened {
+        opacity: 1;
+        z-index: 1000;
+        visibility: visible;
+    }
+
+    .nav-links_list li { margin: 20px; }
+
+    .nav-disconnect_button::after { display: none; }
+    .nav-disconnect_button {
+        margin-left : 0px;
+        margin-top: 20px;
+    }
+
+    .menu {
+        display: flex;
+        z-index: 10000000;
+    }
+}

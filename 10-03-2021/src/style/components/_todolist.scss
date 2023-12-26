@@ -1,0 +1,51 @@
+@import './../settings';
+
+.main__todolist {
+  @include elementsCenterer();
+  flex-direction: column;
+  transform: translateY(-100px);
+
+  &-createTodo--field {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    background-color: white;
+    width: min(80%, 500px);
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 6px;
+
+    form {
+      @include elementsCenterer();
+      width: 100%;
+      .form__checkerInput {
+        @include todoCheckerInput();
+      }
+
+      .form__textInput {
+        width: 100%;
+        border: none;
+        outline: none;
+        margin-left: 15px;
+        height: 50px;
+        padding-right: 20px;
+        color: rgb(53, 53, 53);
+        font-family: $fnt-defaultFamily;
+
+        &::placeholder {
+          color: rgb(133, 133, 133);
+        }
+      }
+    }
+  }
+}
+
+.section__todolist-list_items {
+  @include elementsCenterer();
+  flex-direction: column;
+  list-style-type: none;
+  margin: 20px;
+  width: min(80%, 500px);
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.3);
+}

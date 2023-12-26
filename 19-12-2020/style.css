@@ -1,0 +1,197 @@
+/* Variables */
+:root {
+    --main-color: #D84343;
+    --background-color: linear-gradient(120deg, #535556, #282B2E);
+
+    --table-titles-text-clor: #FFFFFF;
+    --table-default-text-color: #FFFFFF;
+    --table-black-text-color: #E4E4E4;
+    --table-primary-background-color: #5B5B5B;
+    --table-secondary-background-color: #666666;
+    --table-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+
+    --mini_window-header-background: #EDEDED;
+    --mini_window-header-title-text-color: #4E4E4E;
+    --mini_window_body-background: #FFFFFF;
+    --mini_window-body-title-text-color: #2E2E2E;
+    --mini_window-body-button-text-color: #FFFFFF;
+    --mini_window-body-button-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.25);
+    --mini_window-body-box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Polices */
+@font-face {
+    font-family: "Poppins SemiBold";
+    src: url(fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "Poppins Bold";
+    src: url(fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(fonts/Roboto/Roboto-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: var(--background-color) no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+/* Background Decorations */
+.background {
+    position: fixed;
+    z-index: -1;
+}
+
+.black__rectangle {
+    top: -500px;
+    right: -200px;
+}
+
+.red__rectangle {
+    bottom: -500px;
+    left: -200px;
+}
+
+/* Do not remove please robert */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+/* Table */
+table {
+    display: block;
+    max-width: 1200px;
+    max-height: 300px;
+    margin: 30px 0;
+    border-collapse: collapse;
+    overflow: auto;
+    white-space: nowrap;
+    background-color: var(--table-primary-background-color);
+    box-shadow: var(--default-box-shadow);
+}
+
+hr {
+    height: 1em;
+}
+
+.table__titles {
+    background-color: var(--main-color);
+    color: var(--table-titles-text-clor);
+    text-transform: uppercase;
+    font-family: "Poppins Bold";
+}
+
+.table__titles,
+.table__content {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.table__informations {
+    color: var(--table-black-text-color);
+    font-size: 0.9rem;
+    font-family: "Poppins SemiBold";
+}
+
+.table__informations:nth-child(even) {
+    color: var(--table-default-text-color);
+    background-color: var(--table-secondary-background-color);
+}
+
+/* Mini Window */
+.mini_window {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.25);
+}
+
+.mini_window-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    padding: 0 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: var(--mini_window-header-background);
+}
+
+.mini_window-header__title {
+    color: var(--mini_window-header-title-text-color);
+    font-family: "Roboto Bold";
+}
+
+.mini_window-header__close_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: var(--main-color);
+    padding: 5px;
+    cursor: pointer;
+}
+
+.mini_window-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 150px;
+    width: 100%;
+    background-color: var(--mini_window_body-background);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.mini_window-body__title {
+    color: var(--mini_window-body-title-text-color);
+    text-align: center;
+    font-family: "Roboto Bold";
+    font-size: 1.3rem;
+}
+
+.mini_window-body__confirm_button {
+    margin-top: 20px;
+    text-transform: uppercase;
+    padding: 8px 30px;
+    border: none;
+    color: var(--mini_window-body-button-text-color);
+    font-family: "Poppins SemiBold";
+    letter-spacing: 0.5px;
+    border: 2px solid var(--main-color);
+    cursor: pointer;
+    background-color: var(--main-color);
+    box-shadow: var(--mini_window-body-button-box-shadow);
+    transition: 0.3s ease;
+}
+
+.mini_window-body__confirm_button:hover {
+    color: var(--main-color);
+    background-color: #FFFFFF;
+    box-shadow: none;
+}

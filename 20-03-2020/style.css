@@ -1,0 +1,214 @@
+@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkle {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+  display:block;
+  z-index: -10;
+}
+
+.stars {
+  background:#000 url(http://sylvaingarnot.fr/media/stars.png) repeat top center;
+  z-index:-1;
+}
+
+.twinkle{
+  background:transparent url(http://sylvaingarnot.fr/media/twinkling.png) repeat top center;
+  z-index:-1;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+/*********************************************************/
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border: 7px solid #232943;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    rgb(230, 47, 47),
+    rgb(249, 104, 104)
+    );
+  border-radius: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    height: 210vh;
+}
+
+.content {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    color: white;
+}
+
+.content-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 85vh;
+}
+
+#box {
+  display flex;
+  justify-content: center;
+  align-items: center;
+  margin: 35px;
+  height: 550px;
+  width: 350px;
+  background-color: white;
+}
+
+.top {
+  height: 32%;
+}
+
+.bottom {
+  height: 68%;
+}
+
+.bg-content-box {
+  height: 170px;
+}
+
+.bg-content {
+  color: white;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 347px;
+  height: 155px;
+}
+
+
+.package {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 50px;
+}
+
+.date {
+  margin-right: 7em;
+  font-style: italic;
+  font-size: 13px;
+}
+
+ul {
+  margin-top: 40px;
+  list-style: none;
+  text-align: center;
+}
+
+.purchase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 347px;
+  height: 200px;
+}
+
+.btn1 {
+  background-image: linear-gradient(to left,#32faf4,#4968ee,#32faf4);
+}
+
+.btn2 {
+  background-image: linear-gradient(to left,#C4E538,#04ab3d,#C4E538);
+}
+
+.btn3 {
+  background-image: linear-gradient(to left,#fad432,#f2f700,#fad432);
+}
+
+.btn4 {
+  background-image: linear-gradient(to left,#f48400,#fad432,#f48400);
+}
+
+.btn5 {
+  background-image: linear-gradient(to left,#f13c1c,#ff0000,#f13c1c);
+}
+
+#btn-purchase {
+  border: none;
+  padding: 24px;
+  width: 220px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #fff;
+  background-size: 200%;
+  transition: 0.6s;
+}
+
+#btn-purchase:hover {
+  background-position: right;
+}

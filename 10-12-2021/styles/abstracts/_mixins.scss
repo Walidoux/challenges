@@ -1,0 +1,29 @@
+@use "../utilities/pseudos" as *;
+
+@mixin displayFlex(
+  $items: stretch,
+  $content: stretch,
+  $direction: row,
+  $flow: nowrap
+) {
+  display: flex;
+  justify-content: #{$content};
+  align-items: #{$items};
+  flex-direction: #{$direction};
+  flex-flow: #{$flow} #{$direction};
+}
+
+@mixin pseudoElement($el, $el-height, $el-width) {
+  @if $el == "before" or $el == "after" {
+    position: relative;
+
+    &:#{$el} {
+      @extend %pseudos;
+      height: #{$el-height};
+      width: #{$el-width};
+      @content;
+    }
+  } @else {
+    @warn "`#{$el}` is not a valid pseudo-element.";
+  }
+}

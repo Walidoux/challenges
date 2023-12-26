@@ -1,0 +1,126 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(245, 245, 245);
+}
+
+/*  Nav  */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 13vh;
+    background: linear-gradient(45deg, #2f3239, #4d505c);
+    font-family: 'Roboto', sans-serif;
+}
+
+nav .logo {
+    height: 2.5rem;
+    margin-top: 5px;
+}
+
+nav .nav-links {
+    display: flex;
+    list-style: none;
+}
+
+nav .nav-links li:first-child,
+nav .nav-links li:nth-child(2) {
+    margin-right: 30px;
+}
+
+nav .nav-links li .link {
+    color: #fff;
+    font-weight: bolder;
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+nav .nav-links li:nth-child(2) .link {
+    background-color: #ff7361;
+}
+
+nav .nav-links li .link:hover {
+    background-color: #ff7361;
+}
+
+/*  Présentation  */
+
+.presentation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 100px 100px;
+}
+
+.presentation .box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    width: 330px;
+    min-height: 230px;
+    border-radius: 4px;
+    /* background-color: rgb(40, 66, 95); */
+    box-shadow: 0 6px 30px rgba(40, 66, 95, 0.527);
+}
+
+.presentation .box:first-child {
+    background: url('../../images/Background-Minecraft.jpg') no-repeat;
+    background-size: cover;
+}
+
+.presentation .box::before {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 30%);
+    width: 60%;
+    height: 120px;
+    background-color: #fff;
+}
+
+/*  Responsiveness  */
+
+@media screen and (max-width: 600px) {
+    nav {
+        min-height: 25vh;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .presentation {
+        padding: 50px 50px;
+    }
+
+    nav .nav-links {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    nav .nav-links li:first-child,
+    nav .nav-links li:nth-child(2) {
+        margin-right: 0;
+    }
+
+    nav .nav-links li {
+        margin: 10px;
+    }
+}

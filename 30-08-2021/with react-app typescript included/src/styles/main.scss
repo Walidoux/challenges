@@ -1,0 +1,33 @@
+// Imports
+@import "settings";
+@import "./components/table";
+
+// Default Styling
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $default-fontFamily;
+  font-size: $default-fontSize;
+  background: $body_background;
+}
+
+// Main
+.main {
+  @include centerAll();
+  min-height: 100vh;
+  flex-direction: column;
+
+  &_title {
+    font-size: 3rem;
+    color: white;
+    padding: 30px;
+    text-shadow: 0 0 15px rgba($color: white, $alpha: 0.2);
+    letter-spacing: 1px;
+  }
+}

@@ -1,0 +1,129 @@
+
+body, html {
+    background: linear-gradient(to top, rgb(236, 32, 28), rgb(221, 70, 68));
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*****************************************************************************************************/
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+main main {
+    height: 250px;
+    width: 250px;
+}
+
+main h1 {
+    margin-top: 40px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+main p span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+main p {
+    color: rgb(240, 240, 240);
+}
+
+/*****************************************************************************************************/
+
+section.content {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-family: Questrian, sans-serif;
+}
+
+section.content a {
+    margin-left: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/*****************************************************************************************************/
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px 0 30px;
+    min-height: 10vh;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.144);
+}
+
+footer a {
+    color: rgb(231, 231, 231);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 500ms ease;
+}
+
+footer a:hover {
+    color: #FEC051;
+}
+
+/*****************************************************************************************************/
+
+@media screen and (max-width: 900px) {
+    main p {
+        width: 500px;
+        text-align: center;
+    }
+
+    main main {
+        width: 200px;
+        height: 200px;
+    }
+
+    main {
+        min-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        justify-content: center;
+        flex-direction: column;
+        min-height: 13vh;
+    }
+
+    main h1 {
+        width: 300px;
+    }
+
+    main p {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    main main {
+        width: 150px;
+        height: 150px;
+    }
+
+    main p {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    main p {
+        width: 300px;
+    }
+
+    footer {
+        padding: 0;
+    }
+}

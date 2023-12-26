@@ -1,0 +1,12 @@
+@mixin Blur_Firefox_Support {
+  background: rgba(0, 0, 0, 0.8);
+  transition: 0.3s ease;
+
+  @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    & {
+      background: rgba(0, 0, 0, 0.5);
+      -webkit-backdrop-filter: blur(1em);
+      backdrop-filter: blur(1em);
+    }
+  }
+}

@@ -1,0 +1,76 @@
+@import "./../settings";
+
+.footer {
+  padding: 50px 0;
+  margin-top: 100px;
+  background-color: hsl(180, 5%, 17%);
+
+  &_container {
+    @include centerElements();
+    justify-content: space-around;
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+
+    &__field {
+      .title {
+        color: white;
+        text-shadow: 0 0 10px rgba($color: white, $alpha: 0.25);
+      }
+
+      .description {
+        max-width: 450px;
+        color: rgb(211, 211, 211);
+        margin-top: 10px;
+      }
+
+      .directory {
+        position: relative;
+        color: rgb(194, 194, 194);
+        text-decoration: none;
+        transition: $default_transitionEffect;
+        font-weight: bold;
+        padding: 5px;
+        margin: 5px;
+
+        &::after {
+          position: absolute;
+          content: "";
+          bottom: 0px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          opacity: 0;
+          transform: translateY(5px);
+          visibility: hidden;
+          transition: $default_transitionEffect;
+          border-radius: 8px;
+          box-shadow: 0 0 5px rgba($color: white, $alpha: 0.2);
+          background-color: white;
+        }
+
+        &:hover::after {
+          transform: translateY(0);
+          visibility: visible;
+          opacity: 1;
+        }
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footer {
+    padding: 15px 0;
+    &_container {
+      flex-direction: column;
+      &__field {
+        margin: 10px;
+      }
+    }
+  }
+}

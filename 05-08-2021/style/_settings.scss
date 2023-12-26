@@ -1,0 +1,106 @@
+/* Importing Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Animations Keyframes */
+@keyframes bouncing {
+  0% {
+    transform: transformY(0);
+  }
+  50% {
+    transform: transformY(15px);
+  }
+  100% {
+    transform: transformY(0);
+  }
+}
+
+/* Directives */
+@mixin centerElements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Default Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Variables */
+
+$default_fontFamily: "Poppins", sans-serif;
+$default_transitionEffect: 0.3s ease;
+
+$primary_color: hsl(358, 77%, 50%);
+$defaut_darkColor: hsl(240, 8%, 18%);
+$light_darkColor: hsl(245, 9%, 23%);
+
+$body_backgroundColor: linear-gradient(
+  100deg,
+  $defaut_darkColor,
+  $light_darkColor 100%
+);
+
+/* Navigation Bar Variables */
+
+$default-nav_links-textColor: hsl(0, 0%, 87%);
+$hovered-nav_links-textColor: hsl(0, 0%, 100%);
+$default-nav_button-textColor: $primary_color;
+$default-nav_button-backgroundColor: hsl(0, 0%, 100%);
+$default-nav_button-shadowEffect: 0 4px 16px
+  rgba(
+    $color: hsl(0, 0%, 100%),
+    $alpha: 0.3,
+  );
+$hovered-nav_button-textColor: hsl(0, 0%, 100%);
+$hovered-nav_button-backgroundColor: $primary_color;
+$hovered-nav_button-shadowEffect: none;
+
+/* Header Variables */
+$default-header_title-textColor: hsl(0, 0%, 100%);
+$default-header_description-textColor: rgb(206, 206, 206);
+$default-header_button-textColor: hsl(0, 0%, 100%);
+$default-header_button-backgroundColor: $primary_color;
+$default-header_button-shadowStyle: 0 4px 30px
+  rgba(
+    $color: $primary_color,
+    $alpha: 0.3,
+  );
+$hovered-header_button-textColor: $primary_color;
+$hovered-header_button-backgroundColor: hsl(0, 0%, 100%);
+
+$default-location_infosBox-backgroundColor: hsl(0, 0%, 100%);
+$default-location_infosBox-shadowEffect: 20px 0px 50px hsla(0, 0%, 0%, 0.25);
+$default-location_infosBox_boxHeader-textColor: hsl(0, 0%, 100%);
+$default-location_infosBox_boxHeader-backgroundStyle: linear-gradient(
+  200deg,
+  hsl(358, 94%, 65%) 0%,
+  hsl(358, 77%, 50%) 100%
+);
+$default-location_infosBox_boxBody__titles-textColor: hsl(0, 0%, 18%);
+$default-location_infosBox_boxBody__values-textColor: hsl(0, 0%, 31%);
+$default-location_infosBox_iframe-shadowStyle: 0px 4px 50px 5px
+  hsla(0, 0%, 0%, 0.3);
+
+$default-statistics_box_values_textShadow: 0 2px 15px
+  rgba(
+    $color: hsl(0, 0%, 100%),
+    $alpha: 0.1,
+  );
+$default-statistics_box_values_textColor: hsl(0, 0%, 100%);
+$default-statistics_box_keys_textColor: hsl(0, 0%, 89%);
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $default_fontFamily;
+  background: $body_backgroundColor;
+  overflow-x: hidden;
+  transition: $default_transitionEffect;
+}

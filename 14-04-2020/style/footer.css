@@ -1,0 +1,138 @@
+footer {
+    height: 400px;
+    background-color: #fff;
+    width: 100%;
+}
+
+footer .top, footer .bottom {
+    display: flex;
+    width: 100%;
+}
+
+footer .top {
+    background-color: #2A2F3C;
+    display: flex;
+    min-height: 80%;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.281);
+}
+
+footer .bottom {
+    background-color: #242833;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 20%;
+    padding: 0 50px 0 50px;
+    font-size: 1rem;
+    color: rgb(179, 179, 179);
+}
+
+footer .bottom a, footer #links li a {
+    color: rgb(199, 199, 199);
+    font-weight: bold;
+    text-decoration: none;
+    transition: 250ms ease;
+}
+
+footer .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 320px;
+    width: 100%;
+}
+
+footer .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 200px;
+}
+
+footer .social-links li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 10px;
+    transition: 500ms ease;
+}
+
+footer .box h1 {
+    margin-bottom: 20px;
+}
+
+footer .box p {
+    color: rgb(202, 202, 202);
+    width: 300px;
+}
+
+footer .box h1 {
+    color: #fff;
+}
+
+footer .social-links a {
+    text-decoration: none;
+    color: #2A2F3C;
+}
+
+footer .social-links #one:hover {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+footer .social-links #two:hover {
+    background-color: #7289DA;
+    color: #fff;
+}
+
+footer .social-links #tree:hover {
+    background-color: #00acee;
+    color: #fff;
+}
+
+footer a:hover, footer #links li a:hover, footer #links {
+    color: #fff;
+}
+
+/********************************************************************************/
+
+@media screen and (max-width: 650px) {
+    footer .box p {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    footer .bottom {
+        flex-direction: column;
+        min-height: 10%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    footer .bottom {
+        flex-direction: column;
+        min-height: 10%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    footer .top {
+        flex-direction: column;
+    }
+
+    footer .box {
+        height: 250px;
+    }
+    
+    footer .box p {
+        width: 500px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,86 @@
+@import './../settings';
+
+.section__todolist-list_items--item {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid rgb(182, 182, 182);
+
+  &:first-child {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  &:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-color: transparent;
+  }
+
+  &---container {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+
+    &.space_between {
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+
+    .item-container_checkerInput {
+      @include todoCheckerInput();
+    }
+
+    .item-container_todoText {
+      position: relative;
+      font-size: 1rem;
+      margin-left: 15px;
+      padding: 10px 10px 10px 0;
+      transition: $trf-defaultEffect;
+
+      &::after {
+        position: absolute;
+        content: '';
+        top: 53%;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        background-color: rgb(143, 143, 143);
+        transition: $trf-defaultEffect;
+      }
+
+      &.checked::after {
+        width: 93%;
+      }
+
+      &.checked {
+        color: rgb(143, 143, 143);
+      }
+    }
+
+    .item-container_closeButton {
+      @include elementsCenterer();
+      margin-left: auto;
+      outline: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+      transform: rotate(90deg);
+      opacity: 0;
+      visibility: hidden;
+      transition: $trf-defaultEffect;
+    }
+
+    &:hover .item-container_closeButton {
+      opacity: 1;
+      transform: rotate(0deg);
+      visibility: visible;
+    }
+
+    .item-container_remainingItems {
+      color: rgb(122, 121, 121);
+    }
+  }
+}

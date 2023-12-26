@@ -1,0 +1,148 @@
+@import "./../settings";
+
+.navigationbar {
+  position: relative;
+
+  &_container {
+    @include centerAll();
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &__list {
+      @include centerAll();
+      list-style: none;
+
+      .logo {
+        margin-right: 10px;
+      }
+
+      &-item {
+        margin: 0 5px;
+
+        & .directory {
+          @include centerAll();
+          position: relative;
+          padding: 10px;
+          text-decoration: none;
+          color: rgb(223, 223, 223);
+          transition: 0.3s ease;
+          font-weight: 600;
+
+          &::after {
+            position: absolute;
+            content: "";
+            bottom: 5px;
+            right: 10px;
+            width: 0%;
+            height: 2px;
+            background-color: $primary_color;
+            box-shadow: 0 0 5px rgba($color: $primary_color, $alpha: 1);
+            transition: $default-transitionEffect;
+          }
+
+          & .nav_icon {
+            margin-right: 8px;
+          }
+
+          &:hover,
+          &.active {
+            color: white;
+            &::after {
+              width: 40%;
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          padding-left: 20px;
+          border-left: 1px solid rgb(73, 73, 73);
+        }
+      }
+    }
+
+    &__log.notin {
+      display: none;
+
+      .connectButton {
+        position: relative;
+        color: white;
+        border: 2px solid white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: $default-transitionEffect;
+
+        &::before {
+          position: absolute;
+          content: "";
+          right: 0;
+          top: 0;
+          width: 0%;
+          height: 0%;
+          width: 100%;
+          z-index: -1;
+          background-color: white;
+          transition: $default-transitionEffect;
+        }
+
+        &:hover {
+          color: black;
+          &::before {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    &__log.in {
+      @include centerAll();
+
+      .directory {
+        @include centerAll();
+        text-decoration: none;
+
+        .profilImage {
+          height: 60px;
+          border: 3px solid transparent;
+          border-radius: 50%;
+          z-index: 5;
+          transition: $default-transitionEffect;
+
+          &:hover {
+            box-shadow: none;
+            border: 0px solid;
+          }
+        }
+      }
+
+      .disconnectButton {
+        transform: translateX(-10px);
+        height: 40px;
+        width: 50px;
+        cursor: pointer;
+        outline: none;
+        border: none;
+        border: 2px solid rgb(231, 59, 59);
+        background-color: transparent;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        transition: $default-transitionEffect;
+
+        & #icon {
+          color: rgb(231, 59, 59);
+          font-size: 15px;
+          margin-left: 2.5px;
+          transition: $default-transitionEffect;
+        }
+
+        &:hover {
+          background-color: rgb(231, 59, 59);
+          & #icon {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

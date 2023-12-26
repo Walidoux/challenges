@@ -1,0 +1,140 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+/* Directives */
+@mixin centerElements {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin hiddenElements {
+  opacity: 0;
+  visibility: hidden;
+  transition: $default_transitionEffect;
+}
+
+@mixin showElements {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Animations */
+@keyframes upAndDownAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  60%,
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+/* Global Variables */
+$primaryColor: hsl(135, 59%, 41%);
+$darkesh_primaryColor: hsl(135, 49%, 51%);
+
+$default_fontFamily: "Poppins", sans-serif;
+$second_fontFamily: "Montserrat", sans-serif;
+$body_backgroundColor: hsl(180, 8%, 12%);
+$default_fontSize: 1.1rem;
+$default_transitionEffect: 0.3s ease;
+$default_errorColor: hsl(0, 92%, 61%);
+$titles_textColor: white;
+$descriptions_textColor: hsl(0, 0%, 80%);
+
+$active-navigationBar_backgroundColor: rgba(
+  $color: hsl(0, 0%, 0%),
+  $alpha: 0.9,
+);
+$navigation-menuButton_color: hsl(0, 0%, 100%);
+$navigationBar-userProfileImage_borderStyle: 5px solid $primaryColor;
+$navigationBar-userProfileImage_shadowStyle: 0 5px 20px
+  rgba(
+    $color: $primaryColor,
+    $alpha: 0.3,
+  );
+$navigation-disconnectLink_textColor: $default_errorColor;
+$default-navigation--link_textColor: hsl(0, 0%, 75%);
+$hovered-navigation--link_textColor: hsl(0, 0%, 100%);
+
+$header-title_textColor: $titles_textColor;
+$header-description_textColor: $descriptions_textColor;
+$header-links_textColor: hsl(0, 0%, 100%);
+$header-authLink_background: linear-gradient(
+  90deg,
+  $primaryColor 0%,
+  $darkesh_primaryColor 100%
+);
+$default-header--contactLink_textColor: hsl(0, 0%, 100%);
+$default-header--contactLink_borderStyle: 2px solid hsl(0, 0%, 100%);
+$hovered-header--contactLink_borderStyle: 2px solid $primaryColor;
+
+$about-title_textColor: $titles_textColor;
+$about-description_textColor: $descriptions_textColor;
+$about-card--title_textColor: hsl(0, 0%, 93%);
+$about-card--description_textColor: hsl(0, 0%, 75%);
+
+/* Default Styling */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: 0.3s ease;
+}
+
+body {
+  background: $body_backgroundColor;
+  font-family: $default_fontFamily;
+  font-size: $default_fontSize;
+  overflow-x: hidden;
+  &.active {
+    overflow: hidden;
+  }
+}
+
+body::before,
+body::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  height: 100%;
+  z-index: -1000;
+}
+
+body::before {
+  width: 100%;
+  left: 0;
+  background-image: url("../images/Background.svg"),
+    url("../images/icons/Circle.svg"), url("../images/icons/Polygon.svg");
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position-x: 0, 200px, 150px;
+  background-position-y: 0, 75px, 500px;
+}
+
+body::after {
+  width: 25%;
+  right: 0;
+  background: url("../images/icons/Line.svg"),
+    url("../images/icons/MiniCircle.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position-x: 200px, 125px;
+  background-position-y: 450px, 100px;
+}
+
+/* Responsive Part */
+@media screen and (max-width: 700px) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}

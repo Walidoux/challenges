@@ -1,0 +1,98 @@
+@import "../settings";
+
+nav {
+  @include centerElements();
+  justify-content: space-around;
+  padding: 15px;
+
+  .nav_links {
+    @include centerElements();
+    list-style-type: none;
+    gap: 20px;
+
+    .nav_link {
+      position: relative;
+      text-decoration: none;
+      padding: 10px;
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 1px;
+      color: $default-nav_links-textColor;
+      transition: $default_transitionEffect;
+
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 50%;
+        width: 80%;
+        height: 2px;
+        transform: translate(-50%, 10px);
+        opacity: 0;
+        visibility: hidden;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba($color: white, $alpha: 0.3);
+        background-color: $hovered-nav_links-textColor;
+        transition: $default_transitionEffect;
+      }
+
+      & #nav_links-icons {
+        margin-right: 10px;
+        transition: $default_transitionEffect;
+      }
+
+      &:hover {
+        color: $hovered-nav_links-textColor;
+        &::before {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(-50%, 0px);
+        }
+      }
+    }
+  }
+
+  .nav_button {
+    @include centerElements();
+    text-decoration: none;
+    outline: none;
+    border: none;
+    padding: 12px 30px;
+    font-family: $default_fontFamily;
+    cursor: pointer;
+    background-color: $default-nav_button-backgroundColor;
+    border-radius: 30px;
+    font-weight: bold;
+    color: $default-nav_button-textColor;
+    border-bottom-right-radius: 0;
+    box-shadow: $default-nav_button-shadowEffect;
+    transition: $default_transitionEffect;
+
+    & .icon {
+      margin-right: 10px;
+      transition: $default_transitionEffect;
+      & path {
+        transition: $default_transitionEffect;
+      }
+    }
+
+    &:hover {
+      background-color: $hovered-nav_button-backgroundColor;
+      color: $hovered-nav_button-textColor;
+      box-shadow: $hovered-nav_button-shadowEffect;
+
+      & .icon {
+        transform: rotate(-25deg);
+        & path {
+          stroke: $hovered-nav_button-textColor;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

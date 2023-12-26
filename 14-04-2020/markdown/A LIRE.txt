@@ -1,0 +1,26 @@
+Salut si tu lis ce texte c'est que je t'ai choisis pour créé le site internet de ce projet si tu ne sait pas en quoi il consiste il faut que tu lise les texte qui se trouve dans documentation.
+
+Ce qu'il faudrait pour l'instant pour le lancement de OS il faut :
+
+- Un site qui en page de menu explique le concept avec une brev description tu pourras m'en demander une via discord ou simplement en faire une avec les info dans la documentation.
+
+- Il y aura un bouton avec marqué "télécharger" quand l'utilisateur clique dessus il doit se connecter ou s'enregistrer si il n'a pas de compte 
+Puis si il est connecter ou une fois connecter ça le renvois vers une page a ce moment la il doit choisir la langue dans lequel il veuille que l'os soit au moment de l'installation puis il clique sur un nouveau bouton télécharger et a ce moment la le fichier ce télécharge.
+
+:::
+-Il faut que l'utilisateur puisse choisir le language du site : français et anglais au moins
+-Il faut que le site ait un thème et une disposition un peu comme le site de https://shadow.tech/frfr
+-Le site auras donc les pages dans différente langue :
+Page fr : 4
+Page Engl : 4
+
+liste des pages :
+
+Menu
+Login/Enregistrement
+Page du choix de la langue du système d'exploitation
+Page du dl de OS
+
+::
+
+Les 2 liens pour le téléchargement de l'os te seront fournis plus tard étant donné qu'il n'est pour le moment pas terminé.

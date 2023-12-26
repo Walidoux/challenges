@@ -1,0 +1,11 @@
+@media screen and (max-width: 1920px) and (min-width: 1080px) {
+    * {
+        zoom: 1.06;
+    }
+}
+
+@media screen and (max-width: 1280px) and (min-width: 800px) {
+    * {
+        zoom: 0;
+    }
+}

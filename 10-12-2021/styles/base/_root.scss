@@ -1,0 +1,19 @@
+@use "./../abstracts/colors" as *;
+
+:root {
+  @each $color, $shades in $colors {
+    @each $prop, $value in $shades {
+      --clr-#{$color}-#{$prop}: #{$value};
+    }
+  }
+}
+
+[data-theme="dark"] {
+  --clr-primary-400: hsl(355, 66%, 50%);
+  --clr-primary-600: hsl(355, 70%, 54%);
+  --clr-secondary-200: hsl(0, 0%, 20%);
+  --clr-secondary-400: hsl(0, 0%, 40%);
+  --clr-secondary-600: hsl(0, 0%, 60%);
+  --clr-secondary-800: hsl(0, 0%, 80%);
+  --clr-secondary-1000: hsl(0, 0%, 100%);
+}

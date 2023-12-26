@@ -1,0 +1,10 @@
+@import "./../settings";
+
+.section_checkedticket {
+  @include centerAll();
+  position: absolute;
+  height: 80vh;
+  width: 60vw;
+  top: 0;
+  left: 0;
+}

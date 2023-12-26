@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BS | Accueil</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/icons/favicons/site.webmanifest">
+    <link rel="mask-icon" href="assets/icons/favicons/safari-pinned-tab.svg" color="#5bbad5">
+
+    <link rel="stylesheet" href="styles/pages/home.css">
+
+    <script defer src="javascript/home.js"></script>
+    <script src="https://kit.fontawesome.com/a111cfd49e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navigationbar">
+        <div class="navigationbar_container">
+            <ul class="navigationbar_container__list">
+                <img src="assets/images/Logo.svg" class="logo" draggable="false" alt="Logo de BlockStresser">
+                <li class="navigationbar_container__list-item"><a href="#" class="directory active"><img
+                            src="assets/icons/home_icon.svg" class="nav_icon" draggable="false" />
+                        Accueil</a></li>
+                <li class="navigationbar_container__list-item"><a href="doxpage.html" class="directory"><img
+                            src="assets/icons/plus_icon.svg" class="nav_icon" draggable="false" />Ajouter un dox</a>
+                </li>
+                <li class="navigationbar_container__list-item"><a href="#" class="directory"><img
+                            src="assets/icons/shop_icon.svg" class="nav_icon" draggable="false" />Boutique</a></li>
+                <li class="navigationbar_container__list-item"><a href="#" class="directory"><img
+                            src="assets/icons/members_icon.svg" class="nav_icon" draggable="false" />Membres</a></li>
+            </ul>
+            <div class="navigationbar_container__log notin">
+                <a href="#" class="connectButton">Se connecter</a>
+            </div>
+            <div class="navigationbar_container__log in">
+                <a href="#" class="directory"><img src="assets/images/profil.jpg" draggable="false" class="profilImage"
+                        alt="Photo de profil"></a>
+                <button class="disconnectButton"><i id="icon" class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+        <h1 class="main_title">Tests Postés</h1>
+        <table class="table">
+            <thead class="table_head">
+                <tr>
+                    <td class="table_head-titles">Titres</td>
+                    <td class="table_head-titles">Vues</td>
+                    <td class="table_head-titles">Créateurs</td>
+                    <td class="table_head-titles">Dates de post</td>
+                    <td class="table_head-titles">Attributs</td>
+                </tr>
+            </thead>
+            <tbody class="table_body" id="tableBody"></tbody>
+        </table>
+    </main>
+
+    <footer class="footer">
+        <img src="assets/images/Logo.svg" draggable="false" alt="Logo de BlockStresser">
+        <ul class="footer_items-list">
+            <li class="item"><a class="link" href="#">Terms of services</a></li>
+            <li class="item"><a class="link" href="#">Another link</a></li>
+        </ul>
+        <p class="footer_copyright">&copy; Copyright 2021 BlockStresser | All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

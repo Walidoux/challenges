@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@import "core/core";
+@import "core/reCaptcha";
+
+// Pages
+
+@import "pages/register";
+@import "pages/home";
+@import "pages/build";
+@import "pages/settings";
+@import "pages/plugins";
+@import "pages/profile";
+
+// Layouts
+
+@import "layouts/form";
+@import "layouts/footer";
+@import "layouts/floatingbar";
+
+.core_select {
+  -webkit-appearance: none;
+  border: none;
+  outline: none;
+  background-color: $background-surface;
+  border-radius: 6px;
+  font-size: 15px;
+  border: 1px solid transparent;
+  padding: 10px 12px;
+  color: $foreground-default;
+  max-width: fit-content;
+  min-width: 100px;
+  cursor: pointer;
+
+  &::placeholder {
+    color: $foreground-dark;
+  }
+
+  &:focus {
+    background-color: darken($background-surface, 3%);
+    border: 1px solid $foreground-active;
+  }
+}

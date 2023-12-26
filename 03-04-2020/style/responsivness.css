@@ -1,0 +1,54 @@
+@media screen and (max-width: 1020px) {
+    .body {
+        flex-direction: column;
+    }
+    .left {
+        width: 88%;
+    }
+    .right {
+        width: 100%;
+    }
+    .discordapp {
+        width: 40%;
+        margin: 100px;
+    }
+    .stats {
+        width: 50%;
+        letter-spacing: 1px;
+    }
+    .box-right {
+        margin: 50px;
+        width: 54%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .body {
+        flex-direction: column;
+    }
+    .left {
+        width: 80%;
+    }
+    .right {
+        width: 100%;
+    }
+    .discordapp {
+        width: 50%;
+        margin: 100px;
+    }
+    .stats {
+        width: 50%;
+        letter-spacing: 1px;
+    }
+    .box-right {
+        margin: 50px;
+        width: 54%;
+    }
+}
+
+@media screen and (min-width: 530px) {
+    .box-right .rezicon {
+        height: 50px;
+        width: 50px;
+    }
+}

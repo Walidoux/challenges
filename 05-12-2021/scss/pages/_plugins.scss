@@ -1,0 +1,235 @@
+@use "../abstracts/mixins" as *;
+
+.modal-backdrop {
+  position: absolute;
+  place-items: center;
+  display: grid;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s ease;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.active .modal {
+    transform: scale(1);
+  }
+
+  .modal {
+    padding: 24px 50px;
+    background-color: $background-base;
+    border-radius: 16px;
+    box-shadow: $box-shadow;
+    transform: scale(0.5);
+    transition: 0.3s ease;
+
+    .price {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .muted {
+      font-size: 1rem;
+      color: $foreground-muted;
+      margin-bottom: 6px;
+    }
+
+    .normal {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .buttons {
+      @include displayFlex(center, center, row);
+      gap: 16px;
+
+      button {
+        outline: none;
+        padding: 15px 30px;
+        color: white;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: 0.3s ease;
+
+        &:first-child {
+          color: black;
+          border: 2px solid white;
+
+          &:hover {
+            background: transparent;
+            color: white;
+          }
+        }
+
+        &:last-child {
+          background-color: #aa4b4b;
+          border: 2px solid #aa4b4b;
+
+          &:hover {
+            background: transparent;
+            color: #aa4b4b;
+          }
+        }
+      }
+    }
+  }
+}
+
+.page_header {
+  position: absolute;
+  z-index: 100000;
+  right: 0;
+  top: 60px;
+  right: 50px;
+
+  img {
+    max-width: 48px;
+  }
+
+  .stancredit {
+    display: inline-flex;
+    align-items: center;
+    background-color: $background-base;
+    padding: 10px 25px;
+    border-radius: 16px;
+    gap: 16px;
+    box-shadow: $box-shadow-light;
+
+    .balance {
+      font-weight: 500;
+      color: white;
+    }
+  }
+}
+
+.plugin_container {
+  @include displayFlex(center, stretch, row);
+  flex-flow: wrap row;
+  max-width: 1200px;
+  padding: 50px;
+  gap: 25px;
+
+  .plugin_item {
+    display: flex;
+    flex-direction: column;
+    background-color: $background-base;
+    padding: 25px 30px;
+    border-radius: 16px;
+    box-shadow: $box-shadow;
+
+    .plugin_name {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+      color: white;
+      text-shadow: 0 0 10px rgba($color: white, $alpha: 0.3);
+      font-size: 1.5rem;
+
+      img {
+        max-width: 30px;
+        margin-left: 30px;
+      }
+    }
+
+    .plugin_description {
+      color: $foreground-muted;
+      max-width: 300px;
+      margin-bottom: 10px;
+      font-size: 0.875rem;
+
+      ul {
+        margin: 15px;
+      }
+    }
+
+    .plugin_status {
+      @include displayFlex(space-between, center, row);
+      margin-top: auto;
+
+      %button {
+        border: none;
+        outline: none;
+        padding: 1em 3em;
+        border-radius: 6px;
+        transition: 0.25s;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+        color: $foreground-default;
+      }
+
+      button.using {
+        @extend %button;
+        background-color: $plugin-use;
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+
+      button.use {
+        @extend %button;
+        background-color: $plugin-use;
+
+        &:hover {
+          background-color: darken($plugin-use, 10%);
+        }
+      }
+
+      button.buy {
+        @extend %button;
+        background-color: $plugin-buy;
+
+        &:hover {
+          background-color: darken($plugin-buy, 10%);
+        }
+      }
+
+      .plugin_credits {
+        font-size: 0.8rem;
+        padding-left: 30px;
+        color: $foreground-special;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .plugin_container {
+    padding: 100px 50px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .plugin_container {
+    margin: 50px 0;
+
+    .plugin_item {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .page_header {
+    right: 0;
+    width: 100%;
+
+    .stancredit {
+      @include displayFlex(center, center, row);
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+}

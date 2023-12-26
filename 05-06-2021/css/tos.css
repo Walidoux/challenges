@@ -1,0 +1,65 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Variables */
+:root {
+    font-family: "Poppins", sans-serif;
+    font-size: 100%;
+    
+    /* Important Colors */
+    --primary-color: #6382EC;
+
+    /* Default Colors */
+    --body-background-color: #191c20;
+
+    --article-titles-color: white;
+    --article-list-color: rgb(219, 219, 219);
+    --article-paragraph-color: rgb(175, 175, 175);
+}
+
+/* Default Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body-background-color);
+}
+
+section {
+    align-self: center;
+    margin-top: 30px;
+    width: 70vw;
+}
+
+.article_range { margin: 0 0 50px 50px; }
+.article_titles {
+    color: var(--article-titles-color);
+    width: 80%;
+    font-size: 2rem;
+    margin: 8px;
+}
+
+.article_list { color: var(--article-list-color); }
+.paragraph {
+    margin: 10px 0;
+    color: var(--article-paragraph-color);
+}
+
+.article-text_important {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1040px) {
+    section {
+        width: 100vw;
+        padding: 0 25px;
+    }
+
+    .article_titles { width: 95%; }
+}

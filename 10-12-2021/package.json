@@ -1,0 +1,33 @@
+{
+  "name": "christmas_challenge_app",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "framer-motion": "^6.3.3",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-feather": "^2.0.9",
+    "react-useanimations": "^2.0.8",
+    "sass": "^1.51.0",
+    "styled-components": "^5.3.5",
+    "swiper": "^8.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.31",
+    "@types/react": "18.0.8",
+    "eslint": "8.14.0",
+    "eslint-config-next": "12.1.6",
+    "postcss": "^8.4.13",
+    "postcss-focus": "^5.0.1",
+    "typescript": "4.6.4"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.13"
+  }
+}

@@ -1,0 +1,78 @@
+                  ##############################################################################
+                  #																			   #
+                  #                  + Cours HTML/CSS... (Web developping...) +				   #
+                  #																			   #
+                  ##############################################################################
+
+
+
+#-------------------------------------#         Le positionnement        #-------------------------------------#
+
+
+> "{padding}, {margin}" affectent le positionnement d'un élément HTML.
+	Examples :
+		+ "padding: 10px 0 0 10px"
+		+ "padding-left: 10px"
+		+ "padding-right: 10px"
+		+ "padding-top: 10px"
+		+ "padding-bottom: 10px"
+
+
+> "{float}, {postion}" qui permettent aussi de positionner des éléments de manière plus "radicale"
+	Examples :
+		+ "float: right/left/both;" (Il affecte le flux courant.)
+		+ "position: absolute/relative/fixed;" (Le relative n'affecte pas le flux courant.) 
+
+
+> "{z-index: 1}" qui permet de positionner un élément HTML devant un autre.
+	Example :
+		+ "#header {
+				border: 3px solid #2196F3;
+				height: 80px;
+				position: fixed;
+				left: 0;
+				right: 0;
+				z-index: 1;
+				}"
+
+
+#----------------------------------------------------------------------------------------------------------------#
+
+
+                  ##############################################################################
+                  #																			   #
+                  #                  						   								   #
+                  #																			   #
+                  ##############################################################################
+
+
+#--------------------------------------------#         Les images        #----------------------------------------#
+
+> Si une image illustre le texte (et n'est pas seulement décorative), il est conseillé de la placer
+au sein d'une balise  <figure>. La balise  <figcaption>permet d'écrire la légende de l'image.
+
+#----------------------------------------------------------------------------------------------------------------#
+
+
+                  ##############################################################################
+                  #																			   #
+                  #                  						   								   #
+                  #																			   #
+                  ##############################################################################
+
+
+#----------------------#         Les bordures        #------------------------#
+
+		+    "none" = pas de bordure (par défaut) ;
+		+    "solid" = un trait simple ;
+		+    "dotted" = pointillés ;
+		+    "dashed" = tirets ;
+		+    "double" = bordure double ;
+		+    "groove" = en relief ;
+		+    "ridge" = autre effet relief ;
+		+    "inset" = effet 3D global enfoncé ;
+		+    "outset" = effet 3D global surélevé.
+
+#-----------------------------------------------------------------------------#
+
+

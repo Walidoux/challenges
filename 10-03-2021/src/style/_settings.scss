@@ -1,0 +1,85 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+// Global Variables
+$fnz-defaultSize: 1.125rem;
+$fnt-defaultFamily: 'Montserrat', sans-serif;
+$clc-primaryColor: hsl(220, 98%, 61%);
+$trf-defaultEffect: 0.3s ease;
+$clc-backgroundColor: linear-gradient(
+  120deg,
+  hsl(192, 100%, 67%),
+  hsl(280, 87%, 65%)
+);
+
+// Light Theme Colors
+// - Very Light Gray:
+$clc-lightTheme-ligh_gray: hsl(0, 0%, 98%);
+// - Very Light Grayish Blue:
+$clc-lightTheme-V-light_grayish__blue: hsl(236, 33%, 92%);
+// - Light Grayish Blue:
+$clc-lightTheme-light_grayish__blue: hsl(233, 11%, 84%);
+// - Dark Grayish Blue:
+$clc-lightTheme-dark_grayish__blue: hsl(236, 9%, 61%);
+// - Very Dark Grayish Blue:
+$clc-lightTheme-V-dark_grayish__blue: hsl(235, 19%, 35%);
+
+// Dark Theme Colors
+// - Very Dark Blue:
+$clc-darkTheme-V-dark_blue: hsl(235, 21%, 11%);
+// - Very Dark Desaturated Blue:
+$clc-darkTheme-V--Destd_dark__blue: hsl(235, 24%, 19%);
+// - Light Grayish Blue:
+$clc-darkTheme: hsl(234, 39%, 85%);
+// - Light Grayish Blue (hover):
+$clc-darkTheme-hovered--light_grayish__blue: hsl(236, 33%, 92%);
+// - Dark Grayish Blue:
+$clc-darkTheme-dark_grayish_blue: hsl(234, 11%, 52%);
+// - Very Dark Grayish Blue:
+$clc-darkTheme-V-dark-dark_grayish__blue: hsl(233, 14%, 35%);
+// - Very Dark Grayish Blue:
+$clc-darkTheme-V-dark_grayish__blue: hsl(237, 14%, 26%);
+
+// Directives
+@mixin elementsCenterer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@mixin todoCheckerInput {
+  position: relative;
+  appearance: none;
+  height: 25px;
+  min-width: 25px;
+  cursor: pointer;
+  border: 1px solid rgb(165, 165, 165);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: $trf-defaultEffect;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    background: url('./../assets/icon-check.svg'), $clc-backgroundColor;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    transition: $trf-defaultEffect;
+  }
+
+  &:checked::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:checked {
+    border: none;
+  }
+}

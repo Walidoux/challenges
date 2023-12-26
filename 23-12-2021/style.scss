@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin displayFlex($content: "center", $items: "center", $direction: "row") {
+  display: flex;
+  justify-content: #{$content};
+  align-items: #{$items};
+  flex-direction: #{$direction};
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+body {
+  background-color: #1e2022;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.container {
+  @include displayFlex("center", "center", "column");
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  color: white;
+  user-select: none;
+
+  &.blurred {
+    filter: blur(20px);
+    transition: 0.3s ease;
+  }
+
+  .web_content {
+    height: 100vh;
+    width: 100vw;
+  }
+}
+
+.notifications {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease;
+
+  .notifications_container {
+    position: relative;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 50px;
+
+    .popup {
+      @include displayFlex("baseline", "center", "row");
+      position: relative;
+      border-radius: 16px;
+      top: 50%;
+      left: 50%;
+      background-color: #1e2022;
+      transform: scale(0.3);
+      filter: drop-shadow(0 20px 20px hsla(0, 0%, 0%, 0.3));
+      padding: 25px 50px;
+      visibility: hidden;
+      width: #{"min(80%, 825px)"}; /* clamp(350px, 50%, 825px) */
+      opacity: 0;
+      transition: 0.15s ease;
+
+      .illustration {
+        height: auto;
+        width: 100%;
+        filter: drop-shadow(0 10px 20px hsla(0, 0%, 0%, 0.5));
+      }
+
+      .content {
+        @include displayFlex("center", "center", "column");
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 40px 0;
+        margin-left: 40px;
+
+        .title {
+          position: relative;
+          background: linear-gradient(to right, #3441ff 0%, #6064bb 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          white-space: nowrap;
+
+          &::before {
+            position: absolute;
+            content: "";
+            bottom: -3px;
+            left: 0;
+            height: 3px;
+            width: 25%;
+            border-radius: 50px;
+            background: linear-gradient(to right, #3441ff 0%, #6064bb 100%);
+          }
+
+          .icon {
+            margin-left: 5px;
+          }
+        }
+
+        .description {
+          margin-top: 30px;
+          color: rgb(207, 207, 207);
+          letter-spacing: 1px;
+          width: 400px;
+
+          .important {
+            font-weight: bold;
+            text-shadow: 0 2px 6px rgba($color: yellow, $alpha: 0.2);
+            background: linear-gradient(
+              to right,
+              rgb(207, 207, 207) 20%,
+              yellow 40%,
+              yellow 60%,
+              rgb(207, 207, 207) 80%
+            );
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 1s linear infinite;
+          }
+        }
+
+        .button_field {
+          @include displayFlex("center", "center", "row");
+          gap: 15px;
+          flex-flow: wrap row;
+          margin-top: 30px;
+
+          .popup_button {
+            @include displayFlex("center", "center", "row");
+            cursor: pointer;
+            height: 100%;
+            font-size: 1.1rem;
+            color: white;
+            outline: none;
+            border: none;
+            background: none;
+            border-radius: 8px;
+            padding: 15px 25px;
+            transition: 0.3s ease;
+
+            &.accept {
+              background-color: rgb(71, 206, 71);
+              border: 2px solid rgb(71, 206, 71);
+              box-shadow: 0 10px 30px
+                rgba($color: rgb(71, 206, 71), $alpha: 0.2);
+            }
+
+            &.refuse {
+              background-color: rgb(214, 64, 64);
+              border: 2px solid rgb(214, 64, 64);
+              box-shadow: 0 10px 30px
+                rgba($color: rgb(214, 64, 64), $alpha: 0.2);
+            }
+
+            &:hover {
+              transform: scale(0.9);
+              box-shadow: unset;
+            }
+
+            .icon {
+              margin-right: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.shown {
+    visibility: visible;
+    opacity: 1;
+
+    & .notifications_container .popup {
+      transform: translate(-50%, -50%) scale(1);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+@media screen and (max-height: 475px) {
+  .notifications.shown .notifications_container .popup {
+    transform: translate(-50%, 0%) scale(1);
+  }
+  .notifications .notifications_container .popup {
+    top: unset;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .notifications .notifications_container .popup {
+    flex-direction: column;
+    padding-top: 20px;
+    .content {
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) and (max-height: 930px) {
+  .notifications.shown .notifications_container .popup {
+    transform: translate(-50%, 0%) scale(1);
+  }
+  .notifications .notifications_container .popup {
+    top: unset;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .notifications .notifications_container .popup {
+    width: 90%;
+    padding: 0 25px;
+    .title {
+      font-size: 1.6rem;
+      &::before {
+        display: none;
+      }
+    }
+    .description {
+      max-width: 250px !important;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .notifications .notifications_container {
+    padding: 10px 0;
+  }
+}

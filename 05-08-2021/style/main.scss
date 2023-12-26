@@ -1,0 +1,267 @@
+@import "settings";
+@import "components/navbar";
+@import "components/footer";
+
+header {
+  @include centerElements();
+  position: relative;
+  padding: 20px 0;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    width: 40%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &::after {
+    top: 30px;
+    left: 0;
+    background: url("/assets/Deco-1.svg") no-repeat;
+  }
+
+  &::before {
+    top: -300px;
+    right: -200px;
+    background: url("/assets/Deco-2.svg") no-repeat;
+  }
+
+  .header-left_content {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    flex-direction: column;
+    width: 35%;
+
+    .header_title {
+      max-width: 400px;
+      font-size: calc(1rem * 3);
+      color: $default-header_title-textColor;
+    }
+
+    .header_description {
+      color: $default-header_description-textColor;
+      max-width: 450px;
+      margin-top: 10px;
+      & .seperation {
+        position: relative;
+        padding: 0 25px;
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: 50%;
+          width: 60%;
+          padding: 1px;
+          height: 1px;
+          background-color: $default-header_description-textColor;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .header_button {
+      position: relative;
+      margin-top: 30px;
+      outline: none;
+      border: none;
+      background-color: $default-header_button-backgroundColor;
+      color: $default-header_button-textColor;
+      font-family: $default_fontFamily;
+      font-size: calc(1rem * 1.02);
+      border-radius: 30px;
+      border-bottom-left-radius: 0;
+      cursor: pointer;
+      box-shadow: $default-header_button-shadowStyle;
+      padding: 15px 25px;
+      overflow: hidden;
+      transition: $default_transitionEffect;
+
+      &:hover {
+        background-color: $hovered-header_button-backgroundColor;
+        box-shadow: none;
+        color: $hovered-header_button-textColor;
+      }
+
+      & #button_icon {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .header-right_content {
+    position: relative;
+    width: 45%;
+
+    .header_blackComponent,
+    .header_whiteComponent {
+      position: absolute;
+    }
+
+    .header_blackComponent {
+      left: 0;
+      animation: bouncing 1s ease-out infinite alternate;
+    }
+
+    .header_whiteComponent {
+      bottom: -60px;
+      right: -60px;
+    }
+
+    .header_image {
+      height: 500px;
+      width: 100%;
+    }
+  }
+}
+
+/* Location Informations Section */
+
+.location_informations-section {
+  @include centerElements();
+  padding: 100px 50px 0 50px;
+
+  .section_infos-container {
+    position: relative;
+    .location_informations-box {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translate(-100px, -50%);
+      text-align: left;
+      width: 300px;
+      background-color: $default-location_infosBox-backgroundColor;
+      border-radius: 16px;
+      box-shadow: $default-location_infosBox-shadowEffect;
+      z-index: 10;
+
+      .box_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        height: 30%;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        color: $default-location_infosBox_boxHeader-textColor;
+        background: $default-location_infosBox_boxHeader-backgroundStyle;
+
+        .box_title {
+          width: 80%;
+        }
+
+        & #box_icon {
+          font-size: 2rem;
+        }
+      }
+
+      .box_body {
+        padding: 20px 30px;
+
+        .box_infosTitle {
+          color: $default-location_infosBox_boxBody__titles-textColor;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+
+        .box_content {
+          & .value {
+            position: relative;
+            margin-left: 10px;
+            bottom: 2px;
+            line-height: 30px;
+            color: $default-location_infosBox_boxBody__values-textColor;
+          }
+        }
+      }
+    }
+  }
+
+  .googlemaps-iframe {
+    height: 600px;
+    width: 800px;
+    border: 0;
+    border-radius: 16px;
+    transform: translateX(100px);
+    box-shadow: $default-location_infosBox_iframe-shadowStyle;
+  }
+}
+
+/* Statistics Section */
+
+.statistics-section {
+  @include centerElements();
+  flex-wrap: wrap;
+  margin: 50px 0;
+
+  .statistics_box {
+    @include centerElements();
+    height: 200px;
+    width: 400px;
+
+    .box_image {
+      margin-right: 20px;
+    }
+
+    .statistics_box-container {
+      @include centerElements();
+      align-items: flex-start;
+      flex-direction: column;
+
+      .box_value {
+        font-size: 2.5rem;
+        font-weight: bold;
+        line-height: 40px;
+        text-shadow: $default-statistics_box_values_textShadow;
+        color: $default-statistics_box_values_textColor;
+      }
+
+      .box_key {
+        color: $default-statistics_box_keys_textColor;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    flex-direction: column;
+    .header-left_content {
+      @include centerElements();
+      text-align: center;
+      width: 80%;
+      .header_description {
+        & .seperation {
+          display: none;
+        }
+      }
+    }
+
+    .header-right_content {
+      width: 80%;
+
+      .header_image {
+        height: unset;
+      }
+
+      .header_blackComponent,
+      .header_whiteComponent {
+        display: none;
+      }
+    }
+  }
+
+  .section_infos-container {
+    width: 100%;
+    .location_informations-box {
+      display: none;
+    }
+    .googlemaps-iframe {
+      transform: translateX(0);
+      width: 90%;
+    }
+  }
+}

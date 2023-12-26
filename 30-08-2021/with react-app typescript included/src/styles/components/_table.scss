@@ -1,0 +1,31 @@
+@import "./../settings";
+
+.table {
+  border-collapse: collapse;
+  white-space: nowrap;
+  overflow: auto;
+  box-shadow: 0 0 15px rgba($color: #1b1c1f, $alpha: 0.7);
+  background-color: #1b1c1f;
+
+  &_head {
+    background-color: $primary_color;
+
+    &-titles {
+      padding: 12px 30px;
+      color: white;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &_body {
+    &-container {
+      background-color: #1d1f22;
+      &--information {
+        padding: 12px 30px;
+        color: rgb(201, 201, 201);
+      }
+    }
+  }
+}

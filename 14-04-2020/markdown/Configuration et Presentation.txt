@@ -1,0 +1,18 @@
+Présentation et Materiel requis pour la variente d'ubuntu GOLOS v1 :
+
+Matériel	Configuration recommandée			Configuration minimale
+Processeur*	Processeur dual core de plus de 2 GHz		Processeur Intel ou AMD dual core d'au moins 1.5 GHz
+Mémoire vive	4 Go de RAM ou plus	2.00 Go
+Disque (HDD/SSD)Au moins 20 Go d'espace disque disponible	10 Go d'espace disque disponible
+Affichage	Carte vidéo capable d'accélération 3D
+et moniteur capable d'une résolution d'au moins 1366x768	Moniteur capable d'une résolution d'au moins 1024x768
+Média amovible	Clé USB ou lecteur de DVD-ROM requis pour l'installation
+Accès Internet	
+
+*****************************************************************************
+OS v1 ( version une ) est un Système d'exploitation basée sous ubuntu 18.04 il a la particularité d'être très élégant
+et optimiser pour le jeux vidéo.
+C'est le système d'exploitation le plus puissant,le plus sécurisé et le plus stable jamais créé pour le grand public.
+Avec un système d'installation nouveau ou les réglage se font directement via le site web avant de télécharger l'iso personalisé pour vous.
+
+

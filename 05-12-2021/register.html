@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PirateStealer - Build</title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" />
+
+	<script asynce defer src="https://www.google.com/recaptcha/api.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+	<script src="js/particles.js"></script>
+	<script defer src="js/register.js"></script>
+</head>
+
+<body>
+	<div class="floating_toolbar">
+		<div class="fbtl_container">
+			<a class="tool_button" href="https://discord.gg/grabber" target="_blank" rel="noopener">
+				<span class="material-icons">diamond</span>
+			</a>
+			<a class="tool_button" href="/home.html">
+				<span class="material-icons">home</span>
+			</a>
+			<a class="tool_button" href="/build.html">
+				<span class="material-icons">plumbing</span>
+			</a>
+			<a class="tool_button" href="/settings.html">
+				<span class="material-icons">tune</span>
+			</a>
+			<a class="tool_button" href="/plugins.html">
+				<span class="material-icons">extension</span>
+			</a>
+			<a class="tool_button active" href="/login.html">
+				<span class="material-icons">login</span>
+			</a>
+		</div>
+	</div>
+
+	<main>
+		<div class="form_container">
+			<h1 class="main_title">Sign up</h1>
+			<div class="input_group" style="margin-bottom: 15px">
+				<label for="webhookInput">Username</label>
+				<input type="text" id="usernameInput" placeholder="Enter your username" />
+			</div>
+			<div class="input_group">
+				<label for="webhookInput">Password</label>
+				<input type="password" id="passwordInput" placeholder="Enter your Password" />
+			</div>
+			<div class="g-recaptcha" data-theme="dark" data-sitekey="
+								6Ld0rXwdAAAAAFFkqHfMwNJJyh7IkO0US5SVRLsi"></div>
+			<button id="register" class="core_button">Sign Up</button>
+			<hr class="seperation">
+			<a href="login.html" class="link">
+				<span class="material-icons icon">
+					subdirectory_arrow_right
+				</span>
+				Sign in instead</a>
+		</div>
+		<div id="particles-js"></div>
+	</main>
+
+	<footer>&copy; PirateStealer 2021</footer>
+</body>
+
+</html>

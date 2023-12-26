@@ -1,0 +1,41 @@
+Pourquoi ?
+Parce que windows c'est de la merde mais vu que c'est les premier du genre et qu'ils ont été fort en marketing
+et bas paf on voit aujourd'hui partout des machine instable tournant sur un OS de merde instable et pas optimisé du tout
+
+Inconvénient de windaube :
+Windaube a un probleme de gestion quand plusieurs programme sont ouvert il commence a paniqué il va commencer par les faire
+planté a lagué etc...Dans ce genre de cas nous sommes obligé de devoir redémmarer notre ordinateur violamment pour retrouvé
+de nouveau nos performance
+
+Windaube deviens un vrais gruyère au bout de quelque mois d'utilisation car :
+Des programmes installe d'autre programme en douce qui nous veulent pas que du bien
+Nous avons des logicielles espion et qui prenne des performance partout
+On commence a avoir des méssage d'érreur incompréhensible
+Tout les programmes que nous avons installer puis désinstaller laisse des traces sur le système et dans les registre
+ce qui prend de la place et réduit les performances.
+Les mises a jours windows on ne sait pas ce qu'elle font mise a part la " sécurité " qui nous pompe de sacrée performance a chaque installation.
+"Cortana" le pire ajout depuis sheep.exe rien d'autre a dire.
+
+
+Au bout de 3 ans un ordinateur tournant sous windows deviens lente instable en bref inutilisable.
+
+Alors que avec l'OS :
+
+Le système ce bases sous linux et plus précisement sous unbuntu qui a été modifier et optimiser pour tout le monde
+le système linux et stable et ne deviens pas un trou a rat
+lorque une appli est désinstaller elle se désinstalle complètement
+on peux avoir 4 traitement de texte 10 onglet firefox et 1 jeux de dinosaure qui saute ouvert sans que le système ne plante
+Les logiciels disponible sont tous gratuit et pour ce qui souhaiterais avoir leur programme qui a été créé exclusivement
+pour windows et non pour linux sur leur machine tournant sous l'OS un programme a été mis en place pour pouvoir les éxécuter alors même qu'il ne sont pas disponible sous linux.
+Une énorme documentation très complète et simple pour tout ce qui conserne l'OS 
+Une interface a la windows pour éviter le dépéysement
+Tout les programmes préinstaller sont des programmes utilitaire et pas des pub comme sur windaube
+Un très haut niveau de sécurité avec un antivirus léger simple gratuit et open source ( désinstalable a tout moment )
+Le système d'exploitation dans sa premiere version et 100% gratuit et open source sans aucun inconvénient et sans
+aucun programme préinstaller payent.
+Des performances et une fluidité double par rapport a windows.
+
+
+Au bout de 10 ans un ordinateur tournant sous l'OS seras toujours stable et fluide a utiliser.
+
+

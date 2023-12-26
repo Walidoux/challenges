@@ -1,0 +1,17 @@
+/* Primary Colors */
+
+/* Secondary Colors */
+$secondary-lightBlack_color: #38364A;
+$secondary-black_color: #1E1D28;
+
+/* Fonts */
+$default_fontFamily: "comic sans ms", sans-serif;
+
+/* Transitions */
+$default_transition: .3s ease;
+
+/* Others */
+$cell_size: 150px;
+$background_color: radial-gradient(100% 100% at 50% 0%,
+                                    $secondary-lightBlack_color 0%,
+                                    $secondary-black_color 100%);

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Site de recherche en développement</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#000000">
+
+    <meta property='og:title' content="" />
+    <meta property='og:type' content='Site de recherche de base de données' />
+    <meta property='og:url' content="https://mineleaks.fun/" />
+    <meta property='og:image' content="https://imgur.com/ee4ENLS" />
+    <meta property='og:description' content="Still no description to put here :(" />
+    <meta property='og:locale' content='fr_FR, en_US' />
+    <meta property='og:site_name' content="Mineleaks | Le retour !" />
+
+    <link rel="stylesheet" href="./../styles/pages/Search/search.css">
+    <link rel="stylesheet" href="./../styles/components/NavigationBar/navigationbar.css">
+    <link rel="stylesheet" href="./../styles/components/Footer/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./../assets/icons/favicon/favicon.ico" type="image/x-icon">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./../assets/icons/favicon/appleTouchIcon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./../assets/icons/favicon/favicon32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./../assets/icons/favicon/favicon16x16.png">
+    <link rel="manifest" href="./../assets/icons/favicon/site.webmanifest">
+
+    <script defer src="search.js"></script>
+</head>
+
+<body>
+
+    <nav id="navigationBar">
+        <ul class="nav_container" id="nav">
+            <li class="item"><a href="./../index.html" class="link"><img src="./../assets/icons/Home_Icon.svg"
+                        alt="Home Icon" class="icon" draggable="false"><span class="text">Accueil</span></a></li>
+            <li class="item"><img src="./../assets/images/Logo.svg" class="logo" alt="Logo Mineleaks" draggable="false">
+            </li>
+            <li class="item"><a href="#" class="link active" hidden><img src="./../assets/icons/Search_Icon.svg"
+                        alt="Home Icon" class="icon" draggable="false"><span class="text">Recherche</span></a></li>
+            <li class="item discord_styles"><a href="" class="link social_media"><img
+                        src="./../assets/icons/Discord_Icon.svg" alt="Discord Icon" draggable="false"></a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="main">
+        <div class="container search hidden">
+            <!-- Div should be the first child element of the parent -->
+            <img src="./../assets/images/Search_Image.svg" class="icon" alt="Search Image" draggable="false">
+            <p class="description">Appuiyez ici pour effectuer une recherche.</p>
+        </div>
+        <div class="container">
+            <table>
+                <thead class="table_head">
+                    <tr>
+                        <th class="table_titles">Username</th>
+                        <th class="table_titles">Password</th>
+                        <th class="table_titles">IP</th>
+                        <th class="table_titles">Email</th>
+                        <th class="table_titles">UUID</th>
+                    </tr>
+                </thead>
+                <tbody class="table_body">
+                    <td class="popup_content" id="tablePopupContent">xxx</td>
+                    <tr class="table_informations" id="tableInformations">
+                        <td class="table_content">Walidoux</td>
+                        <td class="table_content">
+                            <p class="user_name">maison2003</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_ip">192.168.1.1</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_email">ma.wdzjssss@da.com</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_id">e386d7be-4f58-11ec-81d3-0242ac130003</p>
+                        </td>
+                    </tr>
+                    <tr class="table_informations" id="tableInformations">
+                        <td class="table_content">Walidoux</td>
+                        <td class="table_content">
+                            <p class="user_name">maison2003</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_id">192.168.1.1</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_email">qwdzj@xa.fr</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_id">e386da84-4f58-11ec-81d3-0242ac130003</p>
+                        </td>
+                    </tr>
+                    <tr class="table_informations" id="tableInformations">
+                        <td class="table_content">Walidoux</td>
+                        <td class="table_content">
+                            <p class="user_name">maison2003</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_id">192.168.1.1</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_email">qwdzj@xa.fr</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_id">e386bcde-4f58-11ec-81d3-0242ac130003</p>
+                        </td>
+                    </tr>
+                    <tr class="table_informations" id="tableInformations">
+                        <td class="table_content">Walidoux</td>
+                        <td class="table_content">
+                            <p class="user_name">maison2003</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_id">192.168.1.1</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_email">qwdzj@xa.fr</p>
+                        </td>
+                        <td class="table_content">
+                            <p class="user_id">e386b522-4f58-11ec-81d3-0242ac130003</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <section class="output_section" id="outputSection">
+        <button class="button_swipeUp" id="swipeUpButton"><img src="./../assets/icons/SwipeUp_Icon.svg"
+                alt="SwipeUp Icon" draggable="false" class="icon"></button>
+        <div class="output_container"></div>
+    </section>
+
+    <form method="get" class="searching_popup" id="popupSearch">
+        <div class="form_container">
+            <div class="container">
+                <input type="text" class="search_input" id="searchInput" title="Effectuez votre recherche juste ici."
+                    required autocomplete="off" minlength="5" maxlength="120" />
+            </div>
+
+            <div class="additional">
+                <input type="checkbox" class="checkbox_input" id="SensitiveCase">
+                <label for="SensitiveCase" class="label-checkbox_input">Sensitive Case</label>
+            </div>
+        </div>
+
+        <img src="./../assets/icons/Cross_Icon.svg" class="close_button" id="closeButton" alt="Cross Icon"
+            draggable="false">
+    </form>
+
+    <div class="background">
+        <div class="top">
+            <img src="./../assets/images/Backgrounds/Top_Triangle.svg" class="triangle" draggable="false">
+            <img src="./../assets/images/Backgrounds/Top_Rectangle.svg" class="rectangle" draggable="false">
+        </div>
+        <div class="bottom">
+            <img src="./../assets/images/Backgrounds/Bottom_Triangle.svg" class="triangle" draggable="false">
+            <img src="./../assets/images/Backgrounds/Bottom_Rectangle.svg" class="rectangle" draggable="false">
+        </div>
+    </div>
+</body>
+
+</html>

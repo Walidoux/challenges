@@ -1,0 +1,38 @@
+@import './../settings';
+
+.header {
+  height: 13rem;
+  background: url(./../../assets/bg-mobile-light.jpg) no-repeat;
+  background-size: cover;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding-top: 30px;
+    margin: auto;
+
+    &-title {
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      color: white;
+      font-weight: 600;
+    }
+
+    &-switchField {
+      @include elementsCenterer();
+      position: relative;
+
+      &--input {
+        position: absolute;
+        appearance: none;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+
+        // &:checked {
+        // }
+      }
+    }
+  }
+}

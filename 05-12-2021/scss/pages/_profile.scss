@@ -1,0 +1,155 @@
+@import "../core/core";
+@use "../abstracts/mixins" as *;
+@use "../helpers/input" as *;
+@use "../helpers/input" as *;
+
+.logo {
+  height: 125px;
+  margin-bottom: 50px;
+}
+
+.container {
+  @include displayFlex(center, center, column);
+  position: relative;
+
+  .field {
+    position: relative;
+    display: flex;
+    color: rgb(223, 223, 223);
+    padding: 0 10px;
+    text-shadow: 0 0 10px rgba($color: #000000, $alpha: 1);
+    letter-spacing: 2px;
+
+    .important {
+      font-weight: bold;
+      color: white;
+      margin-right: 10px;
+      letter-spacing: 0;
+    }
+
+    .chars {
+      position: relative;
+      display: block;
+      width: 250px !important;
+      cursor: pointer;
+      color: rgb(103, 110, 214);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      text-decoration: underline;
+    }
+
+    .text_clipboard {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.5);
+      background-color: rgb(83, 187, 83);
+      font-weight: bold;
+      border-radius: 8px;
+      z-index: 10;
+      padding: 10px 20px;
+      transition: 0.1s ease;
+      opacity: 0;
+      visibility: hidden;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-bottom: 10px solid rgb(83, 187, 83);
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+      }
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) scale(1);
+      }
+    }
+  }
+
+  button {
+    @extend %input;
+    padding: 20px 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    margin-top: 50px;
+    background: linear-gradient(-225deg, #4d66c3, #11256d);
+    background-size: 200%;
+    box-shadow: 0 20px 50px rgba($color: #4d66c3, $alpha: 0.25);
+    transition: 0.3s ease;
+
+    &:hover {
+      background-position: right;
+      box-shadow: unset;
+    }
+  }
+}
+
+form {
+  @include displayFlex(center, center, column);
+  position: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  gap: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.85);
+
+  .close_button {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: translateX(-50%) rotate(90deg);
+    }
+  }
+
+  input[type="password"] {
+    @extend %input;
+    padding: 15px 5px 15px 20px;
+    color: white;
+    max-width: 250px;
+    background-color: $background-base;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  input[type="submit"] {
+    padding: 15px 30px;
+    margin-top: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(-225deg, #4d66c3, #11256d);
+    box-shadow: 0 20px 50px rgba($color: #4d66c3, $alpha: 0.25);
+    border-radius: 8px;
+    background-size: 200%;
+    transition: 0.3s ease;
+
+    &:hover {
+      background-position: right;
+      box-shadow: unset;
+    }
+  }
+
+  &.shown {
+    opacity: 1;
+    visibility: visible;
+  }
+}

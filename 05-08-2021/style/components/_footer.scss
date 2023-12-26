@@ -1,0 +1,54 @@
+@import "../settings";
+
+footer {
+  @include centerElements();
+  justify-content: space-between;
+  height: 75px;
+  padding: 0 25px;
+  border-top: 5px solid $primary_color;
+  background-color: #25242d;
+  box-shadow: 0 -5px 20px rgba($color: $primary_color, $alpha: 0.2);
+
+  .copyright {
+    font-size: 1.1rem;
+    color: white;
+
+    .important {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+
+  .contact_link {
+    @include centerElements();
+    background-color: white;
+    text-decoration: none;
+    color: #262626;
+    padding: 10px 30px;
+    border-radius: 30px;
+    img {
+      margin-right: 10px;
+    }
+  }
+
+  .footer_leftContent {
+    @include centerElements();
+    .footer_socialMedias {
+      margin-right: 20px;
+      .socialMedia_link {
+        color: white;
+        margin: 3px;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  footer {
+    padding: 10px 0;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+  }
+}

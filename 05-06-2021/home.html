@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Document</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/home.css">
+
+        <script src="https://kit.fontawesome.com/a111cfd49e.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <nav>
+            <img src="images/Logo.svg" class="nav-logo" alt="Logo Projet" draggable="false">
+            <ul class="nav-links_list">
+                <li><a href="#" class="nav-links active">Accueil</a></li>
+                <li><a href="#" class="nav-links">Recherche</a></li>
+                <li><a href="#" class="nav-links">Abonnements</a></li>
+                <li><a href="#" class="nav-links">Statistiques</a></li>
+                <button class="nav-disconnect_button"> 
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-out-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height:20px;margin-right: 10px;"><path fill="currentColor" d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z" style="transition: .3s ease;"></path></svg>
+                    Déconnexion
+                </button>
+            </ul>
+            <button class="menu">
+                <svg width="60" height="60" viewBox="0 0 100 100">
+                    <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                    <path class="line line2" d="M 20,50 H 80" />
+                    <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                </svg>
+            </button>
+        </nav>
+
+        <header>
+            <div class="header_container">
+                <div class="header-left_side">
+                    <h1 class="header_title">Lorem ipsum</h1>
+                    <p class="header_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nostrum ipsa amet velit illo temporibus nulla!</p>
+                    <a href="auth.html" class="header-signup_button">S'inscrire</a>
+                </div>
+                <div class="header-right_side">
+                    <img src="images/header_image1.svg" class="header_image first" draggable="false">
+                    <img src="images/header_image2.svg" class="header_image second" draggable="false">
+                </div>
+            </div>
+        </header>
+
+        <section class="about_us">
+            <h1 class="about_us-title">Qui sommes-nous ?</h1>
+            <p class="about_us-description">
+                SearchMC est un projet sérieux à long terme équipé d'un panel qui vous permettra,
+                à partir d'un pseudonyme Minecraft, de retrouver tout types d'informations tel que les IP,
+                mots de passe ou bien les emails qui sont récupérés grâce à des bases de données Françaises.
+            </p>
+            <article class="about_us-cards">
+                <div class="about_us-card">
+                    <div class="about_us-cardtop">
+                        <img src="images/icons/anonym.svg" class="about_us-card_icons" draggable="false">
+                    </div>
+                    <div class="about_us-cardbody">
+                        <h2 class="about_us-card_title">Anonyme</h2>
+                        <p class="about_us-card_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi assumenda neque numquam.</p>
+                    </div>
+                </div>
+                <div class="about_us-card">
+                    <div class="about_us-cardtop">
+                        <img src="images/icons/fast.svg" class="about_us-card_icons" draggable="false">
+                    </div>
+                    <div class="about_us-cardbody">
+                        <h2 class="about_us-card_title">Très rapide</h2>
+                        <p class="about_us-card_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi assumenda neque numquam.</p>
+                    </div>
+                </div>
+                <div class="about_us-card">
+                    <div class="about_us-cardtop">
+                        <img src="images/icons/budget.svg" class="about_us-card_icons" draggable="false">
+                    </div>
+                    <div class="about_us-cardbody">
+                        <h2 class="about_us-card_title">Friendly budget</h2>
+                        <p class="about_us-card_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi assumenda neque numquam.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="statistics">
+            <div class="box-statistic">
+                <p class="box-statistic_title">Nombre d'utilisateurs</p>
+                <div class="box-statistic_value">456</div>
+            </div>
+            <div class="box-statistic">
+                <p class="box-statistic_title">Nombre de connectés</p>
+                <div class="box-statistic_value">23</div>
+            </div>
+            <div class="box-statistic">
+                <p class="box-statistic_title">Abonnements achetés</p>
+                <div class="box-statistic_value">190</div>
+            </div>
+            <div class="box-statistic">
+                <p class="box-statistic_title">Lignes de databases</p>
+                <div class="box-statistic_value">318k</div>
+            </div>
+        </section>
+
+        <section class="start_searching">
+            <h2 class="start_searching-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim omnis accusamus voluptate!</h2>
+            <a href="shop.html" class="start_searching-button">S'abonner</a>
+        </section>
+        
+        <footer>
+            <p class="copyright">
+                <img src="images/Logo.svg" draggable="false" height="30px" alt="Logo de SearchMC">
+                <span>&COPY; Copyright | SearchMC 2021.</span>
+            </p>
+            <div class="footer-right_side">
+                <ul class="footer-links">
+                    <li><a class="footer-link" href="#">Conditions d'utilisations</a></li>
+                    <li><a class="footer-link" href="#">Conditions d'achats</a></li>
+                </ul>
+                <div class="footer-social_media">
+                    <a class="footer-social_media__link" href="https://discord.gg/searchmc-to">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a class="footer-social_media__link" href="https://t.me/searchmc">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="javascript/navbar.js"></script>
+    </body>
+</html>

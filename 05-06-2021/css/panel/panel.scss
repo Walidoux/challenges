@@ -1,0 +1,638 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Variables */
+/* Fonts */
+$default-font_family: "Poppins", sans-serif;
+/* Colors */
+$body_backgroundColor: #191c20;
+$input_textColor: white;
+$input_default-backgroundColor: none;
+$input_focused-backgroundColor: rgb(58, 58, 58);
+$table_backgroundColor: #2e3135;
+$table_titlesColor: white;
+$table_infos-backgroundColor: rgb(58, 58, 63);
+$table_content-textColor: rgb(223, 223, 223);
+$statusON: rgb(71, 212, 71);
+$statusOFF: rgb(233, 53, 53);
+$box_waitingList-backgroundColor: #2e3135;
+$box_titles-textColor: white;
+$box_listItems-backgroundColor: rgb(63, 66, 70);
+$box_listItems-textColor: white;
+$submit_inputs: white;
+$submit_buttons: #32353a;
+$selector_inputs-backgroundColor: #32353a;
+$selector_inputs-textColor: rgb(156, 156, 156);
+$list_selector-backgroundColor: #32353a;
+$options-textColor: rgb(223, 223, 223);
+/* Borders */
+$input_borderStyle: 1px solid rgb(63, 63, 63);
+$input_focused-borderStyle: 1px solid rgb(77, 77, 77);
+$table_infos-borderStyle: 1px solid rgb(78, 78, 78);
+/* Box Shadows */
+$table_userAvatar-shadowStyle: 0 5px 10px rgba($color: #000000, $alpha: 0.3);
+$list_selector-shadowStyle: 0 15px 30px rgba($color: #000000, $alpha: 0.4);
+/* Effect (Hovers, Transitions) */
+$default_transition: .3s ease;
+$hovered_background-inputs: white;
+$hovered_color-inputs: #32353a;
+$hovered_options-textColor: white;
+$hovered_options-backgroundColor: #3e4247;
+
+/* Directives */
+
+@mixin centerElements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin default_inputs {
+    height: 40px;
+    outline: none;
+    font-family: $default-font_family;
+    transition: $default_transition;
+}
+
+@mixin text_inputs {
+    @include default_inputs();
+    color: $input_textColor;
+    background: $input_default-backgroundColor;
+    border: $input_borderStyle;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    &:focus {
+        background-color: $input_focused-backgroundColor;
+        border: $input_focused-borderStyle;
+    }
+}
+
+@mixin submit_inputs {
+    @include default_inputs();
+    padding: 0 30px;
+    border: none;
+    border-radius: 8px;
+    background: none;
+    color: $submit_inputs;
+    background-color: $submit_buttons;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: $default_transition;
+    &:hover {
+        background-color: $hovered_background-inputs;
+        color: $hovered_color-inputs;
+    }
+}
+
+@mixin selector_inputs {
+    @include default_inputs();
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 275px;
+    padding: 0 15px;
+    background-color: $selector_inputs-backgroundColor;
+    color: $selector_inputs-textColor;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: $default_transition;
+    &:hover {
+        background-color: $hovered_background-inputs;
+        color: $hovered_color-inputs;
+    }
+
+    & #icon_selector { transition: .3s ease; }
+    & #icon_selector.active { transform: rotate(180deg); }
+}
+
+@mixin list_selector {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: $list_selector-backgroundColor;
+    box-shadow: $list_selector-shadowStyle;
+    border-radius: 6px;
+    list-style: none;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    z-index: 10;
+    transition: $default_transition;
+
+    & .options {
+        position: relative;
+        display: flex;
+        padding: 10px;
+        cursor: pointer;
+        color: $options-textColor;
+        transition: $default_transition;
+
+        &:hover {
+            color: $hovered_options-textColor;
+            font-weight: bold;
+            background-color: $hovered_options-backgroundColor;
+        }
+
+        & .icons { margin: 0 10px 0 5px; }
+    }
+}
+
+/* Default Styling */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 100%;
+    font-family: $default-font_family;
+    background-color: $body_backgroundColor;
+}
+
+/* Background decorations (Ellipses) */
+
+.ellipses {
+    position: fixed;
+    z-index: -1;
+}
+
+.ellipses.first {
+    right: -400px;
+    top: -400px;
+}
+
+.ellipses.second {
+    top: 300px;
+    left: -600px;
+}
+
+/* NavBar Code : "../navbar.css" */
+
+/* Container */
+.container {
+    @include centerElements();
+    flex-wrap: wrap
+}
+
+/* Members List Section */
+
+.members_infolist {
+    @include centerElements();
+    flex-direction: column;
+    padding: 15px 0;
+
+    .text_inputs {
+        @include text_inputs();
+        &.search_profiles {
+            width: 250px;
+            padding: 0 30px;
+            text-align: center;
+        }
+    }
+
+    table {
+        margin: 40px 30px;
+        border-collapse: collapse;
+        white-space: nowrap;
+        overflow: auto;
+        background-color: $table_backgroundColor;
+        
+        .table_titles {
+            padding: 12px 30px;
+            color: $table_titlesColor;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .table_informations {
+            background-color: $table_infos-backgroundColor;
+            border-bottom: $table_infos-borderStyle;
+
+            .table_content {
+                padding: 12px 0;
+                color: $table_content-textColor;
+                text-align: center;
+    
+                .user_avatar {
+                    height: 40px;
+                    border-radius: 50%;
+                    box-shadow: $table_userAvatar-shadowStyle;
+                }
+    
+                .user_isConnected {
+                    position: relative;
+                    display: block;
+                    left: 50%;
+                    width: 15px;
+                    height: 15px;
+                    transform: translateX(-50%);
+                    border-radius: 50%;
+                    &.true { background-color: $statusON; }
+                    &.false { background-color: $statusOFF; }
+                }
+            }
+        }
+    }
+}
+
+/* Members Waiting List Section */
+
+.members_waitinglist {
+    @include centerElements();
+
+    .box_list {
+        position: relative;
+        padding: 20px 30px;
+        width: 375px;
+        border-radius: 8px;
+        background-color: $box_waitingList-backgroundColor;
+        overflow: hidden;
+
+        & .titles { color: $box_titles-textColor; }
+        & #background_icon {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            font-size: 4rem;
+            color: #3f4449; /* No variable needed */
+        }
+        
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin-top: 10px;
+
+            & .list_item {
+                padding: 5px 10px;
+                margin: 5px;
+                border-radius: 8px;
+                color: $box_listItems-textColor;
+                background-color: $box_listItems-backgroundColor;
+            }
+        }
+    }
+}
+
+/* Colors */
+$iframe_backgroundColor: #26282c;
+$label_textColor: white;
+$value_textColor: rgb(185, 185, 185);
+$title_textColor: white;
+$paragraph_textColor: white;
+$indicator_textColor: white;
+$evalutions_keys-textColor: rgb(173, 173, 173);
+$checkbox_backgroudColor: #3e4247;
+$checkbox_switchElement-backgroundColor: white;
+/* Borders */
+$input_image-borderSyle: 5px solid #6382EC;
+/* Shadows */
+$input_image-shadowStyle: 0 5px 30px #6383ec4b;
+$indicator_shadowStyle: 0 3px 15px rgba($color: #ffffff, $alpha: 0.5);
+$checkbox_switchElement-shadowStyle: inset 0 5px 10px rgba($color: #000000, $alpha: 0.3);
+/* Effects */
+$checked_checkbox: rgb(59, 180, 59);
+$hovered_checkbox-switchElement--shadowStyle: 0 5px 20px rgba($color: #000000, $alpha: 0.4);
+
+/* iFrame */
+
+.iframe {
+    /* centering stuff in "admin_user" page */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* end of code */
+    display: flex;
+    width: 1000px;
+    height: 650px;
+    border-radius: 16px;
+    background-color: $iframe_backgroundColor;
+
+    .iframe_left {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 30%;
+        padding: 30px 15px;
+        border-right: 1px solid rgba($color: #5e5e5e, $alpha: 0.5); /* No variable needed */
+
+        .input_file {
+            position: relative;
+            @include centerElements();
+            height: 125px;
+            width: 125px;
+            border-radius: 50%;
+    
+            .input_image {
+                height: 100%;
+                border: $input_image-borderSyle;
+                box-shadow: $input_image-shadowStyle;
+                border-radius: 50%;
+                transition: $default_transition;
+            }
+    
+            .input_selector {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                cursor: pointer;
+                z-index: 5;
+            }
+    
+            label {
+                position: absolute;
+                @include centerElements();
+                width: 35px;
+                height: 35px;
+                right: 0;
+                bottom: 0;
+                border-radius: 50%;
+                background-color: $label_textColor;
+                cursor: pointer;
+                z-index: 5;
+                transition: $default_transition;
+            }
+    
+            #file_icon {
+                color: #252a30; /* No variable needed */
+                transition: $default_transition;
+            }
+    
+            /* No variables needed */
+            .hovered_message-profil {
+                @include centerElements();
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                color: white; 
+                font-size: 0.9rem;
+                line-height: 1.1rem;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: bold;
+                background-color: rgba($color: #000000, $alpha: 0.6);
+                border-radius: 50%;
+                opacity: 0;
+                visibility: hidden;
+                transition: $default_transition;
+            }
+            
+            &:hover .hovered_message-profil {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            /* No variable needed */
+            &:hover #file_icon { color: white; } 
+            &:hover label { background-color: #252a30; }
+            &:hover .input_image {
+                height: 125px;
+                border: 0px solid;
+                box-shadow: none;
+                border-radius: 50%;
+            }
+        }
+        
+        .field {
+            @include centerElements();
+            flex-direction: column;
+            margin-top: 20px;
+            
+            & .value {
+                color: $value_textColor;
+            }
+
+            & .title {
+                text-align: center;
+                color: $title_textColor;
+                width: 60%;
+            }
+
+            form {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            & input[type="text"] {
+                @include text_inputs();
+                padding: 0 15px;
+                text-align: center;
+                width: 80%;
+                margin-bottom: 10px;
+            }
+
+            & input[type="submit"] {
+                @include submit_inputs();
+            }
+        }
+
+        .user_status {
+            @include centerElements();
+            position: absolute;
+            bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: white; /* No variable needed */
+            font-weight: bold;
+
+            #text {
+                margin-right: 10px;
+            }
+
+            #connected, #disconnected {
+                display: block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50px;
+            }
+            
+            & #connected {
+                display: none;
+                background-color: $statusON;
+            }
+
+            & #disconnected {
+                background-color: $statusOFF;
+            }
+        }
+    }
+
+    .iframe_right {
+        @include centerElements();
+        flex-direction: column;
+        width: 70%;
+        padding: 30px 0;
+                
+        .form_inputs {
+            display: flex;
+            margin: 10px 0;
+
+            & input[type="text"] {
+                @include text_inputs();
+                width: 225px;
+                padding: 0 15px;
+            }
+
+            & input[type="submit"] {
+                @include submit_inputs();
+                margin-left: 10px;
+            }
+
+            & .input_selector {
+                position: relative;
+                width: 100%;
+
+                .validating { display: none; margin-top: 10px; }
+                .validating.active { display: block; }
+                & .paragraph { color: $paragraph_textColor; text-align: center; }
+                & .selectorField { @include selector_inputs(); }
+                & .list { @include list_selector(); }
+                &.active .list {
+                    top: 60px;
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                .number_evaluator {
+                    @include centerElements();
+                    position: relative;
+                    margin-top: 10px;
+
+                    & .indicator {
+                        position: absolute;
+                        top: -10px;
+                        left: 70px;
+                        color: $indicator_textColor;
+                        text-shadow: $indicator_shadowStyle;
+                        padding: 5px 10px;
+                        font-size: 0.6rem;
+                        font-weight: bold;
+                        letter-spacing: 1px;
+                        border-radius: 50px;
+                    }
+
+                    & input[name="evaluator"] {
+                        width: 75px;
+                        text-align: center;
+                    }
+
+                    .evaluations {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        margin: 5px;
+
+                        & #minus, & #plus {
+                            position: absolute;
+                            display: flex;
+                            left: 23%;
+                            color: white; /* No variable needed */
+                            cursor: pointer;
+                            transform: translateX(-23%);
+                        }
+
+                        & #minus { bottom: -10px; }
+                        & #plus { top: -10px; }
+                        & .key {
+                            margin-left: 5px;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            color: $evalutions_keys-textColor;
+                        }
+
+                        & input[name="evaluated_number"] {
+                            padding: 8px 5px;
+                            width: 30px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .inputs_field {
+                @include centerElements();
+
+                .inputs_field-container {
+                    @include centerElements();
+                    position: absolute;
+                    margin-left: 20px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateX(20px);
+                    transition: $default_transition;
+                }
+
+                &.active .inputs_field-container {
+                    position: relative;
+                    opacity: 1;
+                    transform: translateX(0);
+                    visibility: visible;
+                    & input[type="checkbox"] { margin-left: 10px; }
+                }
+
+                & input[type="checkbox"] {
+                    position: relative;
+                    height: 30px;
+                    width: 55px;
+                    outline: none;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    margin-right: 10px;
+                    background-color: $checkbox_backgroudColor;
+                    appearance: none;
+                    transition: $default_transition;
+
+                    &::after { /* Switch Element */
+                        position: absolute;
+                        content: '';
+                        top: 50%;
+                        left: 5px;
+                        width: 22px;
+                        height: 22px;
+                        transform: translateY(-50%);
+                        border-radius: 50px;
+                        background-color: $checkbox_switchElement-backgroundColor;
+                        box-shadow: $checkbox_switchElement-shadowStyle;
+                        transition: $default_transition;
+                    }
+
+                    &:hover {
+                        transform: translateY(-3px);
+                        box-shadow: $hovered_checkbox-switchElement--shadowStyle;
+                    }
+
+                    &:checked { background-color: $checked_checkbox; }
+                    &:checked::after {
+                        left: 28px;
+                        transform: translateY(-50%);
+                    }
+                }
+
+                & .paragraph {
+                    color: $paragraph_textColor;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,179 @@
+@import "../settings";
+
+.navigation_menu {
+  @include centerElements();
+  position: absolute;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+  margin: 25px 30px;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  z-index: 1000;
+  transition: $default_transitionEffect;
+
+  .line {
+    fill: none;
+    stroke: $navigation-menuButton_color;
+    stroke-width: 6;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+      stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.line1 {
+      stroke-dasharray: 60 207;
+    }
+
+    &.line2 {
+      stroke-dasharray: 60 60;
+    }
+
+    &.line3 {
+      stroke-dasharray: 60 207;
+    }
+  }
+
+  &.active .line1 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+  }
+
+  &.active .line2 {
+    stroke-dasharray: 1 60;
+    stroke-dashoffset: -30;
+  }
+
+  &.active .line3 {
+    stroke-dasharray: 90 207;
+    stroke-dashoffset: -134;
+  }
+}
+
+nav {
+  @include centerElements();
+  @include hiddenElements();
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  height: 100%;
+  background-color: $active-navigationBar_backgroundColor;
+  z-index: 999;
+  overflow-y: scroll;
+
+  .nav_container {
+    @include centerElements();
+    justify-content: space-around;
+    flex-direction: column;
+
+    .user_profile-field {
+      @include centerElements();
+      @include hiddenElements();
+      position: absolute;
+      margin: 30px 0;
+      transform: translateY(10px);
+      &.active {
+        position: relative;
+      }
+
+      .user_profile-image {
+        border-radius: 50%;
+        margin-right: 30px;
+        border: $navigationBar-userProfileImage_borderStyle;
+        box-shadow: $navigationBar-userProfileImage_shadowStyle;
+      }
+
+      .profile_settings_field {
+        @include centerElements();
+        align-items: flex-start;
+        flex-direction: column;
+
+        .link_field {
+          text-decoration: none;
+          transition: $default_transitionEffect;
+
+          & #nav_icon {
+            margin-right: 10px;
+          }
+        }
+
+        & .disconnect_link {
+          color: $navigation-disconnectLink_textColor;
+        }
+
+        .settings_link {
+          color: $default-navigation--link_textColor;
+          &:hover {
+            color: $hovered-navigation--link_textColor;
+          }
+        }
+      }
+    }
+
+    .nav_links {
+      @include centerElements();
+      @include hiddenElements();
+      flex-direction: column;
+      list-style: none;
+      transform: translateY(60px);
+
+      .nav_link {
+        margin: 15px;
+
+        .directory_link {
+          position: relative;
+          padding: 10px;
+          text-decoration: none;
+          color: $default-navigation--link_textColor;
+          transition: $default_transitionEffect;
+          &:hover {
+            color: $hovered-navigation--link_textColor;
+            &::before {
+              @include showElements();
+            }
+          }
+
+          &::before {
+            @include hiddenElements();
+            position: absolute;
+            content: "";
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            transform: translateY(10px);
+            border-radius: 16px;
+            background-color: $primaryColor;
+          }
+        }
+      }
+    }
+  }
+
+  &.active,
+  &.active .nav_container .user_profile-field.active,
+  &.active .nav_container .nav_links {
+    @include showElements();
+  }
+}
+
+/* Responsive Part */
+
+@media screen and (max-width: 550px) {
+  nav {
+    .nav_container {
+      padding: 50px 0;
+      .user_profile-field {
+        flex-direction: column;
+        .user_profile-image {
+          margin-right: 0;
+        }
+
+        .profile_settings_field {
+          align-items: center;
+        }
+      }
+    }
+  }
+}

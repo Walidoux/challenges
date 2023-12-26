@@ -1,0 +1,56 @@
+@import "./../base/root";
+
+@mixin PositionGroup($stopLeft, $bottomRight, $value: 0) {
+  position: absolute;
+  @if $stopLeft {
+    top: #{$value};
+    left: #{$value};
+  } @else {
+    bottom: #{$value};
+    right: #{$value};
+  }
+}
+
+.background {
+  position: fixed;
+  overflow: hidden;
+  min-height: 100vh;
+  min-width: 100vw;
+  user-select: none;
+  z-index: -1000;
+  top: 0;
+
+  .top {
+    @include PositionGroup(true, false);
+
+    & img:first-child {
+      @include PositionGroup(true, false);
+    }
+
+    & img:last-child {
+      @include PositionGroup(true, false, "-150px");
+    }
+  }
+
+  .bottom {
+    @include PositionGroup(false, true);
+
+    & img:first-child {
+      @include PositionGroup(false, true);
+    }
+
+    & img:last-child {
+      @include PositionGroup(false, true, "-150px");
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  img.triangle {
+    height: 150px;
+  }
+
+  img.rectangle {
+    height: 450px;
+  }
+}

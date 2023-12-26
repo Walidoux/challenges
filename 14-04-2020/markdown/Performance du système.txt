@@ -1,0 +1,10 @@
+	Le Système OS basé sur le noyaux linux (kernel 5.6) et le système ubuntu 18.04 est un monstre de performance :
+Sur un disque dur méchanique HDD bien remplis WaveOS met au alentour des 50 seconde a démarrer tandis que windaube met a peu près 1.50 minute pour les chanceux au démmarage.
+Et sur un ssd la vitesse de démarage est équivalente a windaube.
+En therme de lancement de programme il est aussi plus rapide
+Il est aussi plus rapide que jamais lors du lancement d'un niveaux sur un jeux vidéo ( j'usqu'a 3 fois plus rapide ).
+
+
+
+
+

@@ -1,0 +1,16 @@
+L'environnement Linux est déjà de lui même l'environnement le plus sécuriser mais nous 
+voulons que nos utilisateur soit le mieux protéger possible pour que vos donné soit sécurisé. 
+C'est pourquoi nous avons intégrer pour la premiere fois dans 
+une distribution linux.
+Un antivirus nommé ClamTk qui est préinstaller sur votre os
+Il est dailleur pas nouveau puisque il est installer déjà sur beaucoup de machine tournant sous des
+système ubuntu et est mis a jour régulierement et ne ralenti pas votre ordinateur.
+
+Nous conseillon aussi a tout nos utilisateur de modifier le mots de passe administrateur par défault qui est:
+
+wave
+
+pour un mot de passe personnel plus sécurisé.
+
+Veuillez aussi mettre a jour le système ubuntu ou est basé Wave il suffit d'aller dans les paramètre
+et d'aller dans détail et la vous chercherait une 

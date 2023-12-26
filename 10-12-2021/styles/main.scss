@@ -1,0 +1,120 @@
+@use "base";
+@use "abstracts" as *;
+@use "utilities" as *;
+
+@import "swiper/scss";
+@import "swiper/scss/scrollbar";
+
+.title {
+  text-align: center;
+  color: var(--clr-secondary-1000);
+  transition: $default_transitionEffect;
+}
+
+.illustration {
+  filter: $default_dropShadowEffect;
+  height: auto;
+  user-select: none;
+}
+
+section {
+  position: relative;
+  padding: 50px 0;
+
+  .container {
+    @include displayFlex(center, space-between, row);
+    @extend %container;
+  }
+
+  &.secondary .container {
+    @include displayFlex(center, space-between, row);
+
+    .left_part {
+      @include displayFlex(flex-start, flex-start, column);
+      max-width: 500px;
+
+      .description {
+        color: var(--clr-secondary-800);
+        margin-top: 20px;
+        max-width: 400px;
+        letter-spacing: 1px;
+      }
+
+      .link {
+        @extend %button;
+        margin-top: 50px;
+      }
+    }
+
+    @media screen and (max-width: 750px) {
+      @include displayFlex(center, center, column);
+      text-align: center;
+
+      .left_part {
+        padding: 0 10px;
+
+        .title,
+        .link {
+          margin: 0 auto;
+        }
+
+        .link {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+
+  &.quinary {
+    padding: 0 25px;
+
+    .container {
+      @include displayFlex(center, center, row);
+      background-color: var(--clr-primary-400);
+      border-radius: 24px;
+      padding: 50px 80px;
+
+      .left_part {
+        @include displayFlex(flex-start, center, column);
+        margin-right: 50px;
+
+        .title {
+          color: white;
+          text-align: start;
+          font-size: 2.5rem;
+        }
+
+        input[type="text"] {
+          padding: 20px 30px;
+          border-radius: 50px;
+          margin: 20px 0;
+          outline: none;
+          border: none;
+          font-family: "InterRegular", sans-serif;
+          background: white;
+        }
+
+        input[type="submit"] {
+          @extend %button;
+          margin-top: 10px;
+          background-color: white;
+          color: var(--clr-primary-400);
+        }
+      }
+
+      @media screen and (max-width: 750px) {
+        flex-direction: column;
+
+        .left_part {
+          @include displayFlex(center, center, column);
+          margin-right: 0;
+          margin-bottom: 50px;
+
+          .title {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

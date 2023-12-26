@@ -1,0 +1,81 @@
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 10vh;
+    border-bottom: 1px solid rgba(199, 199, 199, 0.3);
+    background-color: rgb(32, 44, 54);
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 20px;
+    font-weight: bold;
+}
+
+header li .active {
+    color: red;
+}
+
+header li a::before,
+header li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    margin: -5px 0 -5px 0;
+    left: 0;
+    background-color: red;
+    transform: scaleX(0);
+    transition: all .5s;
+}
+
+header ul li a::before {
+    top: 0;
+    transform-origin: left;
+}
+
+header ul li a::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+header li a:hover::before,
+header li a:hover::after {
+    transform: scaleX(1);
+    height: 2px;
+}
+
+header span i {
+    margin-right: 13px;
+}
+
+header span a {
+    background: linear-gradient(to left, rgb(255, 217, 0), red);
+    background-size: 200%;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 500ms ease;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header span a:hover {
+    background-position: right;
+}

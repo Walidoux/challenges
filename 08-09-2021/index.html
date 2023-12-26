@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project N | Home</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="src/style/main.css">
+    <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <script defer src="app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a111cfd49e.js" crossorigin></script>
+</head>
+
+<body>
+    <button class="navigation_menu" id="navigationButton">
+        <svg width="60" height="60" viewBox="0 0 100 100">
+            <path class="line line1"
+                d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+            <path class="line line2" d="M 20,50 H 80" />
+            <path class="line line3"
+                d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+        </svg>
+    </button>
+    <nav id="navigationBar">
+        <div class="nav_container" id="navContainer">
+            <div class="user_profile-field active">
+                <img src="src/images/userProfile.png" height="100px" width="100px" class="user_profile-image">
+                <div class="profile_settings_field">
+                    <a href="to/path" target="_blank" class="link_field disconnect_link">
+                        <i id="nav_icon" class="fas fa-sign-in-alt"></i>Se déconnecter</a>
+                    <a href="to/path" target="_blank" class="link_field settings_link">
+                        <i id="nav_icon" class="fas fa-cog"></i>Paramètres profile</a>
+                </div>
+            </div>
+            <div class="user_profile-field">
+                <img src="path/to/nonValidUserProfile" height="100px" width="100px" class="user_profile-image">
+                <div class="profile_settings_field">
+                    <p class="link_field disconnect_link">Vous n'êtes pas connecté.</p>
+                    <a href="to/path" target="_blank" class="link_field settings_link">
+                        <i id="nav_icon" class="fas fa-sign-in-alt"></i>Page d'authentification</a>
+                </div>
+            </div>
+            <ul class="nav_links">
+                <li class="nav_link"><a class="directory_link active" href="to/path">Accueil</a></li>
+                <li class="nav_link"><a class="directory_link" href="to/path">Boutique</a></li>
+                <li class="nav_link"><a class="directory_link" href="to/path">Recherche</a></li>
+                <li class="nav_link"><a class="directory_link" href="to/path">Terms of services</a></li>
+                <li class="nav_link"><a class="directory_link" href="to/path">Documentation API</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <img src="src/images/Logo.svg" class="header_logo" draggable="false" alt="Logo BlockStresser">
+        <div class="header_container">
+            <h1 class="header_title">Project N</h1>
+            <p class="header_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sapiente,
+                officiis quo amet dignissimos asperiores. Dolorum numquam alias quia voluptates quaerat maiores!</p>
+            <div class="header_links-field">
+                <a href="to/path" class="header_link auth">
+                    <i id="header_link-icon" class="fas fa-sign-in-alt"></i>
+                    S'inscrire
+                </a>
+                <span class="seperation"></span>
+                <a href="to/path" class="header_link contact">
+                    <i id="header_link-icon" class="far fa-user"></i></i>
+                    Contacts
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="about">
+        <h1 class="about_title" data-aos="fade-up">Qui sommes-nous ?</h1>
+        <p class="about_description" data-aos="fade-up">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque
+            minus, beatae nemo
+            vel error totam quae molestias eius ab, illum reprehenderit.</p>
+        <div class="about_cards" data-aos="fade-up">
+            <div class="card_info">
+                <i id="card_icon" class="fas fa-bolt"></i>
+                <div class="card_info-container">
+                    <h3 class="card_container-title">Puissant</h3>
+                    <p class="card_container-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Delectus molestias eum obcaecati, fugit officia incidunt mollitia.</p>
+                </div>
+            </div>
+            <div class="card_info">
+                <i id="card_icon" class="fas fa-bolt"></i>
+                <div class="card_info-container">
+                    <h3 class="card_container-title">Ambitieux</h3>
+                    <p class="card_container-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Delectus molestias eum obcaecati, fugit officia incidunt mollitia.</p>
+                </div>
+            </div>
+            <div class="card_info">
+                <i id="card_icon" class="fas fa-bolt"></i>
+                <div class="card_info-container">
+                    <h3 class="card_container-title">Anonyme</h3>
+                    <p class="card_container-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Delectus molestias eum obcaecati, fugit officia incidunt mollitia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="informations">
+        <div class="informations_container">
+            <img src="src/images/image_infos-section.svg" data-aos="fade-right" draggable="false" class="illustration"
+                alt="Illustration of something important for this informations section">
+            <div data-aos="fade-left" class="informations_container-rightContent">
+                <div class="box">
+                    <i id="box_icon" class="fas fa-adjust"></i>
+                    <p class="box_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, fugiat! Tempore
+                        iusto dolorum magni fuga?</p>
+                </div>
+                <div class="box">
+                    <i id="box_icon" class="fab fa-bandcamp"></i>
+                    <p class="box_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, fugiat! Tempore
+                        iusto dolorum magni fuga?</p>
+                </div>
+                <div class="box">
+                    <i id="box_icon" class="fab fa-centercode"></i>
+                    <p class="box_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, fugiat! Tempore
+                        iusto dolorum magni fuga?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer_container">
+            <div class="footer_container__field">
+                <a class="directory" href="#">About</a>
+                <a class="directory" href="#">Policy</a>
+                <a class="directory" href="#">Terms</a>
+            </div>
+            <div class="footer_container__field">
+                <h2 class="title">Startup</h2>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, quae.</p>
+            </div>
+            <div class="footer_container__field">
+                <a class="directory" href="#">About</a>
+                <a class="directory" href="#"><i id="footer_icon" class="fab fa-facebook"></i></a>
+                <a class="directory" href="#"><i id="footer_icon" class="fab fa-twitter"></i></a>
+                <a class="directory" href="#"><i id="footer_icon" class="fab fa-google-plus-g"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

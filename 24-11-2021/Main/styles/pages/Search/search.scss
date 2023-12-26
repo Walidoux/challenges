@@ -1,0 +1,276 @@
+@import "./../../layout/layout";
+@import "./../../abstracts/mixins";
+@import "./../../utilities/animations";
+@import "./../../base/supports";
+
+@keyframes ShinyAnimation {
+  20%,
+  100% {
+    left: 150px;
+  }
+}
+
+@mixin ShinyStyles($action: true) {
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: -30px;
+    left: -50px;
+    height: 150px;
+    width: 30px;
+    transform: rotate(45deg);
+    background-color: rgba(255, 255, 255, 0.123);
+    animation: if($action, ShinyAnimation 3s infinite forwards, none);
+  }
+}
+
+main {
+  @include flexDisplay("center", "center", "column");
+  transition: 0.3s ease;
+  min-height: 100vh;
+
+  .container {
+    @include flexDisplay("center", "center", "column");
+    min-height: 60vh;
+    min-width: 100vw;
+    position: relative;
+
+    .icon {
+      animation: SearchAnimation 10s infinite alternate;
+    }
+
+    .description {
+      text-align: center;
+      max-width: 225px;
+      margin-top: 30px;
+      line-height: 25px;
+      letter-spacing: 1px;
+      user-select: none;
+      color: #4d4d4d;
+    }
+
+    table {
+      margin: 40px 30px;
+      border-collapse: collapse;
+      white-space: nowrap;
+      background-color: hsl(210, 7%, 15%);
+
+      .table_titles {
+        padding: 12px 30px;
+        color: rgb(216, 216, 216);
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .popup_content {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.3s ease;
+        background-color: hsl(214, 4%, 32%);
+
+        &.shown {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+      .table_informations {
+        background-color: rgb(58, 58, 63);
+        border-bottom: 1px solid rgb(78, 78, 78);
+        transition: 0.3s ease;
+        cursor: grab;
+
+        .table_content {
+          padding: 12px 20px;
+          color: rgb(223, 223, 223);
+          text-align: center;
+        }
+      }
+    }
+
+    &.search {
+      cursor: pointer;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &.hidden {
+    @include Blur_Firefox_Support();
+  }
+}
+
+// Popup Searching
+
+.searching_popup {
+  @include flexDisplay("center", "center", "column");
+  @include Blur_Firefox_Support();
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: 1000;
+  transition: 0.3s ease;
+
+  .form_container {
+    width: #{"min(80%, 700px)"};
+
+    .container {
+      position: relative;
+      overflow: hidden;
+
+      .search_input {
+        @include flexDisplay("center", "center", "row");
+        outline: none;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        color: white;
+        width: 100%;
+        border-bottom: 2px solid white;
+        padding: 30px 10px 15px 0;
+        font-size: 2rem;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        width: 0%;
+        background-color: red;
+        transition: 0.3s ease;
+      }
+
+      &.active::before {
+        width: 100%;
+      }
+    }
+  }
+
+  .additional {
+    @include flexDisplay("center", "center", "row");
+    width: fit-content;
+    position: relative;
+    margin-top: 20px;
+
+    .checkbox_input {
+      @include Component_Toggler(35px, 60px);
+    }
+
+    .label-checkbox_input {
+      font-size: 1.2rem;
+      color: white;
+      user-select: none;
+      margin-left: 15px;
+    }
+  }
+
+  .close_button {
+    position: fixed;
+    padding: 40px;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    transition: 0.3s ease;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+// Output Section
+
+.output_section {
+  display: none; /* Not permanent */
+  position: fixed;
+  top: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  z-index: 10000;
+  pointer-events: none;
+  transition: 0.3s ease;
+
+  .button_swipeUp {
+    @include ShinyStyles(true);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 60px;
+    outline: none;
+    border: none;
+    z-index: 1;
+    padding: 0 30px;
+    cursor: pointer;
+    pointer-events: fill;
+    transition: 0.3s ease;
+    transform: translateX(-50%);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    background-color: hsl(210, 7%, 11%);
+
+    img {
+      transition: 0.3s ease;
+    }
+
+    &:hover img {
+      transform: translateY(-5px);
+    }
+  }
+
+  .output_container {
+    @include flexDisplay("center", "baseline", "column");
+    position: relative;
+    min-height: 80vh;
+    width: 100%;
+    transition: 0.3s ease;
+    background-color: hsl(210, 7%, 11%);
+    transform: translateY(130%);
+  }
+
+  &.shown {
+    @include Blur_Firefox_Support();
+    pointer-events: fill;
+
+    & .button_swipeUp {
+      @include ShinyStyles(false);
+      bottom: 79%;
+
+      .icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    .output_container {
+      transform: translateY(25%);
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .output_section {
+    .button_swipeUp {
+      bottom: 7.9%;
+      background-color: hsl(216, 7%, 13%);
+    }
+
+    &.shown .button_swipeUp {
+      border-bottom: none;
+      background-color: hsl(210, 7%, 11%);
+    }
+  }
+}

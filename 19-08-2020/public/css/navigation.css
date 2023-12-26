@@ -1,0 +1,101 @@
+
+main {
+    position: relative;
+    background: url('../../images/bg.png') no-repeat;
+    box-shadow: 0 13px 20px rgba(0, 0, 0, 0.3);
+    border-bottom: 5px solid #F78618;
+    background-size: cover;
+    min-height: 60vh;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.61);
+    z-index: 0;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 20vh;
+    z-index: 1;
+}
+
+nav ul.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul.nav-links li a {
+    position: relative;
+    margin: 20px;
+    padding: 10px 0 10px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+nav .fa-home, nav .fa-coins, nav .fa-users, nav .fa-question-circle, nav .fa-address-card {
+    margin-right: 10px;
+}
+
+nav ul.nav-links li a.active::before {
+    width: 100%;
+    background-color: #F78618;
+}
+
+nav ul.nav-links li a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 5px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul.nav-links li a:hover::before {
+    width: 100%;
+}
+
+nav .user {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+nav .user a {
+    color: #fff;
+    margin: 5px;
+    padding: 4px 15px;
+    border-radius: 2px;
+    text-decoration: none;
+}
+
+nav .user .login {
+    background-color: #00bc2b;
+}
+
+nav .user .login:hover {
+    background-color: #018f22;
+}
+
+nav .user .register {
+    background-color: #eb9700;
+}
+
+nav .user .register:hover {
+    background-color: #b67703;
+}

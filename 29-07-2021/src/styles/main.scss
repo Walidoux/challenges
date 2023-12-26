@@ -1,0 +1,44 @@
+@import url(https://allfont.net/allfont.css?fonts=comic-sans-ms);
+@import "./settings";
+@import "./components/board";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $background_color no-repeat;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 10px 40px;
+
+  & .logo_text {
+    margin: 5px 0 0 15px;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.test_button,
+.span_test {
+    margin-left: 50px;
+    color: white
+}
+
+.test_button {
+  padding: 12px 35px;
+  border: 1px solid #fff;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}

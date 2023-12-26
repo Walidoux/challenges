@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin Panel</title>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/panel/panel.css">
+        
+        <script src="https://kit.fontawesome.com/a111cfd49e.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+
+        <div class="iframe">
+            <div class="iframe_left">
+                <div class="input_file">
+                    <img src="images/staffMembers/profil1.png" class="input_image" draggable="false" alt="Profil de l'utilisateur">
+                    <p class="hovered_message-profil">Changer d'avatar</p>
+                    <input type="file" name="selector_files" class="input_selector">
+                    <label for="selector_files"><i id="file_icon" class="fas fa-file-upload"></i></label>
+                </div>
+                <div class="field">
+                    <p class="title">Date de création du compte :</p>
+                    <p class="value">20/20/2021</p>
+                </div>
+                <div class="field">
+                    <p class="title">Changement ID Discord <i style="color: #7289DA;margin-left: 8px;" class="fab fa-discord"></i></p>
+                    <form action="#" method="POST">
+                        <input type="text" maxlength="35" placeholder="Nouveau ID Discord" required>
+                        <!-- To Do Javascript Code (Only Numbers Input) -->
+                        <input type="submit" value="Valider">
+                    </form>
+                </div>
+                <div class="field">
+                    <p class="title">Changement ID Telegram <i style="color: #3999c9;margin-left: 8px;" class="fab fa-telegram"></i></p>
+                    <form action="#" method="POST">
+                        <input type="text" maxlength="35" placeholder="Nouveau ID Telegram" required>
+                        <!-- To Do Javascript Code (Only Numbers Input) -->
+                        <input type="submit" value="Valider">
+                    </form>
+                </div>
+                <p class="user_status">
+                    <span id="text">Status :</span>
+                    <span id="connected"></span>
+                    <span id="disconnected"></span>
+                </p>
+            </div>
+
+            <div class="iframe_right">
+
+                <!--
+                        Website used for unicodes :       https://emojiguide.org/
+
+                        Crown: "&#128081;"                For Admins/Owners
+                        Sheild: "&#128737;&#65039;"       For Mods
+                        Satellite: "&#128752;&#65039;"    For Dumpers
+                        Newspaper: "&#128240;"            For Promoters
+                -->
+
+                <form method="POST" class="form_inputs">
+                    <input type="text" name="userName_input" placeholder="Nouveau pseudonyme" required><input type="submit" value="Valider">
+                </form>
+                <form method="POST" class="form_inputs">
+                    <div class="input_selector">
+                        <div class="selectorField">
+                            <p id="selector">Choisissez le rôle...</p>
+                            <i id="icon_selector" class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="list">
+                            <li class="options"><div class="icons">&#128081;</div> Administrateur</li>
+                            <li class="options"><div class="icons">&#128737;&#65039;</div> Modérateur</li>
+                            <li class="options"><div class="icons">&#128752;&#65039;</div> Dumper</li>
+                            <li class="options"><div class="icons">&#128240;</div> Promoteur</li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="newRoleInput" value="Promoteur">
+                    <input type="submit" value="Valider">
+                </form>
+                <form method="POST" class="form_inputs">
+                    <div class="input_selector">
+                        <div class="selectorField">
+                            <p id="selector">Choisissez l'abonnement...</p>
+                            <i id="icon_selector" class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="list">
+                            <li class="options"><div class="icons">&#128081;</div> Administrateur</li>
+                            <li class="options"><div class="icons">&#128737;&#65039;</div> Modérateur</li>
+                            <li class="options"><div class="icons">&#128752;&#65039;</div> Dumper</li>
+                            <li class="options"><div class="icons">&#128240;</div> Promoteur</li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="newRoleInput" value="Promoteur">
+                    <input type="submit" value="Valider">
+                </form>
+                <form method="POST" class="form_inputs">
+                    <div class="input_selector">
+                        <p class="paragraph">Nombre de Hash Crack/Jours :</p>
+                        <div class="number_evaluator">
+                            <p class="indicator">/100</p>
+                            <input type="text" name="evaluator" placeholder="000" maxlength="3" required>
+                            <input type="submit" value="Valider">
+                        </div>
+                    </div>
+                </form>
+                <form method="POST" class="form_inputs">
+                    <div class="input_selector">
+                        <p class="paragraph">Abonnement restant :</p>
+                        <div class="number_evaluator">
+                            <div class="evaluations">
+                                <span id="plus"><i class="fas fa-chevron-up"></i></span>
+                                <input type="text" name="evaluated_number" value="0"><span class="key">j</span>
+                                <span id="minus"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="evaluations">
+                                <span id="plus"><i class="fas fa-chevron-up"></i></span>
+                                <input type="text" name="evaluated_number" value="0"><span class="key">h</span>
+                                <span id="minus"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="evaluations">
+                                <span id="plus"><i class="fas fa-chevron-up"></i></span>
+                                <input type="text" name="evaluated_number" value="0"><span class="key">m</span>
+                                <span id="minus"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <input type="submit" value="Valider">
+                        </div>
+                    </div>
+                </form>
+                <form method="POST" class="form_inputs admin">
+                    <div class="inputs_field">
+                        <input type="checkbox" class="checkbox_input" required>
+                        <p class="paragraph important">Bannir</p>
+                        <div class="inputs_field-container">
+                            <input type="text" placeholder="Raison du bannissement" required>
+                            <input type="submit" value="Valider">
+                            <input type="checkbox">
+                            <p class="paragraph important">Ban IP</p>
+                        </div>
+                    </div>
+                </form>
+                <form method="POST" class="form_inputs mod">
+                    <div class="inputs_field">
+                        <input type="checkbox" class="checkbox_input" required>
+                        <p class="paragraph important">Bannir</p>
+                        <div class="inputs_field-container">
+                            <input type="text" placeholder="Raison du bannissement" required>
+                            <input type="submit" value="Valider">
+                            <input type="checkbox">
+                            <p class="paragraph important">Ban IP</p>
+                        </div>
+                    </div>
+                </form>
+                <form method="POST" class="form_inputs">
+                    <div class="input_selector">
+                        <div class="selectorField">
+                            <p id="selector">Choisissez le rôle...</p>
+                            <i id="icon_selector" class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul class="list">
+                            <li class="options">Rien</li>
+                            <li class="options">En attente</li>
+                            <li class="options validation">Validée</li>
+                        </ul>
+                        <input type="text" class="validating" placeholder="placehodler à modif">
+                    </div>
+                    <input type="hidden" name="newRoleInput">
+                    <input type="submit" value="Valider">
+                </form>
+            </div>
+        </div>
+        
+        <script defer src="javascript/adminUser.js"></script>
+    </body>
+</html>

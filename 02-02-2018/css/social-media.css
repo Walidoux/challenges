@@ -1,0 +1,272 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo|zocial);
+@import url(http://fonts.googleapis.com/css?family=Sintony);
+@keyframes slideInDown {
+  0% {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  visibility: visible;
+  }
+  100% {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  }
+  }
+@keyframes angry-animation {
+  0%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40%{
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  50%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  60%{
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  80%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100%{
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
+i {
+  font-style: normal;
+}
+
+ul.social-links {
+  list-style: none;
+  position: relative;
+  display: block;
+  top: 147px;
+  right: 120px;
+}
+ul.social-links .social-icon {
+  width: 4em;
+  height: 4em;
+  float: left;
+  margin: 8px;
+  border-radius: 100%;
+  box-shadow: 0 0.3em 0.25em rgba(0, 0, 0, 0.1);
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+ul.social-links .social-icon a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  transform: scale(1.15) translateZ(0);
+}
+ul.social-links .social-icon a:hover {
+  transform: scale(1.15) translateZ(0);
+}
+ul.social-links .social-icon a span {
+  display: block;
+  float: left;
+  width: 1em;
+  height: 4em;
+  overflow: hidden;
+  margin: 0;
+  line-height: 1.1;
+  padding: 0;
+  font-size: 1.4em;
+  position: relative;
+}
+ul.social-links .social-icon a span:nth-child(1) {
+  text-align: right;
+  position: absolute;
+}
+ul.social-links .social-icon a span:nth-child(1) i {
+  display: block;
+  margin-top: .55em;
+  margin-left: .35em;
+  color: #fff;
+}
+ul.social-links .social-icon a span:nth-child(2) {
+  text-align: left;
+  margin-left: 0em;
+  width: 40%;
+  position: relative;
+  margin: 0 0em 0 1em;
+  text-align: left;
+  z-index: 2;
+}
+ul.social-links .social-icon a span:nth-child(2) i {
+  margin-top: .55em;
+  margin-left: -.65em;
+  display: block;
+  color: #ccc;
+}
+ul.social-links .social-icon.twitter {
+  background-color: #00cdf8;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00cdf8), color-stop(50%, #00bdda));
+  background-image: -webkit-linear-gradient(left, #00cdf8 50%, #00bdda 50%);
+  background-image: linear-gradient(to right,#00cdf8 50%, #00bdda 50%);
+}
+ul.social-links .social-icon.twitter a {
+  left: .74em;
+  top: .25em;
+}
+ul.social-links .social-icon.twitter span:nth-child(2) i {
+  color: #fef1e0;
+}
+ul.social-links .social-icon.facebook {
+  background-color: #6e8cca;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #6e8cca), color-stop(50%, #5389c9));
+  background-image: -webkit-linear-gradient(left, #6e8cca 50%, #5389c9 50%);
+  background-image: linear-gradient(to right,#6e8cca 50%, #5389c9 50%);
+}
+ul.social-links .social-icon.facebook a {
+  left: 1.09em;
+  top: .2em;
+}
+ul.social-links .social-icon.facebook span:nth-child(1) {
+  margin-left: -.25em;
+}
+ul.social-links .social-icon.facebook span:nth-child(2) {
+  margin-left: .74em;
+}
+ul.social-links .social-icon.facebook span:nth-child(2) i {
+  color: #c2ecf8;
+}
+ul.social-links .social-icon.dribbble {
+  background-color: #e6659d;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #e6659d), color-stop(50%, #be639c));
+  background-image: -webkit-linear-gradient(left, #e6659d 50%, #be639c 50%);
+  background-image: linear-gradient(to right,#e6659d 50%, #be639c 50%);
+}
+ul.social-links .social-icon.dribbble a {
+  left: .80em;
+  top: .25em;
+}
+ul.social-links .social-icon.dribbble span:nth-child(1) {
+  margin-left: -.08em;
+}
+ul.social-links .social-icon.dribbble span:nth-child(2) {
+  margin-left: .92em;
+}
+ul.social-links .social-icon.dribbble span:nth-child(2) i {
+  color: #d9e9f8;
+}
+ul.social-links .social-icon.behance {
+  background-color: #07a2e5;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #07a2e5), color-stop(50%, #0395e2));
+  background-image: -webkit-linear-gradient(left, #07a2e5 50%, #0395e2 50%);
+  background-image: linear-gradient(to right,#07a2e5 50%, #0395e2 50%);
+}
+ul.social-links .social-icon.behance a {
+  left: .80em;
+  top: .25em;
+}
+ul.social-links .social-icon.behance span:nth-child(1) {
+  margin-left: -.06em;
+}
+ul.social-links .social-icon.behance span:nth-child(2) {
+  margin-left: .92em;
+}
+ul.social-links .social-icon.behance span:nth-child(2) i {
+  color: #75e3fe;
+}
+ul.social-links .social-icon.youtube {
+  background-color: #e23c48;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #e23c48), color-stop(50%, #b83c47));
+  background-image: -webkit-linear-gradient(left, #e23c48 50%, #b83c47 50%);
+  background-image: linear-gradient(to right,#e23c48 50%, #b83c47 50%);
+}
+ul.social-links .social-icon.youtube a {
+  left: .80em;
+  top: .15em;
+}
+ul.social-links .social-icon.youtube span:nth-child(1) {
+  margin-left: -.06em;
+}
+ul.social-links .social-icon.youtube span:nth-child(2) {
+  margin-left: .92em;
+}
+ul.social-links .social-icon.youtube span:nth-child(2) i {
+  color: #d1e5ec;
+}
+ul.social-links .social-icon.linkedin {
+  background-color: #4495c0;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #4495c0), color-stop(50%, #447fa7));
+  background-image: -webkit-linear-gradient(left, #4495c0 50%, #447fa7 50%);
+  background-image: linear-gradient(to right,#4495c0 50%, #447fa7 50%);
+}
+ul.social-links .social-icon.linkedin a {
+  left: .80em;
+  top: .11em;
+}
+ul.social-links .social-icon.linkedin span:nth-child(1) {
+  margin-left: -.06em;
+}
+ul.social-links .social-icon.linkedin span:nth-child(2) {
+  margin-left: .92em;
+}
+ul.social-links .social-icon.linkedin span:nth-child(2) i {
+  color: #f4dbe1;
+}
+ul.social-links .social-icon.skype {
+  background-color: #00cff7;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #00cff7), color-stop(50%, #01c7f8));
+  background-image: -webkit-linear-gradient(left, #00cff7 50%, #01c7f8 50%);
+  background-image: linear-gradient(to right,#00cff7 50%, #01c7f8 50%);
+}
+ul.social-links .social-icon.skype a {
+  left: .80em;
+  top: .2em;
+}
+ul.social-links .social-icon.skype span:nth-child(1) {
+  margin-left: -.06em;
+}
+ul.social-links .social-icon.skype span:nth-child(2) {
+  margin-left: .92em;
+}
+ul.social-links .social-icon.skype span:nth-child(2) i {
+  color: #94f0ff;
+}
+ul.social-links .social-icon.pinterest {
+  background-color: #f34256;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f34256), color-stop(50%, #ca3f56));
+  background-image: -webkit-linear-gradient(left, #f34256 50%, #ca3f56 50%);
+  background-image: linear-gradient(to right,#f34256 50%, #ca3f56 50%);
+}
+ul.social-links .social-icon.pinterest a {
+  left: .80em;
+  top: .25em;
+}
+ul.social-links .social-icon.pinterest span:nth-child(1) {
+  margin-left: -.06em;
+}
+ul.social-links .social-icon.pinterest span:nth-child(2) {
+  margin-left: .92em;
+}
+ul.social-links .social-icon.pinterest span:nth-child(2) i {
+  color: #d9fbfd;
+}
+
+.social-links:hover .social-icon:not(:hover) {
+  opacity: 0.6;
+}

@@ -1,0 +1,35 @@
+
+@font-face {
+    font-family: PoppinsRegular;
+    src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: PoppinsBold;
+    src: url('../fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+    font-family: SourceSansPro;
+    src: url('../fonts/SourceSansPro-Regular.ttf');
+}
+
+@font-face {
+    font-family: OpenSansRegular;
+    src: url('../fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: PTSans;
+    src: url('../fonts/PTSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: KarlaRegular;
+    src: url('../fonts/Karla-Regular.ttf');
+}
+
+@font-face {
+    font-family: KarlaBold;
+    src: url('../fonts/Karla-Bold.ttf');
+}

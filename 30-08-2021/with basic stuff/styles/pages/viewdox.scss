@@ -1,0 +1,193 @@
+@import "./../settings", "./../components/navbar", "./../components/footer";
+
+.main {
+  @include centerAll();
+  padding: 50px 0;
+
+  &_content {
+    position: relative;
+    width: 600px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.2);
+
+    .main_container {
+      @include centerAll();
+      flex-direction: column;
+      position: relative;
+      height: 200px;
+      width: 100%;
+      border-top-left-radius: 8px;
+      background-color: rgb(34, 34, 34);
+      box-shadow: 0 10px 20px rgba($color: $primary_color, $alpha: 0.2);
+      border-bottom: 3px solid $primary_color;
+      overflow: hidden;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("./../../assets/images/montains_background.svg")
+          no-repeat;
+        background-size: cover;
+      }
+
+      #main_container-icon {
+        margin-right: 5px;
+      }
+
+      &-title {
+        color: white;
+        padding: 0 25px;
+        text-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.5);
+      }
+
+      &-creationDate {
+        position: absolute;
+        top: 0;
+        padding: 6px 15px;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        color: rgb(184, 184, 184);
+        box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.2);
+        background-color: rgba($color: #9b9b9b, $alpha: 0.2);
+
+        & .important {
+          font-weight: bold;
+          color: white;
+        }
+      }
+
+      &-views {
+        position: absolute;
+        color: white;
+        top: 10px;
+        right: 15px;
+        text-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.5);
+      }
+
+      &-miniSection {
+        position: absolute;
+        display: flex;
+        bottom: 10px;
+
+        & .container {
+          @include centerAll();
+          margin: 0 10px;
+          font-size: 1.1rem;
+          color: white;
+        }
+      }
+    }
+
+    .main_textarea:disabled {
+      height: 400px;
+      width: 100%;
+      font-family: $default-fontFamily;
+      padding: 10px 15px;
+      resize: none;
+      outline: none;
+      cursor: not-allowed;
+      border: none;
+      border-bottom-left-radius: 8px;
+      background-color: rgb(53, 53, 53);
+      color: white;
+    }
+  }
+
+  &_chatbox {
+    position: relative;
+    height: 600px;
+    width: 350px;
+    overflow: hidden;
+    background-color: rgb(34, 34, 34);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.2);
+
+    &-comments {
+      height: 550px;
+      width: 100%;
+      padding: 5px 25px;
+      overflow-x: hidden;
+
+      .comment {
+        display: flex;
+        margin: 25px 0;
+
+        &_userImage {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+        }
+
+        &_rightContent {
+          margin-left: 20px;
+          transform: translateY(-5px);
+
+          &-username {
+            color: white;
+            width: fit-content;
+            font-size: 1.1rem;
+          }
+
+          &-textinfo {
+            color: rgb(187, 187, 187);
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+
+    &-form {
+      display: flex;
+      height: 50px;
+      width: 100%;
+      box-shadow: 0 -10px 20px rgba($color: $primary_color, $alpha: 0.2);
+      border-top: 3px solid $primary_color;
+
+      .text_input {
+        width: 100%;
+        height: 50px;
+        font-size: 1.05rem;
+        outline: none;
+        border: none;
+        color: white;
+        background: none;
+        padding: 0 15px;
+        font-family: $default-fontFamily;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      .submit_button {
+        position: relative;
+
+        &-input {
+          cursor: pointer;
+          border: none;
+          background: none;
+          height: 100%;
+          width: 60px;
+        }
+
+        & #icon {
+          @include centerAll();
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          font-size: 1.3rem;
+          color: white;
+          text-shadow: 0 0 5px rgba($color: white, $alpha: 0.2);
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}

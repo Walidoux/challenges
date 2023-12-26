@@ -1,0 +1,68 @@
+@use "../../styles/abstracts" as *;
+@use "../../styles/utilities" as *;
+
+.header {
+  position: relative;
+  padding: 50px 0;
+
+  .container {
+    @include displayFlex(center, space-between, row);
+    @extend %container;
+
+    .illustration {
+      filter: $default_dropShadowEffect;
+      user-select: none;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .right_content {
+      width: 375px;
+      margin-left: 50px;
+
+      .title {
+        max-width: 400px;
+        font-weight: bolder;
+        letter-spacing: 2px;
+        color: var(--clr-secondary-1000);
+        transition: $default_transitionEffect;
+      }
+
+      .description {
+        margin: 30px 0 50px 0;
+        max-width: 375px;
+        color: var(--clr-secondary-800);
+        transition: $default_transitionEffect;
+      }
+
+      .link {
+        @extend %button;
+      }
+
+      @include pseudoElement(before, 81px, 150px) {
+        background: url("/images/nav-light.png") no-repeat;
+        left: 30px;
+        bottom: -60px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header .container {
+    flex-direction: column-reverse;
+
+    .right_content {
+      @include displayFlex(center, center, column);
+      text-align: center;
+      margin: 0 0 100px 0;
+      width: 100%;
+      padding: 0 25px;
+
+      &::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

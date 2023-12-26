@@ -1,0 +1,55 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: SourceSansPro;
+}
+
+html, body {
+    background: url('../images/Header/404-bg.svg');
+    height: 20%;
+}
+
+/*  Main  */
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main .title {
+    font-size: 5rem;
+    color: #fff;
+    font-family: PoppinsBold;
+}
+
+main .description {
+    font-size: 1.3rem;
+    color: rgb(231, 231, 231);
+    max-width: 80%;
+    text-align: center;
+}
+
+main .button {
+    margin-top: 100px;
+    padding: 15px 30px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    outline: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #fff;
+    color: #0069ff;
+    font-family: PoppinsRegular;
+    transition: .5s;
+}
+
+main .button:hover {
+    background-color: transparent;
+    border: 0.5px solid #fff;
+    color: #fff;
+}

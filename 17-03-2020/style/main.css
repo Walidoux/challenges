@@ -1,0 +1,63 @@
+@keyframes animation-box{0%{box-shadow:0 0 0 0 transparent}100%{box-shadow:0 0 20px 0 rgba(0,0,0,.35)}}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to left, #4641CE, rgb(161, 156, 255));
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.box {
+    width: 580px;
+    height: 230px;
+    border-radius: 12px;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    transition: .4s cubic-bezier(.25,.46,.45,.94);
+}
+
+.box:hover {
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.35);
+}
+
+.image-box {
+    float: left;
+    width: 170px;
+    height: 170px;
+    margin: 30px;
+}
+
+h3 {
+    color: rgb(114, 113, 113);
+    margin: 20px 5px;
+}
+
+p {
+    width: 495px;
+}
+
+.button-box {
+    float: right;
+    margin: auto 30px;
+    padding: 8px 20px 8px 20px;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(to left, rgb(37, 26, 252), rgb(101, 96, 243));
+    border-radius: 20px;
+    opacity: 0.6;
+    transition: .5s;
+}
+
+.button-box:hover {
+    background: linear-gradient(to left, rgb(101, 96, 243), rgb(37, 26, 252));
+    opacity: 1;
+}

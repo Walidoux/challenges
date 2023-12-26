@@ -1,0 +1,37 @@
+@import "./../settings";
+
+.footer {
+  @include centerAll();
+  flex-direction: column;
+  padding: 20px 0;
+  margin-top: 50px;
+  background-color: #212223;
+  box-shadow: 0 -5px 15px rgba($color: #212223, $alpha: 1);
+
+  &_items-list {
+    display: flex;
+    list-style: none;
+
+    & .item {
+      margin: 5px;
+
+      & .link {
+        color: rgb(224, 224, 224);
+        text-decoration: none;
+        padding: 5px;
+        transition: $default-transitionEffect;
+
+        &:hover {
+          text-decoration: underline;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &_copyright {
+    color: white;
+    font-weight: 500;
+    max-width: 80%;
+  }
+}

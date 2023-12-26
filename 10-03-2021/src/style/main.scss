@@ -1,0 +1,18 @@
+@import 'settings';
+
+// Components
+@import 'components/header', 'components/todolist', 'components/todo',
+  'components/itemstate';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fnt-defaultFamily;
+  font-size: $fnz-defaultSize;
+}

@@ -1,0 +1,27 @@
+@import './../settings';
+
+.itemStates_container {
+  @include elementsCenterer();
+  height: 50px;
+  .itemStates_container-list {
+    display: flex;
+    list-style: none;
+
+    &--item {
+      margin: 5px;
+      padding: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      color: rgb(122, 121, 121);
+      transition: $trf-defaultEffect;
+
+      &:hover {
+        color: rgb(70, 67, 67);
+      }
+
+      &.active {
+        color: rgb(70, 70, 235);
+      }
+    }
+  }
+}

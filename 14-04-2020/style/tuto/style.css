@@ -1,0 +1,180 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/*********************************************************************/
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 10vh;
+    border-bottom: 1px solid rgba(199, 199, 199, 0.3);
+    background-color: rgb(32, 44, 54);
+}
+
+header ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 20px;
+    font-weight: bold;
+}
+
+header li .active {
+    color: red;
+}
+
+header li a::before,
+header li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    margin: -5px 0 -5px 0;
+    left: 0;
+    background-color: red;
+    transform: scaleX(0);
+    transition: all .5s;
+}
+
+header ul li a::before {
+    top: 0;
+    transform-origin: left;
+}
+
+header ul li a::after {
+    bottom: 0;
+    transform-origin: right;
+}
+
+header li a:hover::before,
+header li a:hover::after {
+    transform: scaleX(1);
+    height: 2px;
+}
+
+header span i {
+    margin-right: 13px;
+}
+
+header span a {
+    background: linear-gradient(to left, rgb(255, 217, 0), red);
+    background-size: 200%;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 500ms ease;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+header span a:hover {
+    background-position: right;
+}
+
+/*************************************************************************/
+
+main {
+    background: linear-gradient(-45deg, rgb(64, 67, 71), rgb(24, 36, 51));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 90vh;
+}
+
+main .faq {
+    width: 1000px;
+    margin: 20px;
+}
+
+main .faq .question {
+    background-color: #fff;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 20px;
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+main .faq .question:hover {
+    background-color: rgb(214, 214, 214);
+}
+
+main .faq .question i {
+    font-size: 2rem;
+}
+
+main .faq .reply {
+    text-align: center;
+    display: none;
+    padding: 20px;
+    color: #fff;
+    background-color: #242833;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+main .faq .reply a {
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main .faq.active i {
+    transform: rotate(-90deg);
+}
+
+main .faq .reply.active {
+    display: block;
+}
+
+/**********************************************************************/
+
+@media screen and (max-width: 1050px) {
+    main .faq {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    main .faq {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    main .faq {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    main .faq {
+        width: 350px;
+    }
+}

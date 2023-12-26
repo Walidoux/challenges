@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PirateStealer - Settings</title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+	<script src="js/particles.js"></script>
+	<script defer src="js/settings.js"></script>
+</head>
+
+<body>
+	<div class="floating_toolbar">
+		<div class="fbtl_container">
+			<a class="tool_button" href="https://discord.gg/grabber" target="_blank" rel="noopener">
+				<span class="material-icons">diamond</span>
+			</a>
+			<a class="tool_button active" href="/home.html">
+				<span class="material-icons">home</span>
+			</a>
+			<a class="tool_button" href="/build.html">
+				<span class="material-icons">plumbing</span>
+			</a>
+			<a class="tool_button active" href="/settings.html">
+				<span class="material-icons">tune</span>
+			</a>
+			<a class="tool_button" href="/plugins.html">
+				<span class="material-icons">extension</span>
+			</a>
+			<a class="tool_button" href="/login.html">
+				<span class="material-icons">login</span>
+			</a>
+		</div>
+	</div>
+
+	<main>
+		<div class="settings_field">
+			<h1 class="title">Settings</h1>
+			<div class="field_container">
+				<label for="disableQRAuth" class="toggle_field">
+					<label for="disableQRAuth">Disable QRAuth</label>
+					<input class="toggleSwitch" type="checkbox" role="switch" id="disableQRAuth" />
+				</label>
+				<label for="obfuscate" class="toggle_field">
+					<label for="obfuscate">Obfuscate</label>
+					<input class="toggleSwitch" type="checkbox" role="switch" id="obfuscate" />
+				</label>
+				<label for="injectNotify" class="toggle_field">
+					<label for="injectNotify">Inject Notify</label>
+					<input class="toggleSwitch" type="checkbox" role="switch" id="injectNotify" />
+				</label>
+				<label for="logoutNotify" class="toggle_field">
+					<label for="logoutNotify">Logout Notify</label>
+					<input class="toggleSwitch" type="checkbox" role="switch" id="logoutNotify" />
+				</label>
+				<label for="logoutMode" class="toggle_field">
+					<label for="logoutMode">Logout Mode</label>
+					<select class="core_select" name="Logout Mode" id="logoutMode">
+						<option value="instant">Instant</option>
+						<option value="delayed">Delayed</option>
+						<option value="false">OFF</option>
+					</select>
+				</label>
+				<label for="embedColor" class="toggle_field">
+					<label for="embedColor">Embed Color</label>
+					<input id="embedColor" class="color_input" type="color" value="#0075FF" />
+				</label>
+				<label for="webhookProtect" class="toggle_field">
+					<label for="webhookProtect">Webhook protection</label>
+					<input class="toggleSwitch" type="checkbox" role="switch" id="webhookProtect" />
+				</label>
+			</div>
+		</div>
+		<div id="particles-js"></div>
+	</main>
+
+	<footer>&copy; PirateStealer 2021</footer>
+</body>
+
+</html>

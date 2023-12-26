@@ -1,0 +1,29 @@
+@use "../abstracts/mixins" as *;
+
+%button {
+  position: relative;
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 20px 50px;
+  color: white;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-radius: 50px;
+  background-color: var(--clr-primary-600);
+  overflow: hidden;
+
+  @include pseudoElement(before, 125px, 25px) {
+    top: -30px;
+    left: -75px;
+    transform: rotate(45deg);
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: 0.5s ease;
+  }
+
+  &:hover::before {
+    left: 115%;
+  }
+}
