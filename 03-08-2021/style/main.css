@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #252836;
+  font-family: "Montserrat", sans-serif;
+  padding: 50px;
+  min-height: 100vh;
+}
+
+body::after, body::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url("../assets/Decorations.svg");
+}
+
+body .main_image {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 30px;
+}
+
+body .main_title {
+  font-size: 4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  color: #4456b5;
+  text-shadow: 0 0 30px rgba(68, 86, 181, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body .main_description {
+  color: white;
+  margin-top: 20px;
+  letter-spacing: 3px;
+}
+
+body .main_link {
+  position: relative;
+  margin-top: 30px;
+  padding: 15px 40px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid #4456b5;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-box-shadow: 0 5px 30px rgba(68, 86, 181, 0.4);
+          box-shadow: 0 5px 30px rgba(68, 86, 181, 0.4);
+  z-index: 1;
+  overflow: hidden;
+}
+
+body .main_link:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .main_link::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: #4456b5;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+body .main_link:hover::after {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+body .creator {
+  position: absolute;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  bottom: 15px;
+  width: 80%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media screen and (max-width: 500px) {
+  body .main_title {
+    letter-spacing: 5px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,262 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100vh;
+    width: 100vw;
+    background-color: #23242d;
+    font-family: Poppins, sans-serif;
+    overflow-x: hidden;
+}
+
+/*************************************************************/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 200px 0 200px;
+    min-height: 20vh;
+    color: #fff;
+}
+
+nav .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+}
+
+nav .right input {
+    position: relative;
+    margin-left: 10px;
+    outline: none;
+    -webkit-appearance: none;
+    width: 50px;
+    height: 30px;
+    background: #c6c6c6;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
+    transition: .5s;
+}
+
+nav .right input:checked {
+    background: #00C853;
+}
+
+nav .right input::before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background: #fff;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 5px #BEBCBE;
+    transition: 0.5s;
+}
+
+nav .right input:checked::before {
+    left: 20px;
+}
+
+nav .left p {
+    color: rgb(185, 185, 185);
+}
+
+/*************************************************************/
+
+.first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.first .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 250px;
+    height: 200px;
+    margin-right: 50px;
+    border-radius: 8px;
+    background-color: #303244;
+    color: #fff;
+    transition: 400ms ease;
+}
+
+.first .box#one, .first .box#two, .first .box#three, .first .box#four {
+    position: relative;
+}
+
+.first .box#three::before, .first .box#one::before, .first .box#two::before, .first .box#four::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 4px;
+}
+
+.first .box#one::before {
+    background: #4267B2;
+}
+
+.first .box#two::before {
+    background: #00acee;
+}
+
+.first .box#three::before {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+}
+
+.first .box#four::before {
+    background: #c4302b;
+}
+
+.first .box .content, .first .box .content2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.first .box .content p {
+    color: rgb(214, 214, 214);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.first .box .content img {
+    margin-right: 10px;
+}
+
+.first .box h1 {
+    margin-top: 8px;
+    height: 60px;
+    font-size: 3rem;
+}
+
+.first .box span {
+    text-transform: uppercase;
+    color: rgb(158, 158, 158);
+    letter-spacing: 5px;
+    margin-left: 10px;
+}
+
+.first .box .content2 {
+    margin-top: 20px;
+}
+
+.first .box .content2 img {
+    margin-right: 6px;
+}
+
+.first .box .content2 p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/********************************************************************/
+
+h2#title {
+    padding-left: 200px;
+    margin: 40px 0 5px;
+    color: #fff;
+}
+
+.box:hover {
+    background-color: #3c3e55;
+    transform: scale(1.1);
+}
+
+p#dark-mod {
+    display: none;
+}
+
+/********************************************************************/
+
+.second {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.second .box {
+    height: 130px;
+    margin: 20px;
+    width: 250px;
+    color: #fff;
+    border-radius: 8px;
+    background-color: #303244;
+    transition: 400ms ease;
+}
+
+.second .box .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    padding: 0 20px 0 20px;
+}
+
+.second .box .content p {
+    font-weight: bold;
+    color: rgb(214, 214, 214);
+}
+
+.second .box .content .stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second .box .content .stats img {
+    margin-right: 7px;
+}
+
+/********************************************************************/
+
+@media screen and (max-width: 1230px) {
+    .first .box {
+        margin: 30px;
+    }
+
+    h2#title {
+        text-align: center;
+        padding: 0;
+        margin: 20px 0 20px 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    nav {
+        padding: 0 70px 0 70px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    nav {
+        margin-top: 30px;
+        align-items: baseline;
+        flex-direction: column;
+    }
+
+    nav .right {
+        flex-direction: row-reverse;
+    }
+
+    nav .right p {
+        margin-left: 10px
+    }
+}

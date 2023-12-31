@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Karla', sans-serif;
+    background: linear-gradient(to top, black, rgb(56, 56, 56));
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 17vh;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.2)
+}
+
+#nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+#nav-links a {
+    margin: 15px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #fff;
+    transition: 500ms ease;
+}
+
+#nav-links a:hover {
+    color: #74F6BE;
+}
+
+.right button {
+    padding: 13px 30px;
+    outline: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background: transparent;
+    border-radius: 4px;
+    transition: 300ms ease;
+}
+
+.right button:hover {
+    background-color: #fff;
+    color: rgb(103, 218, 168);
+    transform: scale(1.05);
+}
+
+.box-burger {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.box-burger .burger {
+    height: 5px;
+    width: 35px;
+    background-color: #fff;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+}
+
+.box-burger .burger::after,
+.box-burger .burger::before {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 35px;
+    background-color: #fff;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+}
+
+.box-burger .burger::after {
+    transform: translateY(10px);
+}
+
+.box-burger .burger::before {
+    transform: translateY(-10px);
+}
+
+.box-burger.open .burger {
+    background: transparent;
+}
+
+.box-burger.open .burger::after {
+    transform: rotate(-45deg);
+}
+
+.box-burger.open .burger::before {
+    transform: rotate(45deg);
+}
+
+.overlay {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+
+
+
+
+/***********************************************************************************************/
+
+@media screen and (min-width: 900px) {
+    .box-burger {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #nav-links, .right button {
+        display: none;
+    }
+}

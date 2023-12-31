@@ -1,0 +1,262 @@
+@use "../index.scss" as index;
+
+nav {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 80px;
+  background-color: index.$var-primaryLight;
+  overflow: hidden;
+  transition: index.$var-default_transitionEffect;
+
+  .top_navigationbar {
+    @include index.mix-centerAll;
+    justify-content: stretch;
+    margin-top: 3px;
+    padding: 5px 0;
+    border-bottom: 1px solid index.$var-secondaryLight;
+
+    .logo_image {
+      min-width: 80px;
+      margin-right: 15px;
+    }
+
+    .logo_title {
+      font-weight: 600;
+      color: index.$var-primaryDark;
+      margin-left: 20px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      & span {
+        color: index.$var-secondaryDark;
+      }
+    }
+  }
+
+  .body_navigationbar {
+    padding: 10px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    scrollbar-width: thin; // For Firefox Support
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #e2e2e2;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(189, 189, 189);
+    }
+
+    .navigationbar_list {
+      list-style: none;
+
+      .item {
+        margin: 10px 0;
+        height: 60px;
+        cursor: pointer;
+
+        .field {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          transition: index.$var-default_transitionEffect;
+
+          .fake-input_text {
+            position: relative;
+            height: 30px;
+            letter-spacing: 1px;
+            color: rgb(31, 31, 31);
+            margin-top: 5px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            pointer-events: none;
+            border-bottom: 2px solid
+              rgba($color: index.$var-secondaryDark, $alpha: 0.3);
+            background: none;
+
+            &::placeholder {
+              font-family: index.$var-default_fontFamily;
+            }
+          }
+
+          &:hover {
+            background-color: rgb(219, 219, 219);
+          }
+        }
+      }
+    }
+
+    .visibilityEffect {
+      @include index.mix-removeVisibility;
+    }
+  }
+
+  .bottom_navigationbar {
+    box-shadow: 0 -5px 20px rgba($color: #272727, $alpha: 0.2);
+    z-index: 1;
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    color: index.$var-secondaryDark;
+    text-decoration: none;
+
+    &_icon {
+      height: 20px;
+      min-width: 80px;
+    }
+
+    &_text {
+      min-width: 200px;
+    }
+  }
+
+  .field,
+  .link {
+    transition: index.$var-default_transitionEffect;
+
+    &:hover,
+    &.active {
+      background-color: rgb(219, 219, 219);
+    }
+  }
+
+  &:hover {
+    width: 280px;
+
+    & .visibilityEffect {
+      @include index.mix-addVisibility;
+    }
+  }
+}
+
+.form_container {
+  @include index.mix-centerAll;
+  @include index.mix-removeVisibility;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: initial;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  .close_button {
+    position: absolute;
+    cursor: pointer;
+    top: 40px;
+    right: 40px;
+    transition: index.$var-default_transitionEffect;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  .search_form {
+    @include index.mix-centerAll();
+    position: relative;
+    height: 60px;
+    width: 1000px;
+    overflow: hidden;
+    margin: 0 50px;
+
+    .label_input {
+      position: absolute;
+      pointer-events: none;
+      left: 0;
+      min-width: 400px;
+      bottom: 4px;
+      font-size: 2rem;
+      color: rgba($color: index.$var-primaryLight, $alpha: 0.2);
+      transition: index.$var-default_transitionEffect;
+    }
+
+    .input_text {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      letter-spacing: 1px;
+      color: white;
+      font-size: 1.5rem;
+      outline: none;
+      border: none;
+      overflow: hidden;
+      border-bottom: 2px solid
+        rgba($color: index.$var-primaryLight, $alpha: 0.5);
+      background: none;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: white;
+      }
+
+      &:focus + .label_input,
+      &:valid + .label_input {
+        @include index.mix-removeVisibility;
+        font-size: 1rem;
+        transform: translateY(-30px);
+      }
+    }
+  }
+
+  &.visible {
+    @include index.mix-addVisibility;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: row;
+    bottom: 0;
+    height: 60px;
+    width: 100vw;
+
+    .top_navigationbar,
+    .link_text,
+    .fake-input_text {
+      display: none;
+    }
+
+    .body_navigationbar {
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0;
+
+      .navigationbar_list {
+        display: flex;
+
+        .item {
+          margin: 0;
+        }
+      }
+    }
+
+    .bottom_navigationbar {
+      margin-left: auto;
+      box-shadow: -5px 0 20px rgba($color: #272727, $alpha: 0.2);
+    }
+
+    &:hover {
+      width: 100vw;
+    }
+  }
+}

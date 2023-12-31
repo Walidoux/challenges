@@ -1,0 +1,44 @@
+
+body.active {
+    background-color: #fff;
+}
+
+body.active nav {
+    color: #000;
+}
+
+body.active p#light-mod {
+    display: none;
+}
+
+body.active p#dark-mod {
+    display: block;
+}
+
+body.active nav .left p {
+    color: rgb(85, 85, 85);
+}
+
+body.active .box {
+    background-color: rgb(231, 231, 231);
+}
+
+body.active .box {
+    color: #000;
+}
+
+body.active .first .box .content p {
+    color: rgb(70, 70, 70);
+}
+
+body.active .first .box span {
+    color: rgb(95, 95, 95);
+}
+
+body.active .second .box .content p {
+    color: rgb(95, 95, 95);
+}
+
+body.active h2#title {
+    color: #000;
+}

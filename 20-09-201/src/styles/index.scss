@@ -1,0 +1,19 @@
+@forward "./utils/variables" as var-*;
+@forward "./utils/directives" as mix-*;
+
+@use "./utils/variables" as global;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: global.$default_fontFamily;
+  font-size: global.$default_fontSize;
+}

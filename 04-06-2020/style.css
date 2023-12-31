@@ -1,0 +1,213 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.box {
+    height: 1034px;
+    width: 320px;
+    margin: 35px;
+    border-radius: 15px;
+    background-color: rgb(252, 252, 252);
+    box-shadow: -1px 8px 18px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.box .top {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    flex-direction: column;
+    height: 30%;
+    width: 100%;
+}
+
+.box .top::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: skewY(-7deg);
+}
+
+.box:first-child .top::before {background-image: linear-gradient(90deg, #2ebaf2, #2b8cf2);}
+.box:nth-child(2) .top::before {background-image: linear-gradient(90deg, #9c8df1, #7f29f0);}
+.box:nth-child(3) .top::before {background-image: linear-gradient(90deg, #47f48f, #0dcf77);}
+
+.box .top .title {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 70%;
+    color: #ffffff;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.box .top .box-links {
+    list-style: none;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.box .top .box-links li {
+    position: relative;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.box .top .box-links li::before {
+    content:"\2713\0020";
+    font-size: 12px;
+    margin-right: 8px;
+    font-weight: bold;
+    color: #00ff66;
+}
+
+.box:nth-child(3) .top .box-links li::before {
+    color: #fff;
+}
+
+.box .top .box-options ul {
+    position: relative;
+    list-style: none;
+    display: flex;
+}
+
+.box .top .box-options li {
+    padding: 5px 12px;
+    margin: 0 10px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.62);
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.box .top .box-options ul li.active {
+    color: #fff;
+    cursor: unset;
+}
+
+.box .top .box-options p {
+    position: relative;
+    margin-top: 15px;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    transition: 500ms ease;
+    overflow: hidden;
+}
+
+.prices > p {
+    display: none;
+}
+
+.prices > p.active {
+    display: block;
+}
+
+.box .top .box-options .prices p #symbol {
+    font-size: 16px;
+    margin-left: 2px;
+    color: rgb(245, 245, 245);
+}
+
+.box .top .box-options .prices p #description {
+    display: block;
+    font-size: 12px;
+    color: rgb(252, 252, 252);
+}
+
+.box .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60%;
+}
+
+.box .content ul {
+    list-style: none;
+    text-align: center;
+}
+
+.box .content ul li {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    color: #777493;
+    background-color: #fff;
+    margin: 6px 0;
+    position: relative;
+    min-width: 158px;
+    transition: all 0.3s ease 0s;
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.08);
+}
+
+.box .content ul li.not-available {
+    text-decoration: line-through;
+    color: #a7a7a7;
+}
+
+.box .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10%;
+}
+
+.box .footer a {
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 22px;
+    text-decoration: none;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    font-family: sans-serif;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.box:first-child .footer a {
+    background-color: #2c94f2;
+}
+
+.box:nth-child(2) .footer a {
+    background-color: #6811e2;
+}
+
+.box:nth-child(3) .footer a {
+    background-color: #10a45f;
+}
+
+.box:hover .footer a {
+    transform: translateY(-10px);
+}
