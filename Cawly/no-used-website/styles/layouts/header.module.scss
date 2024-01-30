@@ -1,0 +1,32 @@
+@use "../abstracts/mixin" as *;
+
+.header_app {
+  width: 100vw;
+
+  .container {
+    @include flexDisplay("center", "center", "row");
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1080px;
+    padding: 20px 40px;
+    margin: 0 auto;
+
+    .logo {
+      transform: translateX(-8px); // Fixing logo's position
+    }
+
+    .info_field {
+      text-align: right;
+      font-weight: 600;
+      user-select: none;
+
+      .title {
+        color: rgb(39, 39, 39);
+      }
+
+      .description {
+        color: rgb(122, 122, 122);
+      }
+    }
+  }
+}

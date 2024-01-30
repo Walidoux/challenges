@@ -1,0 +1,16 @@
+@use "../abstracts/mixin" as *;
+@use "../abstracts/variables" as *;
+
+.todolist {
+  list-style: none;
+  width: 100vw;
+  transition: $transition_effect;
+
+  .container {
+    @include flexDisplay("center", "center", "column");
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    transition: $transition_effect;
+  }
+}

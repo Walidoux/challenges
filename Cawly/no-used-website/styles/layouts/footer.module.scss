@@ -1,0 +1,46 @@
+@use "../abstracts/mixin" as *;
+@use "../abstracts/variables" as *;
+
+.footer {
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .button {
+    @include flexDisplay("center", "center", "row");
+    @include buttonStyles();
+    background: linear-gradient(
+      135deg,
+      var(--clr-primary-400) 0%,
+      var(--clr-primary-800) 100%
+    );
+    color: white;
+    padding: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba($color: var(--clr-primary-400), $alpha: 0.3);
+    transform: rotate(45deg);
+    transition: $transition_effect;
+
+    &::after,
+    &::before {
+      height: 40%;
+      width: 3px;
+    }
+
+    &:focus {
+      transform: scale(1.2) rotate(45deg);
+      box-shadow: unset;
+    }
+
+    &:hover {
+      box-shadow: unset;
+
+      &::after,
+      &::before {
+        height: 50%;
+      }
+    }
+  }
+}
