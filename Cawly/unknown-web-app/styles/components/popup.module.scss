@@ -1,0 +1,86 @@
+@use "../abstracts/mixin" as *;
+@use "../abstracts/variables" as *;
+
+.popup {
+  @include flexDisplay("center", "center", "row");
+  @include hideVisibility();
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.835);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: $transition_effect;
+
+  .close_button {
+    @include buttonStyles();
+    position: fixed;
+    color: white;
+    top: 30px;
+    right: 30px;
+    height: 20px;
+    width: 20px;
+
+    &::after,
+    &::before {
+      height: 100%;
+      width: 2px;
+    }
+
+    &:hover {
+      &::after {
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+
+      &::before {
+        transform: translate(-50%, -50%) rotate(-135deg);
+      }
+    }
+  }
+
+  .container {
+    @include flexDisplay("center", "center", "column");
+    height: 200px;
+    width: min(80%, 400px);
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 5px 30px rgba($color: #000000, $alpha: 0.3);
+
+    .text_input {
+      height: 45px;
+      outline: none;
+      padding: 0 15px;
+      border-radius: 8px;
+      border: none;
+      font-family: "Open Sans", sans-serif;
+      color: rgb(47, 47, 47);
+      background-color: rgb(243, 243, 243);
+
+      &::placeholder {
+        color: rgb(128, 128, 128);
+      }
+    }
+
+    .submit_button {
+      margin-top: 20px;
+      padding: 10px 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+      box-shadow: 0 10px 15px rgba($color: #000000, $alpha: 0.2);
+      background-color: var(--clr-primary-400);
+      border: 2px solid var(--clr-primary-400);
+      transition: $transition_effect;
+
+      &:hover {
+        color: var(--clr-primary-400);
+        box-shadow: unset;
+        background-color: transparent;
+      }
+    }
+  }
+
+  &.visible {
+    @include showVisibility();
+  }
+}

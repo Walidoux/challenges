@@ -1,0 +1,31 @@
+{
+  "name": "website",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "11.1.2",
+    "next-optimized-images": "^2.6.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-h5-audio-player": "^3.8.1",
+    "react-useanimations": "^2.0.6",
+    "remove": "^0.1.5",
+    "sass": "^1.42.1",
+    "use-state-if-mounted": "^1.0.4",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.27",
+    "@types/uuid": "^8.3.1",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "feather-icons-react": "^0.4.3",
+    "typescript": "4.4.3"
+  }
+}

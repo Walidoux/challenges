@@ -1,0 +1,47 @@
+@use "variables" as *;
+
+@mixin flexDisplay($justify: "center", $align: "center", $direction: "row") {
+  display: flex;
+  justify-content: #{$justify};
+  align-items: #{$align};
+  flex-direction: #{$direction};
+}
+
+@mixin hideVisibility {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+@mixin showVisibility {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin buttonStyles {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    border-radius: 16px;
+    background-color: white;
+    transition: $transition_effect;
+  }
+
+  &::after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+}
