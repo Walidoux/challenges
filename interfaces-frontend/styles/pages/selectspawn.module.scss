@@ -1,0 +1,21 @@
+@import 'variables';
+
+.spawn-data {
+  width: 100%;
+  padding: 20px;
+  cursor: pointer;
+  color: #676767;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+  border-top: 1px solid var(--secondary-400);
+  border-bottom: 1px solid var(--secondary-400);
+  transition: $default-transition;
+
+  &:hover,
+  &.selected {
+    color: white;
+    background: var(--secondary-200);
+  }
+}

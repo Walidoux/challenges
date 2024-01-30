@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "jsxImportSource": "solid-js",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "types": ["vite/client"]
+  }
+}

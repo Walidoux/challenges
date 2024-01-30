@@ -1,0 +1,18 @@
+@import 'mixins';
+@import 'helpers';
+@import 'colors';
+@import 'functions';
+
+.form-container {
+  box-shadow: 0 20px 50px rgba(custom-map-get($colors, 'secondary', 800), 50%);
+  border-radius: 16px;
+  background: custom-map-get($colors, 'secondary', 600);
+  min-width: 400px;
+  transition: $default-transition;
+
+  &.valid {
+    @include element-invisible;
+
+    transform: translateY(-100%);
+  }
+}

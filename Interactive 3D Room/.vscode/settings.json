@@ -1,0 +1,15 @@
+{
+  "prettier.configPath": ".prettierrc",
+
+  "editor.bracketPairColorization.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+
+  "stylelint.validate": ["css", "sass", "scss"],
+  "stylelint.snippet": ["css", "sass", "scss"]
+}

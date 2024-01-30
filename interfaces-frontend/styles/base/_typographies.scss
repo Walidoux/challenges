@@ -1,0 +1,38 @@
+@use '@fontsource/poppins/scss/mixins' as Poppins;
+
+@import 'helpers';
+
+@include Poppins.fontFace($fontName: 'Poppins-Regular', $weight: 400);
+@include Poppins.fontFace($fontName: 'Poppins-Bold', $weight: 600);
+@include Poppins.fontFace($fontName: 'Poppins-ExtraBold', $weight: 700);
+
+%typo-title {
+  padding: 0 10px;
+  text-align: center;
+  font-size: 2.425em;
+  line-height: 1.61em; /* Vertical Rhythm */
+  color: hsl(0deg 100% 100 / 100%);
+  font-family: Poppins-Regular, sans-serif;
+}
+
+%typo-subtitle {
+  padding: 0 10px;
+  text-align: center;
+  font-size: 1.325rem;
+  line-height: 1.632rem;
+  color: hsl(0deg 100% 100% / 90%);
+  font-family: Poppins-Regular, sans-serif;
+}
+
+%typo-button {
+  @extend %input;
+
+  padding: 16px 32px;
+  font-family: Poppins-ExtraBold, sans-serif;
+}
+
+%typo-link {
+  color: var(--light-200);
+  text-decoration: none;
+  font-family: Poppins-Bold, sans-serif;
+}

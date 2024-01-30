@@ -1,0 +1,50 @@
+{
+  "name": "interactive-3d-room",
+  "version": "0.0.0",
+  "description": "An interactive 3D room scene on a browser.",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint:prettier": "prettier \".\"",
+    "lint:scss": "stylelint \"**/*.scss\"",
+    "lint:commit": "commitlint",
+    "release": "semantic-release"
+  },
+  "devDependencies": {
+    "vite": "^2.9.12",
+    "typescript": "^4.7.4",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "sass": "^1.52.3",
+    "eslint": "^8.18.0",
+    "stylelint": "^14.9.1",
+    "semantic-release": "^19.0.3",
+    "vite-plugin-solid": "^2.2.6",
+    "stylelint-scss": "^4.2.0",
+    "eslint-config-conventions": "^2.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "stylelint-color-format": "^1.1.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "typescript-plugin-css-modules": "^3.4.0",
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "@types/three": "^0.141.0",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0"
+  },
+  "dependencies": {
+    "@splinetool/runtime": "^0.9.69",
+    "solid-js": "^1.4.4",
+    "three": "^0.141.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Walidoux/interactive-3D-room.git"
+  }
+}

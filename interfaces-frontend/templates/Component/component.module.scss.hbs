@@ -1,0 +1,9 @@
+@import 'mixins';
+@import 'helpers';
+
+.container {
+  @include display-flex(center, center, row);
+  @extend %container;
+
+  position: relative;
+}

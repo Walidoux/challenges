@@ -1,0 +1,9 @@
+{
+  "extends": ["conventions", "prettier"],
+  "plugins": ["prettier"],
+  "parserOptions": { "project": "./tsconfig.json" },
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": "warn"
+  }
+}

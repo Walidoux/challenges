@@ -1,0 +1,25 @@
+@use '../abstracts/colors' as *;
+@use './typographies' as *;
+
+:root {
+  @each $color, $shades in $colors {
+    @each $prop, $value in $shades {
+      --#{$color}-#{$prop}: #{$value};
+    }
+  }
+
+  --color-success: #3fd34a;
+  --color-error: #ce4242;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins-Regular, sans-serif;
+}

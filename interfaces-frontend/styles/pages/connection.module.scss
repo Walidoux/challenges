@@ -1,0 +1,78 @@
+@import 'mixins';
+@import 'colors';
+@import 'functions';
+@import 'helpers';
+
+.container {
+  padding: 30px 50px;
+
+  .logo {
+    @include display-flex(center, center, column);
+
+    padding: 20px;
+
+    .text-info {
+      position: relative;
+      color: var(--primary-400);
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      right: -20px;
+    }
+  }
+
+  .links-container {
+    @include display-flex(center, center, column);
+
+    margin-top: 10px;
+
+    .link {
+      text-decoration: none;
+      color: #a5a5a5;
+      font-weight: 500;
+      margin: 2.5px 0;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: $default-transition;
+
+      &:hover {
+        color: white;
+      }
+
+      &:last-child {
+        color: var(--primary-600);
+
+        &:hover {
+          color: var(--primary-400);
+        }
+      }
+    }
+  }
+
+  .inputs-container {
+    @include display-flex(center, center, column);
+  }
+
+  .output-popup {
+    @include display-flex(center, center, row);
+    @include element-invisible($height-animation: true);
+
+    text-align: center;
+    border-radius: 16px;
+    color: var(--color-success);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    user-select: none;
+
+    &.visible {
+      @include element-invisible-off;
+
+      height: 100%;
+      padding: 10px;
+      padding-bottom: unset;
+    }
+  }
+
+  .confirm-button {
+    min-width: 375px;
+  }
+}

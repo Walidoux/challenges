@@ -1,0 +1,154 @@
+@import 'mixins';
+@import 'colors';
+@import 'helpers';
+@import 'functions';
+@import 'variables';
+
+.input-container {
+  position: relative;
+  width: 325px;
+
+  &.checkbox {
+    @include display-flex(flex-start, center, row);
+
+    margin-top: 10px;
+  }
+
+  .label-container {
+    @include display-flex(center, center, row);
+
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    user-select: none;
+
+    .icon {
+      position: relative;
+      padding: 2.5px 15px 2.5px 0;
+      border-right: 1px solid var(--secondary-600);
+      background: var(--secondary-800);
+      box-shadow: 10px 0 20px
+        rgba(custom-map-get($colors, 'secondary', 800), 100%);
+      z-index: 5;
+      left: -5px;
+    }
+
+    .value {
+      @include element-invisible-off;
+
+      position: relative;
+      top: 0;
+      left: 0;
+      background: var(--secondary-800);
+      font-size: 0.9rem;
+      margin-left: 10px;
+      color: #4b4b4b;
+      padding: 5px 10px;
+      border-radius: 0;
+      transition: $default-transition;
+    }
+  }
+
+  .label-checkbox {
+    cursor: pointer;
+    user-select: none;
+    padding-left: 7.5px;
+    color: #d8d8d8;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  .input-text,
+  .input-password {
+    @extend %input;
+    @extend %input-autofill;
+
+    border: 1px solid var(--secondary-400);
+    background: var(--secondary-800);
+    border-radius: 10px;
+    padding: 20px 30px;
+    padding-left: 80px;
+    width: 100%;
+    margin: 8.5px 0;
+    height: 60px;
+    color: white;
+
+    &:valid,
+    &:focus {
+      border: 1px solid #424652;
+    }
+
+    &:focus ~ .label-container .value,
+    &:valid ~ .label-container .value {
+      @include element-invisible;
+
+      left: -50px;
+    }
+  }
+
+  &.incorrect .input-text,
+  &.incorrect .input-password {
+    border: 1px solid var(--color-error);
+  }
+
+  .input-checkbox {
+    @extend %input;
+
+    -webkit-appearance: none;
+    appearance: none;
+    height: 17.5px;
+    width: 17.5px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 5px;
+    opacity: 0.7;
+    background: linear-gradient(
+      -200deg,
+      var(--primary-400),
+      var(--primary-600)
+    );
+
+    @include pseudo-element(
+      $element: after,
+      $el-height: 100%,
+      $el-width: 100%,
+      $el-background: $checkmark-icon no-repeat,
+      $el-transition: $default-transition,
+      $isVisible: false
+    ) {
+      margin: 1px;
+    }
+
+    &:hover,
+    &:checked {
+      opacity: 1;
+    }
+
+    &:checked {
+      box-shadow: 0 2px 5px rgba(custom-map-get($colors, 'primary', 600), 50%);
+
+      &::after {
+        @include element-invisible-off;
+      }
+    }
+  }
+}
+
+.error-message {
+  @include element-invisible($height-animation: true);
+
+  letter-spacing: 1px;
+  user-select: none;
+  font-weight: 500;
+  color: var(--color-error);
+  width: 100%;
+  margin-left: 10px;
+
+  &.visible {
+    @include element-invisible-off;
+
+    padding: 5px 0;
+  }
+}

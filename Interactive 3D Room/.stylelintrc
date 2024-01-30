@@ -1,0 +1,14 @@
+{
+  "plugins": ["stylelint-scss", "stylelint-color-format"],
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "property-no-vendor-prefix": null,
+    "comment-no-empty": null,
+    "color-no-invalid-hex": true,
+    "color-function-notation": "legacy",
+    "font-family-name-quotes": "always-where-recommended",
+    "color-format/format": {
+      "format": "hsla"
+    }
+  }
+}
